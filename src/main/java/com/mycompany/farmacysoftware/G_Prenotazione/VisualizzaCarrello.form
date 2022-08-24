@@ -138,7 +138,7 @@
                     <Column editable="false" title="ID" type="java.lang.Integer"/>
                     <Column editable="false" title="Lista Farmaci" type="java.lang.String"/>
                     <Column editable="false" title="Quantita" type="java.lang.Integer"/>
-                    <Column editable="false" title="Numero Ordine" type="java.lang.Object"/>
+                    <Column editable="false" title="Numero Ordine" type="java.lang.Integer"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
