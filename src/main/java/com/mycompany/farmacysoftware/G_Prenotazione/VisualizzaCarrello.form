@@ -58,7 +58,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Carrello"/>
+        <Property name="text" type="java.lang.String" value="Visualizza Carrello"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bottoneIndietro">
@@ -81,15 +81,24 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="404" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jSeparator1" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="bottoneModificaOrdine" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="bottoneConfermaOrdine" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="jSeparator2" min="-2" pref="165" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="491" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSeparator1" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+                              <Component id="bottoneModificaOrdine" min="-2" pref="165" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSeparator2" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="bottoneConfermaOrdine" min="-2" pref="165" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,7 +106,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="510" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="518" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -125,23 +134,25 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="2" rowCount="4">
-                    <Column editable="true" title="Nome" type="java.lang.String">
-                      <Data value="Prova 1 "/>
-                      <Data value="Prova 2 "/>
-                      <Data value="Prova 3"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Quantit&#xe0;" type="java.lang.Integer">
-                      <Data value="1"/>
-                      <Data value="13"/>
-                      <Data value="4"/>
-                      <Data value="null"/>
-                    </Column>
+                  <Table columnCount="4" rowCount="0">
+                    <Column editable="false" title="ID" type="java.lang.Integer"/>
+                    <Column editable="false" title="Lista Farmaci" type="java.lang.String"/>
+                    <Column editable="false" title="Quantita" type="java.lang.Integer"/>
+                    <Column editable="false" title="Numero Ordine" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -163,9 +174,6 @@
         </Container>
         <Component class="javax.swing.JButton" name="bottoneConfermaOrdine">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-account-verificato-30.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Conferma Ordine"/>
           </Properties>
           <Events>
@@ -176,9 +184,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneModificaOrdine">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-modifica-il-calendario-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Modifica Ordine"/>
           </Properties>
           <Events>

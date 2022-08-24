@@ -176,7 +176,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
 
     private void bottoneModificaeAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaeAnnullaActionPerformed
         // TODO add your handling code here:
-        new ModificaAnnullaOrdine().setVisible(true);
+        new ModificaOrdine().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_bottoneModificaeAnnullaActionPerformed
 

@@ -4,9 +4,11 @@
  */
 package com.mycompany.farmacysoftware.G_Prenotazione;
 
-import com.mycompany.farmacysoftware.G_Prenotazione.ModificaAnnullaOrdine;
-import com.mycompany.farmacysoftware.G_Prenotazione.ModificaAnnullaOrdine;
+
+import Control.ControlDiRicercaFarmaci;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,11 +16,19 @@ import javax.swing.JOptionPane;
  */
 public class ModificaOrdine extends javax.swing.JFrame {
 
+    DefaultTableModel tbcModel;
+    
+    LinkedList<String> tipoId= new LinkedList<String>();
+    LinkedList<String> nomeFarmaco = new LinkedList<String>();
+    LinkedList<String> qua = new LinkedList<String>();
+    LinkedList<String> nOrdine = new LinkedList<String>();
+    
     /**
      * Creates new form ModificaQuantitàOrdine
      */
     public ModificaOrdine() {
         initComponents();
+        carica_CarrelloInModificaOrdine();
     }
 
     /**
@@ -46,6 +56,11 @@ public class ModificaOrdine extends javax.swing.JFrame {
         jLabel1.setText("Modifica Ordine");
 
         jButton1.setText("Indietro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -54,12 +69,19 @@ public class ModificaOrdine extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Quantità"
+                "ID", "Lista Farmaci", "Quantita", "Numero Ordine"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -67,7 +89,6 @@ public class ModificaOrdine extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        bottoneConfermaModifica.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-invia-30.png")); // NOI18N
         bottoneConfermaModifica.setText("Conferma Modifica");
         bottoneConfermaModifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +96,6 @@ public class ModificaOrdine extends javax.swing.JFrame {
             }
         });
 
-        bottoneEliminaOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-x-24.png")); // NOI18N
         bottoneEliminaOrdine.setText("Elimina Ordine");
         bottoneEliminaOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,20 +109,20 @@ public class ModificaOrdine extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(bottoneEliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bottoneConfermaModifica)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(115, 115, 115))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bottoneConfermaModifica, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,7 +137,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 473, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -138,8 +158,26 @@ public class ModificaOrdine extends javax.swing.JFrame {
 
     private void bottoneConfermaModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaModificaActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         JOptionPane.showMessageDialog(null, "Ordine Modificato");
-        new ModificaAnnullaOrdine().setVisible(true);
+        new VisualizzaCarrello().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_bottoneConfermaModificaActionPerformed
 
@@ -147,6 +185,50 @@ public class ModificaOrdine extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new VisualizzaCarrello().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void carica_CarrelloInModificaOrdine(){
+        
+        System.out.println("sono in caricaCarrello");
+        String id = null;
+        String nome = null;
+        String quantita = null;
+        String numero_ordine = null;
+        
+        ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
+        
+        vc.VisualizzaCarrello();
+        
+        tipoId = (LinkedList<String>) vc.getListI();
+        nomeFarmaco = (LinkedList<String>) vc.getListN();
+        qua = (LinkedList<String>) vc.getListQ();
+        nOrdine = (LinkedList<String>) vc.getListNo();
+        
+        while(!nOrdine.isEmpty()){
+            
+            String tbcData[] = {tipoId.getFirst(), nomeFarmaco.getFirst(), qua.getFirst(),nOrdine.getFirst()};
+            
+            tbcModel = (DefaultTableModel)jTable1.getModel();
+            tbcModel.addRow(tbcData);
+            
+            tipoId.removeFirst();
+            nomeFarmaco.removeFirst();
+            qua.removeFirst();
+            nOrdine.removeFirst();
+        }
+    
+    
+    }
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
