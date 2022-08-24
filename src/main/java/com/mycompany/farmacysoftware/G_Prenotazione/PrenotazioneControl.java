@@ -27,7 +27,7 @@ class PrenotazioneControl {
         String Qt = null;
         Connection conn= null;
         try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
             if(conn!=null){
                 System.out.println("connection done");
                     }

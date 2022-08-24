@@ -85,9 +85,9 @@ public class ControlDiRicercaFarmaci {
             while(rs.next()){
                 
                 String tipoId = String.valueOf(rs.getInt("ID"));
-                String nomeFarmaco = rs.getString("Lista Farmaci");
-                String qua = String.valueOf(rs.getInt("Quantita"));
-                String nOrdine = String.valueOf(rs.getInt("N_Ordine"));
+                String nomeFarmaco = rs.getString("ListaFarmaci");
+                String qua = String.valueOf(rs.getInt("Quantità"));
+                String nOrdine = String.valueOf(rs.getInt("NumeroOrdine"));
                 
                 id.add(tipoId);
                 nome.add(nomeFarmaco);
