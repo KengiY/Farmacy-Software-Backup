@@ -87,7 +87,7 @@ public class ControlDiRicercaFarmaci {
                 String tipoId = String.valueOf(rs.getInt("ID"));
                 String nomeFarmaco = rs.getString("Lista Farmaci");
                 String qua = String.valueOf(rs.getInt("Quantita"));
-                String nOrdine = String.valueOf(rs.getInt("Numero Ordine"));
+                String nOrdine = String.valueOf(rs.getInt("N_Ordine"));
                 
                 id.add(tipoId);
                 nome.add(nomeFarmaco);
