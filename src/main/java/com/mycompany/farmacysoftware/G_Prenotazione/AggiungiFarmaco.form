@@ -186,6 +186,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable2MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -193,6 +196,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Aggiungi al Carrello"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneAggiungiAlCarrelloActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSpinner" name="sceltaQuantit&#xe0;">
         </Component>

@@ -6,6 +6,7 @@ package com.mycompany.farmacysoftware.G_Prenotazione;
 
 
 import Control.ControlDiRicercaFarmaci;
+
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
 import com.mycompany.farmacysoftware.HomeFarmacista;
 import java.sql.Connection;
@@ -23,6 +24,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
@@ -36,6 +38,8 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
     LinkedList<String> name= new LinkedList<String>();
     LinkedList<String> ad= new LinkedList<String>();
     DefaultTableModel tb1Model;
+    String clicked_element_farm= null;
+    String clicked_element_tipo= null;
     /**
      * Creates new form AggiungiFarmaco
      */
@@ -93,9 +97,19 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
                 "Nome", "Tipo Farmaco"
             }
         ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable2);
 
         bottoneAggiungiAlCarrello.setText("Aggiungi al Carrello");
+        bottoneAggiungiAlCarrello.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottoneAggiungiAlCarrelloActionPerformed(evt);
+            }
+        });
 
         bottoneCerca.setText("Cerca");
         bottoneCerca.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +205,25 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         tr.setRowFilter(RowFilter.regexFilter(br));
         
     }//GEN-LAST:event_bottoneCercaActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+            JTable source = (JTable)evt.getSource();
+            int row = source.rowAtPoint( evt.getPoint() );
+            int column = source.columnAtPoint( evt.getPoint() );
+            clicked_element_farm=source.getModel().getValueAt(row, 0)+"";
+            clicked_element_tipo=source.getModel().getValueAt(row, 1)+"";
+    }//GEN-LAST:event_jTable2MouseClicked
+
+    private void bottoneAggiungiAlCarrelloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiAlCarrelloActionPerformed
+        int qt= (int) sceltaQuantità.getValue();
+        if( clicked_element_farm!= null && !clicked_element_farm.isEmpty()&& qt!=0){
+               
+               
+               PrenotazioneControl agg = new PrenotazioneControl();
+               agg.AggiungiAlCarrello(clicked_element_farm,qt,clicked_element_tipo );
+                
+            }
+    }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
     public void carica_tabella(){
                 String br= null;
                 String nome = null;
