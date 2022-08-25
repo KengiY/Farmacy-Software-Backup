@@ -5,6 +5,7 @@
 package com.mycompany.farmacysoftware.G_Prenotazione;
 
 
+import Control.PrenotazioneControl;
 import Control.ControlDiRicercaFarmaci;
 
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;

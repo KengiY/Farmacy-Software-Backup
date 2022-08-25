@@ -8,7 +8,9 @@ package Control;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import javax.swing.table.*;
@@ -47,7 +49,7 @@ public class ControlDiRicercaFarmaci {
     public void VIsualizzaFarmaci(){
         Connection conn= null;
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
         if(conn!=null){
             System.out.println("connection done");
                     }
@@ -75,7 +77,7 @@ public class ControlDiRicercaFarmaci {
         System.out.println("sono in visualizza Carrello");
         Connection conn= null;
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
         if(conn!=null){
             System.out.println("connection done");
                     }
@@ -100,6 +102,26 @@ public class ControlDiRicercaFarmaci {
                 System.out.println("connection ha sucato");
         }
         
+    }
+    
+    
+    public void EliminaElemento(String clicked_element_farmaco){
+    Connection conn= null;
+        try{
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+            if(conn!=null){
+                System.out.println("connection done");
+                    }
+                     String sql = "delete from carrello where ListaFarmaci= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,clicked_element_farmaco);
+            ps.execute();
+            
+
+        }catch (Exception e){
+            System.out.println(e);
+         }
+    
     }
     
     

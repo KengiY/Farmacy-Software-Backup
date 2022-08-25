@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.farmacysoftware.G_Prenotazione;
+package Control;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,20 +14,20 @@ import java.sql.Statement;
  *
  * @author 39329
  */
-class PrenotazioneControl {
+public class PrenotazioneControl {
     /*public void AggiungiAlCarrello(String farmaco, int qt, String tipo){
         System.out.println(farmaco+" "+ qt+" "+tipo );
     }*/
 
     public void AggiungiAlCarrello(String farmaco, int qt, String tipo){
-;
+
         String NumOrdine = null;
         int num = 0;
         int tip= Integer.parseInt (tipo);
         String Qt = null;
         Connection conn= null;
         try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
             if(conn!=null){
                 System.out.println("connection done");
                     }

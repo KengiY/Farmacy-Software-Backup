@@ -35,7 +35,7 @@ public class ControlRecuperoPassword {
 
                 try{
                     int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Bruno1234");
+                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Manfro1234");
                     if(conn!=null){
                         System.out.println("connection done");
                     }
@@ -91,7 +91,7 @@ public class ControlRecuperoPassword {
             if(res=='f'){
                 try{
                     int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Bruno1234");
+                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Manfro1234");
                     if(conn!=null){
                         System.out.println("connection done");
                     }
@@ -116,7 +116,7 @@ public class ControlRecuperoPassword {
         }else if (res=='d'){
             try{
                     int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
                     if(conn!=null){
                         System.out.println("connection done");
                     }
@@ -139,7 +139,7 @@ public class ControlRecuperoPassword {
         }else if (res=='c'){
         try{
                     int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
                     if(conn!=null){
                         System.out.println("connection done");
                     }

@@ -6,8 +6,13 @@ package com.mycompany.farmacysoftware.G_Prenotazione;
 
 
 import Control.ControlDiRicercaFarmaci;
+import java.awt.event.InputMethodListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +27,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
     LinkedList<String> nomeFarmaco = new LinkedList<String>();
     LinkedList<String> qua = new LinkedList<String>();
     LinkedList<String> nOrdine = new LinkedList<String>();
-    
+    LinkedList<String> OrdiniDaEliminare= new LinkedList<String>();
+
+    String clicked_element_farmaco;
+
     /**
      * Creates new form ModificaQuantitàOrdine
      */
@@ -85,6 +93,18 @@ public class ModificaOrdine extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jTable1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jTable1InputMethodTextChanged(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -157,23 +177,6 @@ public class ModificaOrdine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneConfermaModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaModificaActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         JOptionPane.showMessageDialog(null, "Ordine Modificato");
@@ -182,7 +185,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneConfermaModificaActionPerformed
 
     private void bottoneEliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneEliminaOrdineActionPerformed
-        // TODO add your handling code here:
+         int row = jTable1.getSelectedRow();
+         clicked_element_farmaco=jTable1.getModel().getValueAt(row, 1)+"";
+         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
+         vc.EliminaElemento(clicked_element_farmaco);
     }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -190,6 +196,15 @@ public class ModificaOrdine extends javax.swing.JFrame {
         new VisualizzaCarrello().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged
+
+        
+    }//GEN-LAST:event_jTable1InputMethodTextChanged
 
     public void carica_CarrelloInModificaOrdine(){
         
