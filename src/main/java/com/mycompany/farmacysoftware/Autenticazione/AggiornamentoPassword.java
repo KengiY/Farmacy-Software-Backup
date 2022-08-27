@@ -169,7 +169,11 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
       ControlRecuperoPassword rp= new ControlRecuperoPassword(user);
       int pl;
 
-      rp.AggiornamentoPass(user,pass);
+        try {
+            rp.AggiornamentoPass(user,pass);
+        } catch (SQLException ex) {
+            Logger.getLogger(AggiornamentoPassword.class.getName()).log(Level.SEVERE, null, ex);
+        }
       pl= rp.getlof();
       if ( pl==1){
       new Login().setVisible(true);

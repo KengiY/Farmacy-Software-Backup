@@ -31,16 +31,13 @@ public class ControlLogin {
         }
 
         public void checkLogin() throws SQLException{
-            Connection conn= null;
+
             char res= user.charAt(0);
             if(res=='f'){
-                try{
                     int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                
+                    String luogo = "db_farmacia";
+                    DBMSControl dc= new DBMSControl();
+                    Connection conn= dc.ConnessioneDBMS(luogo);
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_farmacista");
 
@@ -65,17 +62,11 @@ public class ControlLogin {
                         JOptionPane.showMessageDialog(null, "Password Errata");
                     }
 
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
             }else if(res=='d'){
-                try{
                 int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                
+                String luogo = "db_azienda";
+                DBMSControl dc= new DBMSControl();
+                Connection conn= dc.ConnessioneDBMS(luogo);
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_utente");
 
@@ -101,17 +92,12 @@ public class ControlLogin {
                     }else{
                         JOptionPane.showMessageDialog(null, "Password Errata");
                     }
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
+
             }else if(res=='c'){
-                try{
                 int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                
+                String luogo = "db_azienda";
+                DBMSControl dc= new DBMSControl();
+                Connection conn= dc.ConnessioneDBMS(luogo);
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_utente");
 
@@ -137,9 +123,6 @@ public class ControlLogin {
                         JOptionPane.showMessageDialog(null, "Password Errata");
                     }
 
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
             }
         }
 

@@ -8,7 +8,10 @@ import Control.ControlDiRicercaFarmaci;
 import com.mycompany.farmacysoftware.G_Prenotazione.ModificaOrdine;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
+import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,7 +32,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     /**
      * Creates new form VisualizzaCarrello
      */
-    public VisualizzaCarrello() {
+    public VisualizzaCarrello() throws SQLException {
         initComponents();
         carica_Carrello();
     }
@@ -185,13 +188,17 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
 
     private void bottoneModificaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaOrdineActionPerformed
-        // TODO add your handling code here:
-        new ModificaOrdine().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new ModificaOrdine().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_bottoneModificaOrdineActionPerformed
 
     
-    public void carica_Carrello(){
+    public void carica_Carrello() throws SQLException{
         
         System.out.println("sono in caricaCarrello");
         String id = null;
@@ -257,7 +264,11 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VisualizzaCarrello().setVisible(true);
+                try {
+                    new VisualizzaCarrello().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

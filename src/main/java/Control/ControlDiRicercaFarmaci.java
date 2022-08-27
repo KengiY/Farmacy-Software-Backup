@@ -49,15 +49,14 @@ public class ControlDiRicercaFarmaci {
     }
     
     
-    public void VIsualizzaFarmaci(){
-        Connection conn= null;
-        try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-        if(conn!=null){
-            System.out.println("connection done");
-                    }
+    public void VIsualizzaFarmaci() throws SQLException{
+        
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("select * from lista_farmaci");
+        
         
         while(rs.next())
             {
@@ -68,19 +67,13 @@ public class ControlDiRicercaFarmaci {
                 id.add(ad);
                 }
         
-        
-        }catch (Exception e){
-            System.out.println("connection ha sucato");
-            }
+
     }
     
-    public void VisualizzaFarmaciBanco(){
-        Connection conn= null;
-        try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-        if(conn!=null){
-            System.out.println("connection done");
-                    }
+    public void VisualizzaFarmaciBanco() throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("select * from lista_farmaci where ID = 0");
         
@@ -94,18 +87,12 @@ public class ControlDiRicercaFarmaci {
                 }
         
         
-        }catch (Exception e){
-            System.out.println("connection ha sucato");
-            }
     }
     
-    public void VisualizzaFarmaciAutomatici(){
-        Connection conn= null;
-        try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-        if(conn!=null){
-            System.out.println("connection done");
-                    }
+    public void VisualizzaFarmaciAutomatici() throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("select * from ordini_periodici");
         
@@ -120,10 +107,6 @@ public class ControlDiRicercaFarmaci {
                 periodicità.add(pd);
                 }
         
-        
-        }catch (Exception e){
-            System.out.println("connection ha sucato");
-            }
     }
     
     
@@ -132,14 +115,10 @@ public class ControlDiRicercaFarmaci {
     
     
     
-    public void VisualizzaCarrello(){
-        System.out.println("sono in visualizza Carrello");
-        Connection conn= null;
-        try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-        if(conn!=null){
-            System.out.println("connection done");
-                    }
+    public void VisualizzaCarrello() throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("select * from carrello");
             
@@ -156,54 +135,48 @@ public class ControlDiRicercaFarmaci {
                 numero_ordine.add(nOrdine);
                         
             }
-  
-            }catch (Exception e){
-                System.out.println("connection ha sucato");
-        }
-        
+
     }
     
     
-    public void EliminaElemento(String clicked_element_farmaco){
-    Connection conn= null;
-        try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-            if(conn!=null){
-                System.out.println("connection done");
-                    }
-                     String sql = "delete from carrello where ListaFarmaci= ? ";
+    public void EliminaElemento(String clicked_element_farmaco) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+            String sql = "delete from carrello where ListaFarmaci= ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,clicked_element_farmaco);
             ps.execute();
-            
 
-        }catch (Exception e){
-            System.out.println(e);
-         }
     
     }
     
-    public void EliminaElementoPeriodicita(String clicked_element_farmaco){
-    Connection conn= null;
-        try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-            if(conn!=null){
-                System.out.println("connection done");
-                    }
-                     String sql = "delete from ordini_periodici where ListaFarmaci= ? ";
+    public void EliminaElementoPeriodicita(String clicked_element_farmaco) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+            String sql = "delete from ordini_periodici where ListaFarmaci= ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,clicked_element_farmaco);
             ps.execute();
-            
 
-        }catch (Exception e){
-            System.out.println(e);
-         }
     
     }
     
-    
-    
-    
+    public void ModificaOrdine(int qta, String clicked_element_farm ) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+                String sql =  "update carrello set Quantità=? where ListaFarmaci=?";
+                
+                PreparedStatement ps = conn.prepareStatement(sql);
+                
+                ps.setInt(1, qta);
+                ps.setString(2, clicked_element_farm);
+            
+                ps.executeUpdate();
+                ps.close();
+                
+            }
 
 }

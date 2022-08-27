@@ -44,7 +44,7 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
     /**
      * Creates new form AggiungiFarmaco
      */
-    public AggiungiFarmaco() {
+    public AggiungiFarmaco() throws SQLException {
         initComponents();
         carica_tabella();
     }
@@ -230,13 +230,17 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         if( clicked_element_farm!= null && !clicked_element_farm.isEmpty()&& qt!=0){
  
                PrenotazioneControl agg = new PrenotazioneControl();
-               agg.AggiungiAlCarrello(clicked_element_farm,qt,clicked_element_tipo );
+            try {
+                agg.AggiungiAlCarrello(clicked_element_farm,qt,clicked_element_tipo );
+            } catch (SQLException ex) {
+                Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 
             }
     }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
     
     
-    public void carica_tabella(){
+    public void carica_tabella() throws SQLException{
                 String br= null;
                 String nome = null;
                 String id = null;
@@ -287,7 +291,11 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AggiungiFarmaco().setVisible(true);
+                try {
+                    new AggiungiFarmaco().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
         }
             

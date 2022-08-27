@@ -15,10 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author 39329
- */
+
 public class ControlRecuperoPassword {
         String user;
         String passUser;
@@ -31,15 +28,12 @@ public class ControlRecuperoPassword {
 
       
     public void checkUser() throws SQLException{
-            Connection conn= null;
 
-                try{
-                    int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                
+    int log = 1;
+    String luogo = "db_farmacia";
+    DBMSControl dc= new DBMSControl();
+    Connection conn= dc.ConnessioneDBMS(luogo);
+
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_farmacista");
 
@@ -65,11 +59,6 @@ public class ControlRecuperoPassword {
                         JOptionPane.showMessageDialog(null, "User inesistente");
                     }
 
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
-           
-
         }
         
         public String getUser(){
@@ -82,20 +71,18 @@ public class ControlRecuperoPassword {
         return lof;
         }
         
-        public void AggiornamentoPass(String user, String pass){
-            Connection conn= null;
+        public void AggiornamentoPass(String user, String pass) throws SQLException{
+
             user= user;
             pass = pass;
             char res= user.charAt(0);
             
             if(res=='f'){
-                try{
-                    int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_farmacia","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                    
+                int log = 1;
+                String luogo = "db_farmacia";
+                DBMSControl dc= new DBMSControl();
+                Connection conn= dc.ConnessioneDBMS(luogo);
+
                     String sql =  "update credenziali_farmacista set Password=? where Username=?";
                     PreparedStatement ps = conn.prepareStatement(sql);
                     
@@ -109,18 +96,12 @@ public class ControlRecuperoPassword {
                     lof=1;
 
 
+            }else if (res=='d'){
+                int log = 1;
+                String luogo = "db_azienda";
+                DBMSControl dc= new DBMSControl();
+                Connection conn= dc.ConnessioneDBMS(luogo);
 
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
-        }else if (res=='d'){
-            try{
-                    int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                    
                     String sql =  "update credenziali_utente set Password=? where Username=?";
                     PreparedStatement ps = conn.prepareStatement(sql);
                     
@@ -132,18 +113,12 @@ public class ControlRecuperoPassword {
                     System.out.println(pass);
                     JOptionPane.showMessageDialog(null, "Password aggiornata");
                     lof=1;
+            }else if (res=='c'){
+                int log = 1;
+                String luogo = "db_azienda";
+                DBMSControl dc= new DBMSControl();
+                Connection conn= dc.ConnessioneDBMS(luogo);
 
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
-        }else if (res=='c'){
-        try{
-                    int log = 1;
-                    conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-                    if(conn!=null){
-                        System.out.println("connection done");
-                    }
-                    
                     String sql =  "update credenziali_utente set Password=? where Username=?";
                     PreparedStatement ps = conn.prepareStatement(sql);
                     
@@ -155,12 +130,6 @@ public class ControlRecuperoPassword {
                     System.out.println(pass);
                     JOptionPane.showMessageDialog(null, "Password aggiornata");
                     lof=1;
-
-            
-
-                }catch (Exception e){
-                    System.out.println("connection ha sucato");
-                }
         }
         
         

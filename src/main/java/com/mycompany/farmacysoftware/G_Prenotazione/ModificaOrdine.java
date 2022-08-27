@@ -39,7 +39,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
     /**
      * Creates new form ModificaQuantitàOrdine
      */
-    public ModificaOrdine() {
+    public ModificaOrdine() throws SQLException {
         initComponents();
         carica_CarrelloInModificaOrdine();
     }
@@ -204,38 +204,21 @@ public class ModificaOrdine extends javax.swing.JFrame {
         int clicked_qt = Integer.parseInt(clicked_element_qt);
         
         if(qta != clicked_qt){
-            
+            ControlDiRicercaFarmaci fr = new ControlDiRicercaFarmaci();
             try {
-                Connection conn = null;
-                
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
-                
-                if(conn!=null){
-                    System.out.println("connection done");
-                }
-                
-                String sql =  "update carrello set Quantità=? where ListaFarmaci=?";
-                
-                PreparedStatement ps = conn.prepareStatement(sql);
-                
-                ps.setInt(1, qta);
-                ps.setString(2, clicked_element_farm);
-            
-                ps.executeUpdate();
-                ps.close();
-                JOptionPane.showMessageDialog(null, "Ordine Modificato");
-            
-   
-            } catch (SQLException e) {
-                System.out.println(e);
+                fr.ModificaOrdine( qta, clicked_element_farm );
+            } catch (SQLException ex) {
+                Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
         }
         
-        
+        JOptionPane.showMessageDialog(null, "Ordine Modificato");
         this.setVisible(false);
-        new ModificaOrdine().setVisible(true);
+        try {
+            new ModificaOrdine().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
 
@@ -246,9 +229,17 @@ public class ModificaOrdine extends javax.swing.JFrame {
         int row = jTable1.getSelectedRow();
         clicked_element_farmaco=jTable1.getModel().getValueAt(row, 1)+"";
         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
-        vc.EliminaElemento(clicked_element_farmaco);
+        try {
+            vc.EliminaElemento(clicked_element_farmaco);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
-        new ModificaOrdine().setVisible(true);
+        try {
+            new ModificaOrdine().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -283,7 +274,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTable1InputMethodTextChanged
 
-    public void carica_CarrelloInModificaOrdine(){
+    public void carica_CarrelloInModificaOrdine() throws SQLException{
         
         System.out.println("sono in caricaCarrello");
         String id = null;
@@ -358,7 +349,11 @@ public class ModificaOrdine extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificaOrdine().setVisible(true);
+                try {
+                    new ModificaOrdine().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

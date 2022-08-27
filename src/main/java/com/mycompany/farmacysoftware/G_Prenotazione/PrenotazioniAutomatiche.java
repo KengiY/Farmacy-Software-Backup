@@ -6,7 +6,10 @@ package com.mycompany.farmacysoftware.G_Prenotazione;
 
 import Control.ControlDiRicercaFarmaci;
 import Control.PrenotazioneControl;
+import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
@@ -32,7 +35,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
     /**
      * Creates new form PrenotazioniAutomatiche
      */
-    public PrenotazioniAutomatiche() {
+    public PrenotazioniAutomatiche() throws SQLException {
         initComponents();
         carica_tabella();
         carica_tabellaOrdiniPeriodici();
@@ -299,9 +302,17 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         
         if(qt>0){
         System.out.println(clicked_element_farm + " " + qt + " " + dt);
-        ad.addPAutomatica(clicked_element_farm, qt, dt);
+            try {
+                ad.addPAutomatica(clicked_element_farm, qt, dt);
+            } catch (SQLException ex) {
+                Logger.getLogger(PrenotazioniAutomatiche.class.getName()).log(Level.SEVERE, null, ex);
+            }
         this.setVisible(false);
-        new PrenotazioniAutomatiche().setVisible(true);
+            try {
+                new PrenotazioniAutomatiche().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(PrenotazioniAutomatiche.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else{
             JOptionPane.showMessageDialog(null, "La quantità deve essere maggiore di 0");
         }
@@ -332,7 +343,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
     }//GEN-LAST:event_bottone_eliminaActionPerformed
 
 
-    public void carica_tabella(){
+    public void carica_tabella() throws SQLException{
                 String br= null;
                 String nome = null;
                 String id = null;
@@ -356,7 +367,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
     
     
     
-    public void carica_tabellaOrdiniPeriodici(){
+    public void carica_tabellaOrdiniPeriodici() throws SQLException{
                 String br= null;
                 String nome = null;
                 String id = null;
@@ -415,7 +426,11 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PrenotazioniAutomatiche().setVisible(true);
+                try {
+                    new PrenotazioniAutomatiche().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(PrenotazioniAutomatiche.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
