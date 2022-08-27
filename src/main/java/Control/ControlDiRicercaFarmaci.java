@@ -25,7 +25,7 @@ public class ControlDiRicercaFarmaci {
     //Creo Liste per Carrello
     List<String> quantita = new LinkedList<String>();
     List<String> numero_ordine = new LinkedList<String>();
-    
+    List<String> periodicità = new LinkedList<String>();
     
     public List<String> getListN(){
     return  nome;
@@ -44,12 +44,15 @@ public class ControlDiRicercaFarmaci {
     return  numero_ordine;
     }
     
+    public List<String> getListPd(){
+    return  periodicità;
+    }
     
     
     public void VIsualizzaFarmaci(){
         Connection conn= null;
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
         if(conn!=null){
             System.out.println("connection done");
                     }
@@ -71,13 +74,69 @@ public class ControlDiRicercaFarmaci {
             }
     }
     
+    public void VisualizzaFarmaciBanco(){
+        Connection conn= null;
+        try{
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+        if(conn!=null){
+            System.out.println("connection done");
+                    }
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from lista_farmaci where ID = 0");
+        
+        while(rs.next())
+            {
+                String name= rs.getString("Nome");
+                String ad= String.valueOf(rs.getInt("ID"));
+                
+                nome.add(name);
+                id.add(ad);
+                }
+        
+        
+        }catch (Exception e){
+            System.out.println("connection ha sucato");
+            }
+    }
+    
+    public void VisualizzaFarmaciAutomatici(){
+        Connection conn= null;
+        try{
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+        if(conn!=null){
+            System.out.println("connection done");
+                    }
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from ordini_periodici");
+        
+        while(rs.next())
+            {
+                String name= rs.getString("ListaFarmaci");
+                String quant= String.valueOf(rs.getInt("Quantità"));
+                String pd= rs.getString("Periodicità");
+                
+                nome.add(name);
+                quantita.add(quant);
+                periodicità.add(pd);
+                }
+        
+        
+        }catch (Exception e){
+            System.out.println("connection ha sucato");
+            }
+    }
+    
+    
+    
+    
+    
     
     
     public void VisualizzaCarrello(){
         System.out.println("sono in visualizza Carrello");
         Connection conn= null;
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
         if(conn!=null){
             System.out.println("connection done");
                     }
@@ -108,7 +167,7 @@ public class ControlDiRicercaFarmaci {
     public void EliminaElemento(String clicked_element_farmaco){
     Connection conn= null;
         try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
             if(conn!=null){
                 System.out.println("connection done");
                     }
@@ -124,7 +183,24 @@ public class ControlDiRicercaFarmaci {
     
     }
     
+    public void EliminaElementoPeriodicita(String clicked_element_farmaco){
+    Connection conn= null;
+        try{
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+            if(conn!=null){
+                System.out.println("connection done");
+                    }
+                     String sql = "delete from ordini_periodici where ListaFarmaci= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,clicked_element_farmaco);
+            ps.execute();
+            
+
+        }catch (Exception e){
+            System.out.println(e);
+         }
     
+    }
     
     
     

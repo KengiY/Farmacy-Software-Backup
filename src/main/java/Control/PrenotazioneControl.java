@@ -19,27 +19,32 @@ public class PrenotazioneControl {
         System.out.println(farmaco+" "+ qt+" "+tipo );
     }*/
 
+    
+    
     public void AggiungiAlCarrello(String farmaco, int qt, String tipo){
 
-        String NumOrdine = null;
+        String numOrdine = null;
         int num = 0;
-        int tip= Integer.parseInt (tipo);
-        String Qt = null;
+        int tip= Integer.parseInt(tipo);
+       
+        
         Connection conn= null;
         try{
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Manfro1234");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
             if(conn!=null){
                 System.out.println("connection done");
                     }
             System.out.println("sono un sacco ghei");
             Statement st = (Statement)conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT *FROM carrello ORDER BY NumeroOrdine");
-            if(rs.next()){
-                NumOrdine = rs.getString("NumeroOrdine");
-                num= Integer.parseInt ( NumOrdine);
+            ResultSet rs = st.executeQuery("SELECT * FROM carrello");
+            
+           
+        if(rs.next()){
+                numOrdine = rs.getString("NumeroOrdine");
+                num= Integer.parseInt (numOrdine);
                 System.out.println("NumOrdine" + num);
                 num++;
-                NumOrdine=Integer.toString(num);
+                numOrdine=Integer.toString(num);
                 System.out.println(num+farmaco+qt+tipo);
                 System.out.println("sono un pochino ghei");
                 String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
@@ -48,7 +53,61 @@ public class PrenotazioneControl {
                 ps.setInt(1,tip);
                 ps.setString(2,farmaco);
                 ps.setInt(3,qt);
-                ps.setInt(4,num);
+                ps.setInt(4,2);
+                ps.executeUpdate();
+                System.out.println("sono tanto ghei");
+                ps.close();
+            }else{
+                System.out.println(num+farmaco+qt+tipo);
+                System.out.println("sono un pochino ghei");
+                String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                System.out.println("sono un po ghei");
+                ps.setInt(1,tip);
+                ps.setString(2,farmaco);
+                ps.setInt(3,qt);
+                ps.setInt(4,0);
+                ps.executeUpdate();
+                System.out.println("sono tanto ghei");
+                ps.close();
+            }
+            
+                
+                
+        }catch (Exception e){
+            System.out.println(e);
+         }
+        
+    }
+    
+    
+    
+    public void addPAutomatica(String farmaco, int q, String p){
+
+        Connection conn= null;
+        try{
+            
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+            
+            if(conn!=null){
+                System.out.println("connection done");
+                    }
+            System.out.println("sono un sacco ghei");
+            
+            Statement st = (Statement)conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM lista_farmaci");
+            
+            
+            
+            if(rs.next()){
+              
+                
+                String sql = "Insert into ordini_periodici (ListaFarmaci, Quantità, Periodicità) VALUES (?, ?, ?)";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                System.out.println("sono un po ghei");
+                ps.setInt(2,q);
+                ps.setString(1,farmaco);
+                ps.setString(3,p);
                 ps.executeUpdate();
                 System.out.println("sono tanto ghei");
                 ps.close();
@@ -58,5 +117,11 @@ public class PrenotazioneControl {
         }catch (Exception e){
             System.out.println(e);
          }
+        
+        
+        
     }
+    
+    
+    
 }

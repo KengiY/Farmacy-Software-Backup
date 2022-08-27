@@ -10,7 +10,10 @@ import java.awt.event.InputMethodListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -28,6 +31,8 @@ public class ModificaOrdine extends javax.swing.JFrame {
     LinkedList<String> qua = new LinkedList<String>();
     LinkedList<String> nOrdine = new LinkedList<String>();
     LinkedList<String> OrdiniDaEliminare= new LinkedList<String>();
+    String clicked_element_farm= null;
+    String clicked_element_qt= null;
 
     String clicked_element_farmaco;
 
@@ -51,10 +56,12 @@ public class ModificaOrdine extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         bottoneConfermaModifica = new javax.swing.JButton();
         bottoneEliminaOrdine = new javax.swing.JButton();
+        textfield_quantita = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(600, 200));
@@ -71,6 +78,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Inserire Quantità:");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,26 +139,33 @@ public class ModificaOrdine extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(bottoneEliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textfield_quantita, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(bottoneConfermaModifica)
+                .addGap(24, 24, 24))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(bottoneEliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bottoneConfermaModifica)
-                .addGap(115, 115, 115))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bottoneConfermaModifica, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bottoneEliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bottoneEliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bottoneConfermaModifica, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textfield_quantita, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,10 +185,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -179,16 +197,58 @@ public class ModificaOrdine extends javax.swing.JFrame {
     private void bottoneConfermaModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaModificaActionPerformed
         
         
-        JOptionPane.showMessageDialog(null, "Ordine Modificato");
-        new VisualizzaCarrello().setVisible(true);
+        int qta = Integer.parseInt(textfield_quantita.getText());
+        System.out.println(qta + clicked_element_qt);
+        
+        
+        int clicked_qt = Integer.parseInt(clicked_element_qt);
+        
+        if(qta != clicked_qt){
+            
+            try {
+                Connection conn = null;
+                
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_azienda","root", "Bruno1234");
+                
+                if(conn!=null){
+                    System.out.println("connection done");
+                }
+                
+                String sql =  "update carrello set Quantità=? where ListaFarmaci=?";
+                
+                PreparedStatement ps = conn.prepareStatement(sql);
+                
+                ps.setInt(1, qta);
+                ps.setString(2, clicked_element_farm);
+            
+                ps.executeUpdate();
+                ps.close();
+                JOptionPane.showMessageDialog(null, "Ordine Modificato");
+            
+   
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+            
+            
+        }
+        
+        
         this.setVisible(false);
+        new ModificaOrdine().setVisible(true);
+        
+        
+
+        
     }//GEN-LAST:event_bottoneConfermaModificaActionPerformed
 
     private void bottoneEliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneEliminaOrdineActionPerformed
-         int row = jTable1.getSelectedRow();
-         clicked_element_farmaco=jTable1.getModel().getValueAt(row, 1)+"";
-         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
-         vc.EliminaElemento(clicked_element_farmaco);
+        int row = jTable1.getSelectedRow();
+        clicked_element_farmaco=jTable1.getModel().getValueAt(row, 1)+"";
+        ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
+        vc.EliminaElemento(clicked_element_farmaco);
+        this.setVisible(false);
+        new ModificaOrdine().setVisible(true);
     }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -198,7 +258,24 @@ public class ModificaOrdine extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-
+            JTable source = (JTable)evt.getSource();
+            //int row = source.rowAtPoint( evt.getPoint() );
+            int i = jTable1.getSelectedRow();
+            int column = source.columnAtPoint( evt.getPoint() );
+            clicked_element_farm=source.getModel().getValueAt(i, 1)+"";
+            clicked_element_qt=source.getModel().getValueAt(i, 2)+"";
+        
+            
+            
+        
+        /*
+        int i = jTable1.getSelectedRow();
+        DefaultTableModel pippo = (DefaultTableModel) jTable1.getModel();
+        textfield_quantita.setText(pippo.getValueAt(i, 2).toString());
+        */
+        
+            
+            
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged
@@ -291,8 +368,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
     private javax.swing.JButton bottoneEliminaOrdine;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField textfield_quantita;
     // End of variables declaration//GEN-END:variables
 }
