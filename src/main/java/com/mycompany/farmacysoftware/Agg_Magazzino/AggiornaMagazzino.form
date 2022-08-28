@@ -48,7 +48,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="188" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
               <Component id="Indietro" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -75,7 +75,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Caricamento Merci"/>
+        <Property name="text" type="java.lang.String" value="Aggiornamento Magazzino"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
@@ -167,11 +167,11 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="Aggiungi">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-pi&#xf9;-30.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Aggiungi"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AggiungiActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="Nome">
           <Events>

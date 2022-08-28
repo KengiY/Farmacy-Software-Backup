@@ -4,7 +4,11 @@
  */
 package com.mycompany.farmacysoftware.Agg_Magazzino;
 
+import Control.ControlMagazzino;
 import com.mycompany.farmacysoftware.HomeFarmacista;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -58,7 +62,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Caricamento Merci");
+        jLabel1.setText("Aggiornamento Magazzino");
         jLabel1.setToolTipText("");
 
         Indietro.setText("Indietro");
@@ -70,8 +74,12 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        Aggiungi.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-più-30.png")); // NOI18N
         Aggiungi.setText("Aggiungi");
+        Aggiungi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AggiungiActionPerformed(evt);
+            }
+        });
 
         Nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +163,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(Indietro)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -186,6 +194,21 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
     private void NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeActionPerformed
+
+    private void AggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AggiungiActionPerformed
+       ControlMagazzino cm = new ControlMagazzino();
+       int qt = (int) Quantita.getValue();
+       String ID= id.getText();
+       String farmaco = Nome.getText();
+       if(qt>0&& !ID.isEmpty()&& !farmaco.isEmpty()){
+           try {
+               cm.addMagazzino(ID, farmaco, qt);
+               System.out.println("fatto");
+           } catch (SQLException ex) {
+               Logger.getLogger(AggiornaMagazzino.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+    }//GEN-LAST:event_AggiungiActionPerformed
 
     /**
      * @param args the command line arguments
