@@ -5,6 +5,9 @@
 package com.mycompany.farmacysoftware.G_Prenotazione;
 
 import com.mycompany.farmacysoftware.HomeFarmacista;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -159,8 +162,12 @@ public class GestionePrenotazione extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneAggiungiFarmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiFarmacoActionPerformed
-        // TODO add your handling code here:
-        new AggiungiFarmaco().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new AggiungiFarmaco().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
         
        
@@ -168,21 +175,33 @@ public class GestionePrenotazione extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneAggiungiFarmacoActionPerformed
 
     private void bottoneVisualizzaCarrelloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneVisualizzaCarrelloActionPerformed
-        // TODO add your handling code here:
-        new VisualizzaCarrello().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new VisualizzaCarrello().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
         
     }//GEN-LAST:event_bottoneVisualizzaCarrelloActionPerformed
 
     private void bottoneModificaeAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaeAnnullaActionPerformed
-        // TODO add your handling code here:
-        new ModificaOrdine().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new ModificaOrdine().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_bottoneModificaeAnnullaActionPerformed
 
     private void bottonePrenotazioniAutomaticheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonePrenotazioniAutomaticheActionPerformed
-        // TODO add your handling code here:
-        new PrenotazioniAutomatiche().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new PrenotazioniAutomatiche().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_bottonePrenotazioniAutomaticheActionPerformed
 

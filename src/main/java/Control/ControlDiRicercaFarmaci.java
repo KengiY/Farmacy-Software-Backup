@@ -27,6 +27,7 @@ public class ControlDiRicercaFarmaci {
     List<String> numero_ordine = new LinkedList<String>();
     List<String> periodicità = new LinkedList<String>();
     
+    
     public List<String> getListN(){
     return  nome;
     }
@@ -35,7 +36,6 @@ public class ControlDiRicercaFarmaci {
     return  id;
     }
     
-    //Creo le get per il carrello
     public List<String> getListQ(){
     return  quantita;
     }
@@ -47,6 +47,35 @@ public class ControlDiRicercaFarmaci {
     public List<String> getListPd(){
     return  periodicità;
     }
+    
+    
+    //FORSE
+    public void VisualizzaOrdini() throws SQLException{
+        
+        String luogo = "db_azienda";
+        DBMSControl dc = new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from carrello");
+        
+        
+        while(rs.next())
+            {
+                String name= rs.getString("ListaFarmaci");
+                String ad= String.valueOf(rs.getInt("ID"));
+                String quant= String.valueOf(rs.getInt("Quantità"));
+                String no = String.valueOf(rs.getInt("NumeroOrdine"));
+                
+                nome.add(name);
+                id.add(ad);
+                quantita.add(quant);
+                numero_ordine.add(no);
+                }
+
+    }
+    
+    
+    
     
     
     public void VIsualizzaFarmaci() throws SQLException{
@@ -109,7 +138,29 @@ public class ControlDiRicercaFarmaci {
         
     }
     
+  
+    public void VisualizzaScorte() throws SQLException{
+        String luogo = "db_farmacia";
+        DBMSControl dc = new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from magazzino");
+            
+            while(rs.next()){
+                
+                String tipoId = String.valueOf(rs.getInt("tipo"));
+                String nomeFarmaco = rs.getString("Farmaco");
+                String qua = String.valueOf(rs.getInt("Quantità"));
+           
+                id.add(tipoId);
+                nome.add(nomeFarmaco);
+                quantita.add(qua);
+                      
+            }
+
+    }
     
+   
     
     
     

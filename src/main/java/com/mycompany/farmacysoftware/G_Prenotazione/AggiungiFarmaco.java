@@ -90,6 +90,12 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         labelCerca.setForeground(new java.awt.Color(242, 242, 242));
         labelCerca.setText("Cerca:");
 
+        barraDiRicerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barraDiRicercaActionPerformed(evt);
+            }
+        });
+
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -238,6 +244,10 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
                 
             }
     }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
+
+    private void barraDiRicercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraDiRicercaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_barraDiRicercaActionPerformed
     
     
     public void carica_tabella() throws SQLException{

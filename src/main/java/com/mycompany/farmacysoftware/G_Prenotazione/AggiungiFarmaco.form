@@ -150,6 +150,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="barraDiRicerca">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="barraDiRicercaActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>

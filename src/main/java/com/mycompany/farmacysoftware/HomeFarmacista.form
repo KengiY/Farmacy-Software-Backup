@@ -129,9 +129,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="AggiornaMagazzino">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-sincronizzare-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Aggiorna Magazzino"/>
           </Properties>
           <Events>
@@ -142,9 +139,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="GestioneScorte">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-scatola-consegnata-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Gestione Scorte"/>
           </Properties>
           <Events>
@@ -153,9 +147,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="GestionePrenotazione">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-ordine-di-acquisto-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Gestione Prenotazione"/>
           </Properties>
           <Events>
@@ -164,9 +155,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="Notifiche">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-promemoria-appuntamenti-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Notifiche"/>
           </Properties>
           <Events>
@@ -192,9 +180,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-bastone-di-asclepio-40.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Home"/>
       </Properties>

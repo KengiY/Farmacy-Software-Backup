@@ -12,28 +12,41 @@ import java.sql.Statement;
 
 /**
  *
- * @author 39329
+ * @author manfr
  */
-public class ControlMagazzino {
+public class ControlOrdini {
     
     
-    public void addMagazzino(String id, String farmaco, int qt) throws SQLException{
-        String luogo = "db_farmacia";
+    
+    
+    
+ 
+    public void addOrdine(int id, String farmaco, int qt , int no) throws SQLException{
+        String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM magazzino");
+        ResultSet rs = st.executeQuery("SELECT * FROM carrello");
+        
         
         if(rs.next() || !rs.next()){
-            String sql = "Insert into magazzino (tipo, Farmaco, quantità) VALUES (?, ?, ?)";
+            String sql = "Insert into lista_ordini_totale (ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
                
-            ps.setString(1,id);
+            ps.setInt(1,id);
             ps.setString(2,farmaco);
             ps.setInt(3,qt);
+            ps.setInt(4,no);
             ps.executeUpdate();
-            System.out.println("fatto2");
+            System.out.println("controlOrdini effettuata");
             ps.close();
+            
         }
     }
+    
+ 
+    
+    
+    
+    
 }

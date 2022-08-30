@@ -5,10 +5,12 @@
 package com.mycompany.farmacysoftware.Agg_Magazzino;
 
 import Control.ControlMagazzino;
+import com.mycompany.farmacysoftware.G_Prenotazione.VisualizzaCarrello;
 import com.mycompany.farmacysoftware.HomeFarmacista;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -204,6 +206,9 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
            try {
                cm.addMagazzino(ID, farmaco, qt);
                System.out.println("fatto");
+               JOptionPane.showMessageDialog(null, "Farmaco Aggiunto");
+               new AggiornaMagazzino().setVisible(true);
+               this.setVisible(false);
            } catch (SQLException ex) {
                Logger.getLogger(AggiornaMagazzino.class.getName()).log(Level.SEVERE, null, ex);
            }

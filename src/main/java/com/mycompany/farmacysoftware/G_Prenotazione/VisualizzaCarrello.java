@@ -5,6 +5,10 @@
 package com.mycompany.farmacysoftware.G_Prenotazione;
 
 import Control.ControlDiRicercaFarmaci;
+import Control.ControlMagazzino;
+import Control.ControlOrdini;
+import Control.PrenotazioneControl;
+import com.mycompany.farmacysoftware.Agg_Magazzino.AggiornaMagazzino;
 import com.mycompany.farmacysoftware.G_Prenotazione.ModificaOrdine;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
@@ -27,6 +31,16 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     LinkedList<String> nomeFarmaco = new LinkedList<String>();
     LinkedList<String> qua = new LinkedList<String>();
     LinkedList<String> nOrdine = new LinkedList<String>();
+    
+    int no;
+    
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int nor) {
+        this.no = nor;
+    }
     
     
     /**
@@ -182,11 +196,24 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
+    
+    
+    
+    
+    
     private void bottoneConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdineActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Ordine Confermato");
+
+        try {
+            carica_carrelloOrdini();
+            setNo(getNo()+1);
+            System.out.println(getNo()+1);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
     }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
 
+    
     private void bottoneModificaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaOrdineActionPerformed
         try {
             // TODO add your handling code here:
@@ -197,6 +224,46 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_bottoneModificaOrdineActionPerformed
 
+    
+    
+    public void carica_carrelloOrdini() throws SQLException{
+        
+
+        ControlDiRicercaFarmaci vo = new ControlDiRicercaFarmaci();
+        vo.VisualizzaOrdini();
+        
+        tipoId = (LinkedList<String>) vo.getListI();
+        nomeFarmaco = (LinkedList<String>) vo.getListN();
+        qua = (LinkedList<String>) vo.getListQ();
+        nOrdine = (LinkedList<String>) vo.getListNo();
+        
+        
+        
+        while(!nOrdine.isEmpty()){
+            
+            int tipoid = Integer.parseInt(tipoId.getFirst());
+            String n = nomeFarmaco.getFirst();
+            int q = Integer.parseInt(qua.getFirst());
+            int nor = Integer.parseInt(nOrdine.getFirst());
+            
+            ControlOrdini ao = new ControlOrdini();
+            ao.addOrdine(tipoid, n, q, nor);
+            
+            
+            tipoId.removeFirst();
+            nomeFarmaco.removeFirst();
+            qua.removeFirst();
+            nOrdine.removeFirst();
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     public void carica_Carrello() throws SQLException{
         
@@ -227,8 +294,9 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
             qua.removeFirst();
             nOrdine.removeFirst();
         }
-    
-    
+        
+        
+            
     }
     
     
