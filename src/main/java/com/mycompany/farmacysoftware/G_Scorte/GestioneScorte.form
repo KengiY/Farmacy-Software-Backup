@@ -154,6 +154,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/com/mycompany/farmacysoftware/G_Scorte/VisualizzaScorte.form
               <AbsoluteConstraints x="530" y="20" width="100" height="30"/>
             </Constraint>
@@ -172,6 +173,9 @@
 =======
               <AbsoluteConstraints x="520" y="20" width="110" height="30"/>
 >>>>>>> c429d7c8caf5384e96d7bdf41eb8fde864def25c:src/main/java/com/mycompany/farmacysoftware/G_Scorte/GestioneScorte.form
+=======
+              <AbsoluteConstraints x="520" y="20" width="110" height="30"/>
+>>>>>>> c429d7c8caf5384e96d7bdf41eb8fde864def25c
             </Constraint>
           </Constraints>
         </Component>
