@@ -32,16 +32,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     LinkedList<String> qua = new LinkedList<String>();
     LinkedList<String> nOrdine = new LinkedList<String>();
     
-    int no;
-    
-    public int getNo() {
-        return no;
-    }
 
-    public void setNo(int nor) {
-        this.no = nor;
-    }
-    
     
     /**
      * Creates new form VisualizzaCarrello
@@ -205,8 +196,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
 
         try {
             carica_carrelloOrdini();
-            setNo(getNo()+1);
-            System.out.println(getNo()+1);
+
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
         }

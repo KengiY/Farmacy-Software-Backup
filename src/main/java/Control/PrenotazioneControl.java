@@ -31,8 +31,7 @@ public class PrenotazioneControl {
         int tip= Integer.parseInt(tipo);
        
         VisualizzaCarrello vc = new VisualizzaCarrello();
-        int nor = vc.getNo();
-        
+      
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
@@ -40,19 +39,40 @@ public class PrenotazioneControl {
             Statement st = (Statement)conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM carrello");
             
-           
-        if(rs.next() || !rs.next()){
+        
+        if(rs.next()){
+                System.out.println("pompini");
+                ResultSet pl = st.executeQuery("select * from carrello limit 1");
+                System.out.println("pompini");
+                try{
+                    String nordine= pl.getString(1);
+                    System.out.println("pompini1");
+                    //nordine++;
+                    String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
+                    PreparedStatement ps = conn.prepareStatement(sql);
                 
-                String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
-                PreparedStatement ps = conn.prepareStatement(sql);
+                    ps.setInt(1,tip);
+                    ps.setString(2,farmaco);
+                    ps.setInt(3,qt);
+                    ps.setInt(4,1);
+                    ps.executeUpdate();
                 
-                ps.setInt(1,tip);
-                ps.setString(2,farmaco);
-                ps.setInt(3,qt);
-                ps.setInt(4,nor);
-                ps.executeUpdate();
+                    ps.close();
+                }catch(SQLException ex){
+                    System.out.println("pompini2");
+                    String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
+                    PreparedStatement ps = conn.prepareStatement(sql);
                 
-                ps.close();
+                    ps.setInt(1,tip);
+                    ps.setString(2,farmaco);
+                    ps.setInt(3,qt);
+                    ps.setInt(4,1);
+                    ps.executeUpdate();
+                
+                    ps.close();
+                }
+ 
+
         }
 
         
