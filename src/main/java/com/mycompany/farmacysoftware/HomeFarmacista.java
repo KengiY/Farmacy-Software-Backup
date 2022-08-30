@@ -3,12 +3,14 @@ package com.mycompany.farmacysoftware;
 import com.mycompany.farmacysoftware.Agg_Magazzino.AggiornaMagazzino;
 import com.mycompany.farmacysoftware.Autenticazione.Login;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
-import com.mycompany.farmacysoftware.G_Scorte.VisualizzaScorte;
+import com.mycompany.farmacysoftware.G_Scorte.GestioneScorte;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
 
 
@@ -189,7 +191,11 @@ public class HomeFarmacista extends javax.swing.JFrame {
     }//GEN-LAST:event_AggiornaMagazzinoActionPerformed
 
     private void GestioneScorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestioneScorteActionPerformed
-            new VisualizzaScorte().setVisible(true);
+        try {
+            new GestioneScorte().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
+        }
             this.setVisible(false); 
     }//GEN-LAST:event_GestioneScorteActionPerformed
 

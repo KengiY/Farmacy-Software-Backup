@@ -92,6 +92,12 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Cerca:");
 
+        barraDiRicerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barraDiRicercaActionPerformed(evt);
+            }
+        });
+
         jButton2.setText("Cerca");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,8 +291,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
+
         String br= barraDiRicerca.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tbpaModel);
         jTable3.setRowSorter(tr);
@@ -341,6 +346,10 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_bottone_eliminaActionPerformed
+
+    private void barraDiRicercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraDiRicercaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_barraDiRicercaActionPerformed
 
 
     public void carica_tabella() throws SQLException{

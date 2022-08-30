@@ -16,9 +16,10 @@ import java.sql.Statement;
 public class DBMSControl {
     String sql;
     Connection conn= null;
+   
     public Connection ConnessioneDBMS(String dbms){
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Manfro1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Bruno1234");
         if(conn!=null){
             System.out.println("connection done");
                     }

@@ -4,6 +4,7 @@
  */
 package Control;
 
+import com.mycompany.farmacysoftware.G_Prenotazione.VisualizzaCarrello;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,7 +20,8 @@ public class PrenotazioneControl {
     /*public void AggiungiAlCarrello(String farmaco, int qt, String tipo){
         System.out.println(farmaco+" "+ qt+" "+tipo );
     }*/
-
+    
+    
     
     
     public void AggiungiAlCarrello(String farmaco, int qt, String tipo) throws SQLException{
@@ -28,6 +30,8 @@ public class PrenotazioneControl {
         int num = 0;
         int tip= Integer.parseInt(tipo);
        
+        VisualizzaCarrello vc = new VisualizzaCarrello();
+        int nor = vc.getNo();
         
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
@@ -37,25 +41,7 @@ public class PrenotazioneControl {
             ResultSet rs = st.executeQuery("SELECT * FROM carrello");
             
            
-        if(rs.next()){
-                numOrdine = rs.getString("NumeroOrdine");
-                num= Integer.parseInt (numOrdine);
-                
-                num++;
-                numOrdine=Integer.toString(num);
-                
-               
-                String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
-                PreparedStatement ps = conn.prepareStatement(sql);
-                
-                ps.setInt(1,tip);
-                ps.setString(2,farmaco);
-                ps.setInt(3,qt);
-                ps.setInt(4,2);
-                ps.executeUpdate();
-                
-                ps.close();
-            }else{
+        if(rs.next() || !rs.next()){
                 
                 String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
@@ -63,11 +49,11 @@ public class PrenotazioneControl {
                 ps.setInt(1,tip);
                 ps.setString(2,farmaco);
                 ps.setInt(3,qt);
-                ps.setInt(4,0);
+                ps.setInt(4,nor);
                 ps.executeUpdate();
                 
                 ps.close();
-            }
+        }
 
         
     }

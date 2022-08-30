@@ -260,17 +260,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
             clicked_element_farm=source.getModel().getValueAt(i, 1)+"";
             clicked_element_qt=source.getModel().getValueAt(i, 2)+"";
         
-            
-            
-        
-        /*
-        int i = jTable1.getSelectedRow();
-        DefaultTableModel pippo = (DefaultTableModel) jTable1.getModel();
-        textfield_quantita.setText(pippo.getValueAt(i, 2).toString());
-        */
-        
-            
-            
+       
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTable1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTable1InputMethodTextChanged
