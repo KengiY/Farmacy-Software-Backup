@@ -227,7 +227,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
         qua = (LinkedList<String>) vo.getListQ();
         nOrdine = (LinkedList<String>) vo.getListNo();
         
-        
+        ControlOrdini ao = new ControlOrdini();
         
         while(!nOrdine.isEmpty()){
             
@@ -236,7 +236,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
             int q = Integer.parseInt(qua.getFirst());
             int nor = Integer.parseInt(nOrdine.getFirst());
             
-            ControlOrdini ao = new ControlOrdini();
+            
             ao.addOrdine(tipoid, n, q, nor);
             
             
@@ -245,6 +245,9 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
             qua.removeFirst();
             nOrdine.removeFirst();
         }
+        
+        ao.elimina();
+        ao.addOrdineDipendente();
         
         
     }

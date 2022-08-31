@@ -24,7 +24,7 @@ public class PrenotazioneControl {
     
     
     
-    public void AggiungiAlCarrello(String farmaco, int qt, String tipo) throws SQLException{
+    public void AggiungiAlCarrelloo(String farmaco, int qt, String tipo) throws SQLException{
 
         String numOrdine = null;
         int num = 0;
@@ -36,28 +36,28 @@ public class PrenotazioneControl {
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
             
-            Statement st = (Statement)conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM carrello");
-            
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini");
         
-        if(rs.next()){
+        
+        if(rs.next()|| !rs.next()){
                 System.out.println("pompini");
-                ResultSet pl = st.executeQuery("select * from carrello limit 1");
-                System.out.println("pompini");
+                
                 try{
-                    String nordine= pl.getString(1);
+                    int nordine= rs.getInt("Nordine");
                     System.out.println("pompini1");
-                    //nordine++;
+                    nordine++;
                     String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
                     PreparedStatement ps = conn.prepareStatement(sql);
                 
                     ps.setInt(1,tip);
                     ps.setString(2,farmaco);
                     ps.setInt(3,qt);
-                    ps.setInt(4,1);
+                    ps.setInt(4,nordine);
                     ps.executeUpdate();
                 
                     ps.close();
+                    
                 }catch(SQLException ex){
                     System.out.println("pompini2");
                     String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";

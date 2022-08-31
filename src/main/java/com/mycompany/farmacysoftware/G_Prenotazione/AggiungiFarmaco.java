@@ -235,12 +235,17 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         int qt= (int) sceltaQuantità.getValue();
         if( clicked_element_farm!= null && !clicked_element_farm.isEmpty()&& qt!=0){
  
-               PrenotazioneControl agg = new PrenotazioneControl();
             try {
-                agg.AggiungiAlCarrello(clicked_element_farm,qt,clicked_element_tipo );
+                PrenotazioneControl agg = new PrenotazioneControl();
+                
+      
+                
+                agg.AggiungiAlCarrelloo(clicked_element_farm,qt,clicked_element_tipo );
             } catch (SQLException ex) {
                 Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
             }
+     
+           
                 
             }
     }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
