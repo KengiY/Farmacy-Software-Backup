@@ -37,7 +37,7 @@ public class PrenotazioneControl {
         Connection conn= dc.ConnessioneDBMS(luogo);
             
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini");
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini ORDER BY Nordine DESC");
         
         
         if(rs.next()|| !rs.next()){
