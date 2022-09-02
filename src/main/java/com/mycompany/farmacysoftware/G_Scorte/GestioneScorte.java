@@ -7,8 +7,7 @@ package com.mycompany.farmacysoftware.G_Scorte;
 
 import Control.ControlDiRicercaFarmaci;
 import com.mycompany.farmacysoftware.HomeFarmacista;
-import java.awt.event.ActionEvent;
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,19 +19,17 @@ import javax.swing.table.TableRowSorter;
  *
  * @author manfr
  */
+
 public class GestioneScorte extends javax.swing.JFrame {
 
     LinkedList<String> name= new LinkedList<String>();
     LinkedList<String> ad= new LinkedList<String>();
     LinkedList<String> pd= new LinkedList<String>();
-    LinkedList<String> quant= new LinkedList<String>();
-    
+    LinkedList<String> quant= new LinkedList<String>();   
     DefaultTableModel tbgsModel;
   
-
-
     /**
-     * Creates new form VisualizzaScorte
+     * Creates new form GestioneScorte1
      */
     public GestioneScorte() throws SQLException {
         initComponents();
@@ -49,54 +46,44 @@ public class GestioneScorte extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        bottoneIndietro = new javax.swing.JButton();
-        PannelloRicerca = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         barraDiRicerca = new javax.swing.JTextField();
+        bottoneCerca = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Farmacy Software 1.0");
-        setLocation(new java.awt.Point(600, 200));
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Gestione Scorte");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 15, -1, 30));
+        jLabel1.setToolTipText("");
 
-        bottoneIndietro.setText("Indietro");
-        bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel2.setText("Cerca il Farmaco");
+
+        bottoneCerca.setText("Cerca");
+        bottoneCerca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottoneIndietroActionPerformed(evt);
+                bottoneCercaActionPerformed(evt);
             }
         });
-        getContentPane().add(bottoneIndietro, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
-
-        PannelloRicerca.setBackground(new java.awt.Color(0, 102, 102));
-        PannelloRicerca.setForeground(new java.awt.Color(242, 242, 242));
-        PannelloRicerca.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Tipo Farmaco", "Nome Farmaco", "Quantità"
+                "Tipo Farmaco", "Lista Farmaci", "Quantità"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, true
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -109,43 +96,86 @@ public class GestioneScorte extends javax.swing.JFrame {
             jTable5.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        PannelloRicerca.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 650, 440));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(barraDiRicerca, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(bottoneCerca, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(barraDiRicerca, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bottoneCerca, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel2.setText("Cerca il Farmaco:");
-        PannelloRicerca.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 30));
-        PannelloRicerca.add(barraDiRicerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 320, 30));
-
-        jButton1.setText("Cerca");
+        jButton1.setText("Indietro");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        PannelloRicerca.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 110, 30));
 
-        getContentPane().add(PannelloRicerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 54, 670, 530));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         new HomeFarmacista().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneIndietroActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bottoneCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneCercaActionPerformed
         // TODO add your handling code here:
         String br= barraDiRicerca.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tbgsModel);
         jTable5.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(br));
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bottoneCercaActionPerformed
 
-
-     public void carica_tabellaScorte() throws SQLException{
+    
+    public void carica_tabellaScorte() throws SQLException{
                 String br= null;
                 String nome = null;
                 String id = null;
@@ -169,12 +199,10 @@ public class GestioneScorte extends javax.swing.JFrame {
                     name.removeFirst();
                     quant.removeFirst();
         }}
-    
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) throws SQLException, ClassNotFoundException {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -199,6 +227,7 @@ public class GestioneScorte extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -210,17 +239,13 @@ public class GestioneScorte extends javax.swing.JFrame {
         });
     }
 
-
-
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PannelloRicerca;
     private javax.swing.JTextField barraDiRicerca;
-    private javax.swing.JButton bottoneIndietro;
+    private javax.swing.JButton bottoneCerca;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable5;
     // End of variables declaration//GEN-END:variables

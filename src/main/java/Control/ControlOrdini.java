@@ -156,7 +156,12 @@ public class ControlOrdini {
                 ps.setString(2, nordine);
             
                 ps.executeUpdate();
-                ps.close();}
+                ps.close();
+    }
+    
+    
+    
+    
     
     public void elimina() throws SQLException{
         String luogo = "db_azienda";

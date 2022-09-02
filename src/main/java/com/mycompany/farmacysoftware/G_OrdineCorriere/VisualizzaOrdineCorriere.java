@@ -177,6 +177,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
     private void JButton_OrdineConsegnatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_OrdineConsegnatoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_JButton_OrdineConsegnatoActionPerformed
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
