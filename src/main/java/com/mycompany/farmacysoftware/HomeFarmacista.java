@@ -37,64 +37,80 @@ public class HomeFarmacista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        home_bottoneLogout = new javax.swing.JButton();
+        jDialog1 = new javax.swing.JDialog();
+        bottoneLogout = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        AggiornaMagazzino = new javax.swing.JButton();
+        bottoneAggiornaMagazzino = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        GestioneScorte = new javax.swing.JButton();
-        GestionePrenotazione = new javax.swing.JButton();
-        Notifiche = new javax.swing.JButton();
+        bottoneGestioneScorte = new javax.swing.JButton();
+        bottoneGestionePrenotazione = new javax.swing.JButton();
+        bottoneNotifiche = new javax.swing.JButton();
         home_benvenuto = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Farmacy Software 1.0");
         setLocation(new java.awt.Point(600, 200));
         setResizable(false);
 
-        home_bottoneLogout.setText("Logout");
-        home_bottoneLogout.addActionListener(new java.awt.event.ActionListener() {
+        bottoneLogout.setText("Logout");
+        bottoneLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                home_bottoneLogoutActionPerformed(evt);
+                bottoneLogoutActionPerformed(evt);
             }
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setPreferredSize(new java.awt.Dimension(560, 480));
 
-        AggiornaMagazzino.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-sincronizzare-24.png")); // NOI18N
-        AggiornaMagazzino.setText("Aggiorna Magazzino");
-        AggiornaMagazzino.addActionListener(new java.awt.event.ActionListener() {
+        bottoneAggiornaMagazzino.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\refresh-fill.png")); // NOI18N
+        bottoneAggiornaMagazzino.setText("Aggiorna Magazzino");
+        bottoneAggiornaMagazzino.setPreferredSize(new java.awt.Dimension(158, 158));
+        bottoneAggiornaMagazzino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AggiornaMagazzinoActionPerformed(evt);
+                bottoneAggiornaMagazzinoActionPerformed(evt);
             }
         });
 
-        GestioneScorte.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-scatola-consegnata-24.png")); // NOI18N
-        GestioneScorte.setText("Gestione Scorte");
-        GestioneScorte.addActionListener(new java.awt.event.ActionListener() {
+        bottoneGestioneScorte.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\red-packet-fill.png")); // NOI18N
+        bottoneGestioneScorte.setText("Gestione Scorte");
+        bottoneGestioneScorte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestioneScorteActionPerformed(evt);
+                bottoneGestioneScorteActionPerformed(evt);
             }
         });
 
-        GestionePrenotazione.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-ordine-di-acquisto-24.png")); // NOI18N
-        GestionePrenotazione.setText("Gestione Prenotazione");
-        GestionePrenotazione.addActionListener(new java.awt.event.ActionListener() {
+        bottoneGestionePrenotazione.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-scatola-consegnata-24.png")); // NOI18N
+        bottoneGestionePrenotazione.setText("Gestione Prenotazione");
+        bottoneGestionePrenotazione.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestionePrenotazioneActionPerformed(evt);
+                bottoneGestionePrenotazioneActionPerformed(evt);
             }
         });
 
-        Notifiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-promemoria-appuntamenti-24.png")); // NOI18N
-        Notifiche.setText("Notifiche");
-        Notifiche.addActionListener(new java.awt.event.ActionListener() {
+        bottoneNotifiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\notification-4-fill.png")); // NOI18N
+        bottoneNotifiche.setText("Notifiche");
+        bottoneNotifiche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NotificheActionPerformed(evt);
+                bottoneNotificheActionPerformed(evt);
             }
         });
 
-        home_benvenuto.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        home_benvenuto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         home_benvenuto.setForeground(new java.awt.Color(242, 242, 242));
         home_benvenuto.setText("Benvenuto Farmacista");
 
@@ -103,26 +119,26 @@ public class HomeFarmacista extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jSeparator2)
-                .addGap(55, 55, 55))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GestionePrenotazione, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GestioneScorte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Notifiche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AggiornaMagazzino, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
+                        .addGap(56, 56, 56)
+                        .addComponent(jSeparator2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addContainerGap(82, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(home_benvenuto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(78, 78, 78))
+                            .addComponent(bottoneGestioneScorte, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bottoneGestionePrenotazione))
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bottoneAggiornaMagazzino, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                            .addComponent(bottoneNotifiche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(44, 44, 44))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(home_benvenuto, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,33 +147,41 @@ public class HomeFarmacista extends javax.swing.JFrame {
                 .addComponent(home_benvenuto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
+                .addGap(99, 99, 99)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GestionePrenotazione, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AggiornaMagazzino, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                    .addComponent(bottoneAggiornaMagazzino, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bottoneGestionePrenotazione, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GestioneScorte, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Notifiche, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                    .addComponent(bottoneGestioneScorte, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bottoneNotifiche, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-bastone-di-asclepio-40.png")); // NOI18N
         jLabel1.setText("Home");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-bastone-di-asclepio-40.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(home_bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -166,47 +190,51 @@ public class HomeFarmacista extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(home_bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bottoneLogout, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void home_bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_bottoneLogoutActionPerformed
+    private void bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLogoutActionPerformed
         // TODO add your handling code here:
             new Login().setVisible(true);
             this.setVisible(false);
-    }//GEN-LAST:event_home_bottoneLogoutActionPerformed
+    }//GEN-LAST:event_bottoneLogoutActionPerformed
 
-    private void GestionePrenotazioneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionePrenotazioneActionPerformed
+    private void bottoneGestionePrenotazioneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestionePrenotazioneActionPerformed
             new GestionePrenotazione().setVisible(true);
             this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_GestionePrenotazioneActionPerformed
+    }//GEN-LAST:event_bottoneGestionePrenotazioneActionPerformed
 
-    private void AggiornaMagazzinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AggiornaMagazzinoActionPerformed
+    private void bottoneAggiornaMagazzinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiornaMagazzinoActionPerformed
             new AggiornaMagazzino().setVisible(true);
             this.setVisible(false); 
-    }//GEN-LAST:event_AggiornaMagazzinoActionPerformed
+    }//GEN-LAST:event_bottoneAggiornaMagazzinoActionPerformed
 
-    private void GestioneScorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestioneScorteActionPerformed
+    private void bottoneGestioneScorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneScorteActionPerformed
         try {
             new GestioneScorte().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }
             this.setVisible(false); 
-    }//GEN-LAST:event_GestioneScorteActionPerformed
+    }//GEN-LAST:event_bottoneGestioneScorteActionPerformed
 
-    private void NotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificheActionPerformed
+    private void bottoneNotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificheActionPerformed
         try {
             new NotificheDipendente().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }
             this.setVisible(false); 
-    }//GEN-LAST:event_NotificheActionPerformed
+    }//GEN-LAST:event_bottoneNotificheActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,13 +273,16 @@ public class HomeFarmacista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AggiornaMagazzino;
-    private javax.swing.JButton GestionePrenotazione;
-    private javax.swing.JButton GestioneScorte;
-    private javax.swing.JButton Notifiche;
+    private javax.swing.JButton bottoneAggiornaMagazzino;
+    private javax.swing.JButton bottoneGestionePrenotazione;
+    private javax.swing.JButton bottoneGestioneScorte;
+    private javax.swing.JButton bottoneLogout;
+    private javax.swing.JButton bottoneNotifiche;
     private javax.swing.JLabel home_benvenuto;
-    private javax.swing.JButton home_bottoneLogout;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

@@ -200,7 +200,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
         }
-     
+        
     }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
 
     

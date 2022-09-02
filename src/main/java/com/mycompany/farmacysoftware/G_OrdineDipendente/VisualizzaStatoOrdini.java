@@ -4,17 +4,57 @@
  */
 package com.mycompany.farmacysoftware.G_OrdineDipendente;
 
+import Control.ControlDiRicercaFarmaci;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 39329
  */
 public class VisualizzaStatoOrdini extends javax.swing.JFrame {
 
+    DefaultTableModel tbcModel;
+    LinkedList<String> nOrdine = new LinkedList<String>();
+    LinkedList<String> stat = new LinkedList<String>();
+    
     /**
      * Creates new form VisualizzaStatoOrdini
      */
-    public VisualizzaStatoOrdini() {
+    public VisualizzaStatoOrdini() throws SQLException {
         initComponents();
+        caricaStatoOrdiniDip();
+    }
+
+    
+    public void caricaStatoOrdiniDip() throws SQLException{
+        
+        System.out.println("sono in caricaOrdiniCorriere");
+     
+        
+        ControlDiRicercaFarmaci csod = new ControlDiRicercaFarmaci();
+        
+        csod.VisualizzaStatoOrdiniDipendente();
+       
+        nOrdine = (LinkedList<String>) csod.getListNo();
+        stat = (LinkedList<String>) csod.getStatus();
+        
+        while(!nOrdine.isEmpty()){
+            
+            String tbcData[] = {nOrdine.getFirst(),stat.getFirst()};
+            
+            tbcModel = (DefaultTableModel)JTableStatoOrdini.getModel();
+            tbcModel.addRow(tbcData);
+            
+            nOrdine.removeFirst();           
+            stat.removeFirst();
+        }
+        
+        
+            
     }
 
     /**
@@ -29,10 +69,8 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Indietro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        StatoOrdine = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TabellaOrdini = new javax.swing.JTable();
-        jSeparator1 = new javax.swing.JSeparator();
+        JTableStatoOrdini = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Farmacy Software 1.0");
@@ -52,7 +90,9 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        StatoOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-scatola-consegnata-24.png")); // NOI18N
+<<<<<<< HEAD
+        JTableStatoOrdini.setModel(new javax.swing.table.DefaultTableModel(
+=======
         StatoOrdine.setText("Stato Ordine");
         StatoOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,14 +101,12 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
         });
 
         TabellaOrdini.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> e7ce6a5b1bcb521960fba2bcae9f7878c16e8b9c
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Nome Farmaco", "Quantità"
+                "#Ordine", "Stato"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -79,7 +117,11 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TabellaOrdini);
+        jScrollPane1.setViewportView(JTableStatoOrdini);
+        if (JTableStatoOrdini.getColumnModel().getColumnCount() > 0) {
+            JTableStatoOrdini.getColumnModel().getColumn(0).setResizable(false);
+            JTableStatoOrdini.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,25 +129,15 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(StatoOrdine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator1))
-                .addGap(253, 253, 253))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(StatoOrdine)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,10 +171,9 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_IndietroActionPerformed
 
-    private void StatoOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatoOrdineActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_StatoOrdineActionPerformed
-
+    
+ 
+    
     /**
      * @param args the command line arguments
      */
@@ -173,18 +204,20 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VisualizzaStatoOrdini().setVisible(true);
+                try {
+                    new VisualizzaStatoOrdini().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(VisualizzaStatoOrdini.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Indietro;
-    private javax.swing.JButton StatoOrdine;
-    private javax.swing.JTable TabellaOrdini;
+    private javax.swing.JTable JTableStatoOrdini;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,29 +28,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="home_bottoneLogout" min="-2" pref="81" max="-2" attributes="0"/>
+              <Component id="home_benvenuto" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
+              <Component id="bottoneLogout" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                      <Component id="home_bottoneLogout" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="home_benvenuto" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="bottoneLogout" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel1" pref="479" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,36 +61,32 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="0" type="rgb"/>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[560, 480]"/>
+        </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="home_benvenuto" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSeparator1" min="-2" pref="145" max="-2" attributes="0"/>
-                              <Component id="jSeparator4" min="-2" pref="513" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="GestioneOrdine" alignment="1" min="-2" pref="139" max="-2" attributes="0"/>
-                      <Component id="jSeparator3" alignment="1" min="-2" pref="139" max="-2" attributes="0"/>
-                      <Component id="jSeparator2" alignment="1" min="-2" pref="139" max="-2" attributes="0"/>
-                      <Component id="Notifica" min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="bottoneNotifica" alignment="1" min="-2" pref="158" max="-2" attributes="0"/>
+                      <Component id="bottoneGestioneOrdine" min="-2" pref="158" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jSeparator4" min="-2" pref="513" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,18 +94,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="home_benvenuto" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                  <Component id="GestioneOrdine" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                  <Component id="Notifica" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
+                  <Component id="bottoneGestioneOrdine" min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="bottoneNotifica" min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace pref="133" max="32767" attributes="0"/>
                   <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
@@ -117,40 +109,44 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="GestioneOrdine">
+        <Component class="javax.swing.JButton" name="bottoneGestioneOrdine">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\inbox-unarchive-fill.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Gestione Ordine"/>
+            <Property name="actionCommand" type="java.lang.String" value=" Gestione Ordine"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GestioneOrdineActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneGestioneOrdineActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Notifica">
+        <Component class="javax.swing.JButton" name="bottoneNotifica">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\notification-4-fill.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Notifiche"/>
+            <Property name="actionCommand" type="java.lang.String" value="  Notifiche"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NotificaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneNotificaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="home_benvenuto">
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator4">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="3"/>
+              <Font name="Segoe UI" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f2" green="f2" red="f2" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Benvenuto Dipendente"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator1">
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator2">
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator3">
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator4">
         </Component>
       </SubComponents>
     </Container>
@@ -162,13 +158,26 @@
         <Property name="text" type="java.lang.String" value="Home"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="home_bottoneLogout">
+    <Component class="javax.swing.JButton" name="bottoneLogout">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="home_bottoneLogoutActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneLogoutActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="home_benvenuto">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f2" green="f2" red="f2" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\icons8-scheda-dipendente-40.png"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

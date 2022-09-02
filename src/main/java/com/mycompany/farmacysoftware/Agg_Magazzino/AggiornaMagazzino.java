@@ -38,7 +38,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Indietro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        Aggiungi = new javax.swing.JButton();
+        bottoneAggiungi = new javax.swing.JButton();
         Nome = new javax.swing.JTextField();
         Quantita = new javax.swing.JSpinner();
         id = new javax.swing.JTextField();
@@ -67,6 +67,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
         jLabel1.setText("Aggiornamento Magazzino");
         jLabel1.setToolTipText("");
 
+        Indietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\arrow-left-circle-line.png")); // NOI18N
         Indietro.setText("Indietro");
         Indietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,10 +77,14 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        Aggiungi.setText("Aggiungi");
-        Aggiungi.addActionListener(new java.awt.event.ActionListener() {
+        bottoneAggiungi.setBackground(new java.awt.Color(204, 255, 204));
+        bottoneAggiungi.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\add-circle-fill.png")); // NOI18N
+        bottoneAggiungi.setText("Aggiungi");
+        bottoneAggiungi.setBorder(null);
+        bottoneAggiungi.setIconTextGap(3);
+        bottoneAggiungi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AggiungiActionPerformed(evt);
+                bottoneAggiungiActionPerformed(evt);
             }
         });
 
@@ -95,12 +100,15 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("ID");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("Nome Farmaco");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("Quantità");
 
@@ -109,53 +117,45 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                            .addComponent(Nome))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel2)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(121, 121, 121)
-                                .addComponent(jLabel3)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(Quantita, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Quantita, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Aggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(171, 171, 171))
+                .addComponent(bottoneAggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(277, 277, 277))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(126, 126, 126)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Quantita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(Aggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                    .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Quantita, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addComponent(bottoneAggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,7 +165,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
                 .addComponent(Indietro)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,10 +175,10 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                     .addComponent(Indietro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -197,7 +197,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeActionPerformed
 
-    private void AggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AggiungiActionPerformed
+    private void bottoneAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiActionPerformed
        ControlMagazzino cm = new ControlMagazzino();
        int qt = (int) Quantita.getValue();
        String ID= id.getText();
@@ -213,7 +213,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
                Logger.getLogger(AggiornaMagazzino.class.getName()).log(Level.SEVERE, null, ex);
            }
        }
-    }//GEN-LAST:event_AggiungiActionPerformed
+    }//GEN-LAST:event_bottoneAggiungiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,10 +251,10 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Aggiungi;
     private javax.swing.JButton Indietro;
     private javax.swing.JTextField Nome;
     private javax.swing.JSpinner Quantita;
+    private javax.swing.JButton bottoneAggiungi;
     private javax.swing.JTextField id;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;

@@ -54,7 +54,9 @@ public class RecuperoPassword extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
         jLabel1.setText("Inserire Username:");
 
+        BottoneInviaRichiesta.setBackground(new java.awt.Color(204, 255, 204));
         BottoneInviaRichiesta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BottoneInviaRichiesta.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\mail-send-fill.png")); // NOI18N
         BottoneInviaRichiesta.setText("Invia Richiesta");
         BottoneInviaRichiesta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,18 +69,19 @@ public class RecuperoPassword extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BottoneInviaRichiesta, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(43, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(recupero_usernametext)))
-                .addGap(55, 55, 55))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(210, Short.MAX_VALUE)
-                .addComponent(BottoneInviaRichiesta)
-                .addGap(191, 191, 191))
+                        .addComponent(recupero_usernametext))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,12 +92,12 @@ public class RecuperoPassword extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(BottoneInviaRichiesta)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
-        bottoneIndietro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\arrow-left-circle-line.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,14 +114,14 @@ public class RecuperoPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bottoneIndietro)
+                .addComponent(bottoneIndietro, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(bottoneIndietro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -127,12 +130,6 @@ public class RecuperoPassword extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
-        // TODO add your handling code here:
-        new Login().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     private void BottoneInviaRichiestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottoneInviaRichiestaActionPerformed
         String user = recupero_usernametext.getText();
@@ -154,6 +151,12 @@ public class RecuperoPassword extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_BottoneInviaRichiestaActionPerformed
+
+    private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     /**
      * @param args the command line arguments

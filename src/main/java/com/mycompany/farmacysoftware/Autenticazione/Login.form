@@ -67,9 +67,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-accedi-arrotondato-destro-30.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
     </Component>
@@ -85,18 +82,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bottoneRecuperoPassword" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="separatore" min="-2" pref="277" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="153" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bottoneLogin" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel2" min="-2" pref="74" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -108,12 +96,30 @@
                                   <Component id="username" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="separatore" min="-2" pref="277" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="bottoneRecuperoPassword" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="bottoneLogin" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="195" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
               </Group>
@@ -123,7 +129,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel4" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -137,9 +146,9 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="separatore" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bottoneLogin" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bottoneRecuperoPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="bottoneLogin" max="32767" attributes="0"/>
+                      <Component id="bottoneRecuperoPassword" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="200" max="32767" attributes="0"/>
               </Group>
@@ -190,8 +199,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneLogin">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="1"/>
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\icons8-in-corso-30.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
@@ -202,7 +217,10 @@
         <Component class="javax.swing.JButton" name="bottoneRecuperoPassword">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="10" style="0"/>
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\questionnaire-fill.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Password Dimenticata"/>
           </Properties>
@@ -211,9 +229,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-drugstore-48.png"/>
+              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\icons8-drugstore-48.png"/>
             </Property>
           </Properties>
         </Component>

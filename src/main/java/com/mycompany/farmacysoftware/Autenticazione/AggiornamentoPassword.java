@@ -56,6 +56,7 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         recupero_passwordtext = new javax.swing.JTextField();
         bottoneConfermaRecuperoPassword = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         bottoneIndietro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,14 +78,20 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
             }
         });
 
+        bottoneConfermaRecuperoPassword.setBackground(new java.awt.Color(204, 255, 204));
         bottoneConfermaRecuperoPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bottoneConfermaRecuperoPassword.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-account-verificato-30.png")); // NOI18N
+        bottoneConfermaRecuperoPassword.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-account-verificato-30.png")); // NOI18N
         bottoneConfermaRecuperoPassword.setText("Conferma");
+        bottoneConfermaRecuperoPassword.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        bottoneConfermaRecuperoPassword.setInheritsPopupMenu(true);
         bottoneConfermaRecuperoPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bottoneConfermaRecuperoPasswordActionPerformed(evt);
             }
         });
+
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel2.setText("Scrivi la tua nuova password e clicca \"Conferma\" per aggiornarla.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,35 +99,40 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(recupero_passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
-                        .addGap(55, 55, 55))))
+                        .addComponent(recupero_passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(55, 55, 55))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bottoneConfermaRecuperoPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(203, 203, 203))
+                .addComponent(bottoneConfermaRecuperoPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(199, 199, 199))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(recupero_passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(109, 109, 109)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recupero_passwordtext, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(68, 68, 68)
                 .addComponent(bottoneConfermaRecuperoPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
-        bottoneIndietro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\arrow-left-circle-line.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,16 +148,16 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                .addComponent(bottoneIndietro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bottoneIndietro, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bottoneIndietro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -230,6 +242,7 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
     private javax.swing.JButton bottoneIndietro;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

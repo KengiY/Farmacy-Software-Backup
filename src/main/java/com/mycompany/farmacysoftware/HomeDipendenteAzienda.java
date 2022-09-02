@@ -30,15 +30,14 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        GestioneOrdine = new javax.swing.JButton();
-        Notifica = new javax.swing.JButton();
-        home_benvenuto = new javax.swing.JLabel();
+        bottoneGestioneOrdine = new javax.swing.JButton();
+        bottoneNotifica = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        home_bottoneLogout = new javax.swing.JButton();
+        bottoneLogout = new javax.swing.JButton();
+        home_benvenuto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Farmacy Software 1.0");
@@ -46,65 +45,61 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setPreferredSize(new java.awt.Dimension(560, 480));
 
-        GestioneOrdine.setText("Gestione Ordine");
-        GestioneOrdine.addActionListener(new java.awt.event.ActionListener() {
+        bottoneGestioneOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\inbox-unarchive-fill.png")); // NOI18N
+        bottoneGestioneOrdine.setText("Gestione Ordine");
+        bottoneGestioneOrdine.setActionCommand(" Gestione Ordine");
+        bottoneGestioneOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GestioneOrdineActionPerformed(evt);
+                bottoneGestioneOrdineActionPerformed(evt);
             }
         });
 
-        Notifica.setText("Notifiche");
-        Notifica.addActionListener(new java.awt.event.ActionListener() {
+        bottoneNotifica.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\notification-4-fill.png")); // NOI18N
+        bottoneNotifica.setText("Notifiche");
+        bottoneNotifica.setActionCommand("  Notifiche");
+        bottoneNotifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NotificaActionPerformed(evt);
+                bottoneNotificaActionPerformed(evt);
             }
         });
 
-        home_benvenuto.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        home_benvenuto.setForeground(new java.awt.Color(242, 242, 242));
-        home_benvenuto.setText("Benvenuto Dipendente");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel2.setText("Benvenuto Dipendente");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(home_benvenuto))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(GestioneOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Notifica, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(211, 211, 211))
+                    .addComponent(bottoneNotifica, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bottoneGestioneOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(207, 207, 207))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(home_benvenuto)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addComponent(GestioneOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(Notifica, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(bottoneGestioneOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(bottoneNotifica, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
@@ -112,55 +107,60 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Home");
 
-        home_bottoneLogout.setText("Logout");
-        home_bottoneLogout.addActionListener(new java.awt.event.ActionListener() {
+        bottoneLogout.setText("Logout");
+        bottoneLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                home_bottoneLogoutActionPerformed(evt);
+                bottoneLogoutActionPerformed(evt);
             }
         });
+
+        home_benvenuto.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        home_benvenuto.setForeground(new java.awt.Color(242, 242, 242));
+        home_benvenuto.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-scheda-dipendente-40.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(home_bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(home_benvenuto)
+                .addGap(178, 178, 178)
+                .addComponent(bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(home_bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(home_benvenuto)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bottoneLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void home_bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_bottoneLogoutActionPerformed
+    private void bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLogoutActionPerformed
         // TODO add your handling code here:
             new Login().setVisible(true);
             this.setVisible(false);
-    }//GEN-LAST:event_home_bottoneLogoutActionPerformed
+    }//GEN-LAST:event_bottoneLogoutActionPerformed
 
-    private void GestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestioneOrdineActionPerformed
+    private void bottoneGestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneOrdineActionPerformed
             new GestioneOrdine().setVisible(true);
             this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_GestioneOrdineActionPerformed
+    }//GEN-LAST:event_bottoneGestioneOrdineActionPerformed
 
-    private void NotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificaActionPerformed
+    private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NotificaActionPerformed
+    }//GEN-LAST:event_bottoneNotificaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,15 +199,14 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton GestioneOrdine;
-    private javax.swing.JButton Notifica;
+    private javax.swing.JButton bottoneGestioneOrdine;
+    private javax.swing.JButton bottoneLogout;
+    private javax.swing.JButton bottoneNotifica;
     private javax.swing.JLabel home_benvenuto;
-    private javax.swing.JButton home_bottoneLogout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     // End of variables declaration//GEN-END:variables
 }

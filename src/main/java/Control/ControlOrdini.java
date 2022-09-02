@@ -94,7 +94,7 @@ public class ControlOrdini {
         }
         
     }
-    public void EliminaOrdini(String nordine) throws SQLException{
+    public void EliminaOrdiniTotali(String nordine) throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
@@ -105,6 +105,58 @@ public class ControlOrdini {
 
     
     }
+    public void EliminaOrdini(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+            String sql = "delete from lista_ordini where NumeroOrdine= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,nordine);
+            ps.execute();
+
+    
+    }
+    public void Confermaordinicorriere(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        System.out.println(nordine);
+
+        int no = Integer.parseInt(nordine);
+        String farmacia = " farm1";
+        String Indirizzo= "via dai coglioni";
+        String Stato = "Da consegnare";
+        System.out.println("controlOrdini effettuata");
+        
+       
+            String sql = "Insert into info_consegne (Ordine, Farmacia, Indirizzo, Stato) VALUES (?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+               
+            ps.setInt(1,no);
+            ps.setString(2,farmacia);
+            ps.setString(3,Indirizzo);
+            ps.setString(4,Stato);
+            ps.executeUpdate();
+            System.out.println("controlOrdini effettuata");
+            ps.close();
+
+        }
+    
+    public void CambioStato(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        String stato="Confermato";
+        System.out.println(nordine+"sucarola");
+                String sql =  "update lista_ordini set stato=? where Nordine=?";
+                
+                PreparedStatement ps = conn.prepareStatement(sql);
+                
+                ps.setString(1, stato);
+                ps.setString(2, nordine);
+            
+                ps.executeUpdate();
+                ps.close();}
     
     public void elimina() throws SQLException{
         String luogo = "db_azienda";
@@ -129,19 +181,21 @@ public class ControlOrdini {
                 nordine= rs.getInt("Nordine");
                 nordine++;
                 
-                String sql =  "Insert into lista_ordini(Nordine, Farmacia, idordine) VALUES (?, ?, ?)";
+                String sql =  "Insert into lista_ordini(Nordine, Farmacia, idordine, stato) VALUES (?, ?, ?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setInt(1,nordine);
                 ps.setString(2,farmacia);
                 ps.setInt(3,idordine);
+                ps.setString(4,"daConsegnare");
                 ps.execute();
                 ps.close();
             }catch(SQLException ex){
-                String sql =  "Insert into lista_ordini(Nordine, Farmacia, idordine) VALUES (?, ?, ?)";
+                String sql =  "Insert into lista_ordini(Nordine, Farmacia, idordine,stato) VALUES (?, ?, ?,?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setInt(1,nordine);
                 ps.setString(2,farmacia);
                 ps.setInt(3,idordine);
+                ps.setString(4,"daConsegnare");
                 ps.execute();
                 ps.close();
         }

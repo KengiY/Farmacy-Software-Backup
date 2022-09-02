@@ -63,6 +63,31 @@ public class ControlDiRicercaFarmaci {
     
     
     
+    public void VisualizzaStatoOrdiniDipendente() throws SQLException{
+        
+        String luogo = "db_azienda";
+        DBMSControl dc = new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from lista_ordini_totale");
+        
+        
+        while(rs.next())
+            {
+                String nOrdine = String.valueOf(rs.getInt("NumeroOrdine"));
+               
+                String stat = rs.getString("Stato");
+                
+                
+                numero_ordine.add(nOrdine);
+                status.add(stat);
+                
+                
+                
+                }
+
+    }
+    
     
     public void VisualizzaOrdiniCorriere() throws SQLException{
         
@@ -92,8 +117,6 @@ public class ControlDiRicercaFarmaci {
 
     }
     
-    
-    //FORSE
     public void VisualizzaOrdini() throws SQLException{
         
         String luogo = "db_azienda";
@@ -238,8 +261,9 @@ public class ControlDiRicercaFarmaci {
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
+        String stato = "daConsegnare";
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("select * from lista_ordini");
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini WHERE stato = 'daConsegnare' ");
             
             while(rs.next()){
                 String nOrdine = String.valueOf(rs.getInt("Nordine"));
