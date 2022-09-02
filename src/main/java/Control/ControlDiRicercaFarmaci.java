@@ -69,14 +69,14 @@ public class ControlDiRicercaFarmaci {
         DBMSControl dc = new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("select * from lista_ordini_totale");
+        ResultSet rs = st.executeQuery("select * from lista_ordini");
         
         
         while(rs.next())
             {
-                String nOrdine = String.valueOf(rs.getInt("NumeroOrdine"));
+                String nOrdine = String.valueOf(rs.getInt("Nordine"));
                
-                String stat = rs.getString("Stato");
+                String stat = rs.getString("stato");
                 
                 
                 numero_ordine.add(nOrdine);
