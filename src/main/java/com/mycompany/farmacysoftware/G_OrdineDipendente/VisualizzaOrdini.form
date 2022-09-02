@@ -99,8 +99,8 @@
                           <Component id="jScrollPane2" min="-2" pref="661" max="-2" attributes="0"/>
                           <EmptySpace pref="47" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bottoneConfermaOrdine" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
-                              <Component id="bottoneConfermaOrdine2" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="ConfermaOrdine" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="VisualizzaOrdine" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
@@ -116,7 +116,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="715" max="32767" attributes="0"/>
-                      <Component id="bottoneConfermaOrdine1" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="EliminaOrdine" min="-2" pref="155" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -132,9 +132,9 @@
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="bottoneConfermaOrdine2" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="VisualizzaOrdine" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="bottoneConfermaOrdine" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="ConfermaOrdine" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -146,7 +146,7 @@
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
-                      <Component id="bottoneConfermaOrdine1" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="EliminaOrdine" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace pref="342" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -154,12 +154,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bottoneConfermaOrdine">
+        <Component class="javax.swing.JButton" name="ConfermaOrdine">
           <Properties>
             <Property name="text" type="java.lang.String" value="Conferma Ordine"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneConfermaOrdineActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfermaOrdineActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -203,20 +203,20 @@
         </Container>
         <Component class="javax.swing.JSeparator" name="jSeparator2">
         </Component>
-        <Component class="javax.swing.JButton" name="bottoneConfermaOrdine1">
+        <Component class="javax.swing.JButton" name="EliminaOrdine">
           <Properties>
             <Property name="text" type="java.lang.String" value="Elimina Ordine"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneConfermaOrdine1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminaOrdineActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="bottoneConfermaOrdine2">
+        <Component class="javax.swing.JButton" name="VisualizzaOrdine">
           <Properties>
             <Property name="text" type="java.lang.String" value="Visualizza Ordine"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bottoneConfermaOrdine2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VisualizzaOrdineActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -240,6 +240,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableListaFarmaciMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
