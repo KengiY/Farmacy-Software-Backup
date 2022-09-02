@@ -4,17 +4,43 @@
  */
 package com.mycompany.farmacysoftware.G_OrdineDipendente;
 
+import Control.ControlDiRicercaFarmaci;
+import Control.ControlOrdini;
+import com.mycompany.farmacysoftware.G_Prenotazione.ModificaOrdine;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 39329
  */
 public class VisualizzaOrdini extends javax.swing.JFrame {
 
+    DefaultTableModel tbcModel;
+    
+    LinkedList<String> nOrdine= new LinkedList<String>();
+    LinkedList<String> farmacia = new LinkedList<String>();
+    LinkedList<String> tipoId= new LinkedList<String>();
+    LinkedList<String> nomeFarmaco = new LinkedList<String>();
+    LinkedList<String> qua = new LinkedList<String>();
+    
+   
+    String clicked_element_nOrdine= null;
+    String clicked_element_farmacia= null;
+
+    String clicked_element_ordine;
+    
     /**
      * Creates new form VisualizzaOrdini
      */
-    public VisualizzaOrdini() {
+    public VisualizzaOrdini() throws SQLException {
         initComponents();
+        visualizza_ordini_dip();
+        
     }
 
     /**
@@ -52,21 +78,39 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        bottoneConfermaOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-in-corso-30.png")); // NOI18N
         bottoneConfermaOrdine.setText("Conferma Ordine");
+        bottoneConfermaOrdine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottoneConfermaOrdineActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Nome", "Quantità"
+                "Numero Ordine", "Farmacia"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,9 +122,9 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bottoneConfermaOrdine))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(bottoneConfermaOrdine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
                 .addGap(200, 200, 200))
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,6 +170,121 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_IndietroActionPerformed
 
+    
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+       
+        
+        JTable source = (JTable)evt.getSource();
+            //int row = source.rowAtPoint( evt.getPoint() );
+            int i = jTable1.getSelectedRow();
+            
+            int column = source.columnAtPoint( evt.getPoint() );
+            clicked_element_nOrdine=source.getModel().getValueAt(i, 1)+"";
+            clicked_element_farmacia=source.getModel().getValueAt(i, 2)+"";
+
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    
+    
+    ///////?????????????????????
+    private void bottoneConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdineActionPerformed
+ 
+        try {
+            stampaListaFarmaciPerOrdine();
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
+
+    
+     ///////?????????????????????
+    //L'ho copiata sulla classe Control Ordini
+    
+    public void stampaListaFarmaciPerOrdine() throws SQLException{
+        
+        String id = null;
+        String nome = null;
+        String quantita = null;
+        String numero_ordine = null;
+        
+        System.out.println("stampaListaFarmaciPerOrdine()");
+        
+        ControlOrdini slfpo = new ControlOrdini();
+        
+        int row = jTable1.getSelectedRow();
+        clicked_element_nOrdine = jTable1.getModel().getValueAt(row, 1)+"";
+        slfpo.prendiFarmaciPerNordine(Integer.parseInt(clicked_element_nOrdine));
+        
+        tipoId = (LinkedList<String>) slfpo.getId();
+        nomeFarmaco = (LinkedList<String>) slfpo.getNome();
+        qua = (LinkedList<String>) slfpo.getQuantita();
+        nOrdine = (LinkedList<String>) slfpo.getNumero_ordine();
+       
+        while(!nOrdine.isEmpty()){
+            System.out.println("Sono nel while puttana");
+            
+            
+            String tbcData[] = {tipoId.getFirst(), nomeFarmaco.getFirst(), qua.getFirst(),nOrdine.getFirst()};
+            
+            tbcModel = (DefaultTableModel)jTable1.getModel();
+            tbcModel.addRow(tbcData);
+            
+            tipoId.removeFirst();
+            nomeFarmaco.removeFirst();
+            qua.removeFirst();
+            nOrdine.removeFirst();
+        }
+  
+        
+        new FarmaciPerOrdine().setVisible(true);
+        
+       
+    }
+    
+ 
+
+    public void visualizza_ordini_dip() throws SQLException{
+        
+        System.out.println("sono in VisualizzaOrdini");
+        
+  
+        ControlDiRicercaFarmaci vod = new ControlDiRicercaFarmaci();
+        
+        vod.VisualizzaOrdiniDip();
+        
+        
+        farmacia = (LinkedList<String>) vod.getListNF();
+        nOrdine = (LinkedList<String>) vod.getListNo();
+        
+        while(!nOrdine.isEmpty()){
+            
+            String tbcData[] = {nOrdine.getFirst(), farmacia.getFirst()};
+            
+            tbcModel = (DefaultTableModel)jTable1.getModel();
+            tbcModel.addRow(tbcData);
+  
+            nOrdine.removeFirst();
+            farmacia.removeFirst();
+        }
+       
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -156,7 +315,11 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VisualizzaOrdini().setVisible(true);
+                try {
+                    new VisualizzaOrdini().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

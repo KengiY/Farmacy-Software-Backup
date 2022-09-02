@@ -113,9 +113,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="VisualizzaStatoOrdini">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-consegna-importante-30.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Visualizza Stato Ordini"/>
           </Properties>
           <Events>
@@ -124,9 +121,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="VisualizzaOridni">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\NetBeansProjects\FarmacySoftware\icon\icons8-visualizza-titolo-30.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Visualizza Ordini"/>
           </Properties>
           <Events>

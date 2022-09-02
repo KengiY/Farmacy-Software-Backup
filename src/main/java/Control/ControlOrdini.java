@@ -4,17 +4,43 @@
  */
 package Control;
 
+import com.mycompany.farmacysoftware.G_OrdineDipendente.FarmaciPerOrdine;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author manfr
  */
 public class ControlOrdini {
+    
+    List<String> nome= new LinkedList<String>();
+    List<String> id= new LinkedList<String>();
+    List<String> quantita = new LinkedList<String>();
+    List<String> numero_ordine = new LinkedList<String>();
+
+    public List<String> getNome() {
+        return nome;
+    }
+
+    public List<String> getId() {
+        return id;
+    }
+
+    public List<String> getQuantita() {
+        return quantita;
+    }
+
+    public List<String> getNumero_ordine() {
+        return numero_ordine;
+    }
+    
     
     
     
@@ -44,6 +70,38 @@ public class ControlOrdini {
         }
         
     }
+    
+    public void prendiFarmaciPerNordine(int no) throws SQLException{
+        
+
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totalem WHERE NumeroOrdine = " + no);
+        
+        while(rs.next()){
+            
+                String tipoId = String.valueOf(rs.getInt("ID"));
+                String nomeFarmaco = rs.getString("ListaFarmaci");
+                String qua = String.valueOf(rs.getInt("Quantità"));
+                String nOrdine = String.valueOf(rs.getInt("NumeroOrdine"));
+            
+                id.add(tipoId);
+                nome.add(nomeFarmaco);
+                quantita.add(qua);
+                numero_ordine.add(nOrdine);
+      
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
  
     public void elimina() throws SQLException{

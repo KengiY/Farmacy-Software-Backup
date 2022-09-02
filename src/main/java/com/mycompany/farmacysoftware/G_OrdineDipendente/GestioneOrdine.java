@@ -5,6 +5,9 @@
 package com.mycompany.farmacysoftware.G_OrdineDipendente;
 
 import com.mycompany.farmacysoftware.HomeDipendenteAzienda;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -129,7 +132,11 @@ public class GestioneOrdine extends javax.swing.JFrame {
     }//GEN-LAST:event_IndietroActionPerformed
 
     private void VisualizzaOridniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaOridniActionPerformed
-        new VisualizzaOrdini().setVisible(true);
+        try {
+            new VisualizzaOrdini().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestioneOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_VisualizzaOridniActionPerformed
 

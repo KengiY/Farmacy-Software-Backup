@@ -103,12 +103,11 @@ public class PrenotazioneControl {
                 
                 ps.close();
             }/// tutto ok
-
-
-        
-        
-        
+   
     }
+    
+    
+    
     
     
     

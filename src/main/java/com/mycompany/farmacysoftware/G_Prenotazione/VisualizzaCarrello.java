@@ -261,10 +261,7 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     public void carica_Carrello() throws SQLException{
         
         System.out.println("sono in caricaCarrello");
-        String id = null;
-        String nome = null;
-        String quantita = null;
-        String numero_ordine = null;
+     
         
         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
         

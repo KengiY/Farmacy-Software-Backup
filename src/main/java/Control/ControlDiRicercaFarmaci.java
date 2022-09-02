@@ -26,6 +26,12 @@ public class ControlDiRicercaFarmaci {
     List<String> quantita = new LinkedList<String>();
     List<String> numero_ordine = new LinkedList<String>();
     List<String> periodicità = new LinkedList<String>();
+    List<String> nome_farmacia = new LinkedList<String>();
+    
+    
+    public List<String> getListNF(){
+        return nome_farmacia;
+    }
     
     
     public List<String> getListN(){
@@ -160,13 +166,7 @@ public class ControlDiRicercaFarmaci {
 
     }
     
-   
-    
-    
-    
-    
-    
-    public void VisualizzaCarrello() throws SQLException{
+   public void VisualizzaCarrello() throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
@@ -188,7 +188,41 @@ public class ControlDiRicercaFarmaci {
             }
 
     }
+   
     
+ 
+
+
+   
+    
+    
+    public void VisualizzaOrdiniDip() throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from lista_ordini");
+            
+            while(rs.next()){
+                String nOrdine = String.valueOf(rs.getInt("Nordine"));
+                String farmacia = rs.getString("Farmacia");
+                
+                numero_ordine.add(nOrdine);
+                nome_farmacia.add(farmacia);
+                
+                        
+            }
+
+    }
+    
+
+
+
+
+
+
+
+
     
     public void EliminaElemento(String clicked_element_farmaco) throws SQLException{
         String luogo = "db_azienda";
