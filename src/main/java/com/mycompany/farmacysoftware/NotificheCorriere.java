@@ -17,14 +17,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 39329
  */
-public class Notifiche extends javax.swing.JFrame {
+public class NotificheCorriere extends javax.swing.JFrame {
     
     
     LinkedList<String> name= new LinkedList<String>();
     LinkedList<String> ad= new LinkedList<String>();
     DefaultTableModel tbpaModel;
     
-    public Notifiche() throws SQLException {
+    public NotificheCorriere() throws SQLException {
         initComponents();
         carica_tabella();
     }
@@ -186,23 +186,30 @@ public class Notifiche extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Notifiche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificheCorriere.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Notifiche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificheCorriere.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Notifiche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificheCorriere.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Notifiche.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificheCorriere.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new Notifiche().setVisible(true);
+                    new NotificheCorriere().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(Notifiche.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(NotificheCorriere.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

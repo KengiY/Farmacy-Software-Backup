@@ -201,7 +201,7 @@ public class HomeFarmacista extends javax.swing.JFrame {
 
     private void NotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificheActionPerformed
         try {
-            new Notifiche().setVisible(true);
+            new NotificheDipendente().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }

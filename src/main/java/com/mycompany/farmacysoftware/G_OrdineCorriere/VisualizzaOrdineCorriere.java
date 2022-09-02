@@ -4,8 +4,14 @@
  */
 package com.mycompany.farmacysoftware.G_OrdineCorriere;
 
+import Control.ControlDiRicercaFarmaci;
 import com.mycompany.farmacysoftware.G_OrdineDipendente.GestioneOrdine;
 import com.mycompany.farmacysoftware.HomeCorriere;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +19,20 @@ import com.mycompany.farmacysoftware.HomeCorriere;
  */
 public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
+    DefaultTableModel tbcModel;
+    LinkedList<String> farmacia= new LinkedList<String>();
+    LinkedList<String> nomeIndirizzi = new LinkedList<String>();
+    LinkedList<String> stat = new LinkedList<String>();
+    LinkedList<String> nOrdine = new LinkedList<String>();
+    
+    
+    
     /**
      * Creates new form VisualizzaOrdineCorriere
      */
-    public VisualizzaOrdineCorriere() {
+    public VisualizzaOrdineCorriere() throws SQLException {
         initComponents();
+        caricaOrdiniCorriere();
     }
 
     /**
@@ -32,12 +47,12 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Indietro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        VisualizzaStato = new javax.swing.JButton();
+        JButton_OrdineConsegnato = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableVOC = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Farmacy Software 1.0");
@@ -57,10 +72,10 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        VisualizzaStato.setText("Ordine Consegnato");
-        VisualizzaStato.addActionListener(new java.awt.event.ActionListener() {
+        JButton_OrdineConsegnato.setText("Ordine Consegnato");
+        JButton_OrdineConsegnato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VisualizzaStatoActionPerformed(evt);
+                JButton_OrdineConsegnatoActionPerformed(evt);
             }
         });
 
@@ -70,7 +85,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
         jLabel3.setText("Clicca per confermare la consegna");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableVOC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -86,12 +101,12 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane2.setViewportView(jTableVOC);
+        if (jTableVOC.getColumnModel().getColumnCount() > 0) {
+            jTableVOC.getColumnModel().getColumn(0).setResizable(false);
+            jTableVOC.getColumnModel().getColumn(1).setResizable(false);
+            jTableVOC.getColumnModel().getColumn(2).setResizable(false);
+            jTableVOC.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -115,7 +130,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jSeparator1)
-                    .addComponent(VisualizzaStato, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE))
+                    .addComponent(JButton_OrdineConsegnato, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE))
                 .addGap(58, 58, 58))
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,7 +143,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(VisualizzaStato, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(JButton_OrdineConsegnato, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
@@ -160,15 +175,59 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VisualizzaStatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaStatoActionPerformed
+    private void JButton_OrdineConsegnatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_OrdineConsegnatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_VisualizzaStatoActionPerformed
+    }//GEN-LAST:event_JButton_OrdineConsegnatoActionPerformed
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
         new HomeCorriere().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_IndietroActionPerformed
 
+    public void caricaOrdiniCorriere() throws SQLException{
+        
+        System.out.println("sono in caricaOrdiniCorriere");
+     
+        
+        ControlDiRicercaFarmaci coc = new ControlDiRicercaFarmaci();
+        
+        coc.VisualizzaOrdiniCorriere();
+       
+        nOrdine = (LinkedList<String>) coc.getListNo();
+        farmacia = (LinkedList<String>) coc.getListNF();
+        nomeIndirizzi = (LinkedList<String>) coc.getListIZ();
+        stat = (LinkedList<String>) coc.getStatus();
+        
+        while(!nOrdine.isEmpty()){
+            
+            String tbcData[] = {nOrdine.getFirst(),farmacia.getFirst(),nomeIndirizzi.getFirst(),stat.getFirst()};
+            
+            tbcModel = (DefaultTableModel)jTableVOC.getModel();
+            tbcModel.addRow(tbcData);
+            
+            nOrdine.removeFirst();
+            farmacia.removeFirst();
+            nomeIndirizzi.removeFirst();
+            stat.removeFirst();
+        }
+        
+        
+            
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -199,20 +258,24 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VisualizzaOrdineCorriere().setVisible(true);
+                try {
+                    new VisualizzaOrdineCorriere().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Indietro;
-    private javax.swing.JButton VisualizzaStato;
+    private javax.swing.JButton JButton_OrdineConsegnato;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableVOC;
     // End of variables declaration//GEN-END:variables
 }

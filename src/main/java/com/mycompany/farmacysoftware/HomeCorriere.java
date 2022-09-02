@@ -166,14 +166,18 @@ public class HomeCorriere extends javax.swing.JFrame {
     }//GEN-LAST:event_home_bottoneLogoutActionPerformed
 
     private void GestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestioneOrdineActionPerformed
+        try {
             new VisualizzaOrdineCorriere().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
             this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_GestioneOrdineActionPerformed
 
     private void NotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificaActionPerformed
         try {
             // TODO add your handling code here:
-            new Notifiche().setVisible(true);
+            new NotificheDipendente().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }

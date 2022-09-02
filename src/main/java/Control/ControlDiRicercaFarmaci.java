@@ -21,13 +21,12 @@ public class ControlDiRicercaFarmaci {
     String barraDIRicerca;
     List<String> nome= new LinkedList<String>();
     List<String> id= new LinkedList<String>();
-    
-    //Creo Liste per Carrello
     List<String> quantita = new LinkedList<String>();
     List<String> numero_ordine = new LinkedList<String>();
     List<String> periodicità = new LinkedList<String>();
     List<String> nome_farmacia = new LinkedList<String>();
-    
+    List<String> indirizzi = new LinkedList<String>();
+    List<String> status = new LinkedList<String>();
     
     public List<String> getListNF(){
         return nome_farmacia;
@@ -52,6 +51,45 @@ public class ControlDiRicercaFarmaci {
     
     public List<String> getListPd(){
     return  periodicità;
+    }
+    
+    public List<String> getListIZ(){
+        return indirizzi;
+    }
+
+    public List<String> getStatus() {
+        return status;
+    }
+    
+    
+    
+    
+    public void VisualizzaOrdiniCorriere() throws SQLException{
+        
+        String luogo = "db_azienda";
+        DBMSControl dc = new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("select * from info_consegne");
+        
+        
+        while(rs.next())
+            {
+                String nOrdine = String.valueOf(rs.getInt("Ordine"));
+                String farmacia = rs.getString("Farmacia");
+                String nomeIndirizzi = rs.getString("Indirizzo");
+                String stat = rs.getString("Stato");
+                
+                
+                numero_ordine.add(nOrdine);
+                nome_farmacia.add(farmacia);
+                indirizzi.add(nomeIndirizzi);
+                status.add(stat);
+                
+                
+                
+                }
+
     }
     
     
@@ -216,14 +254,6 @@ public class ControlDiRicercaFarmaci {
     }
     
 
-
-
-
-
-
-
-
-    
     public void EliminaElemento(String clicked_element_farmaco) throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
@@ -233,7 +263,6 @@ public class ControlDiRicercaFarmaci {
             ps.setString(1,clicked_element_farmaco);
             ps.execute();
 
-    
     }
     
     public void EliminaElementoPeriodicita(String clicked_element_farmaco) throws SQLException{
