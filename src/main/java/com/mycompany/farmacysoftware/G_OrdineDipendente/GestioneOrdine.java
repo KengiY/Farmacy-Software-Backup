@@ -141,7 +141,11 @@ public class GestioneOrdine extends javax.swing.JFrame {
     }//GEN-LAST:event_VisualizzaOridniActionPerformed
 
     private void VisualizzaStatoOrdiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaStatoOrdiniActionPerformed
-        new VisualizzaStatoOrdini().setVisible(true);
+        try {
+            new VisualizzaStatoOrdini().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestioneOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_VisualizzaStatoOrdiniActionPerformed
 
