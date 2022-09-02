@@ -52,7 +52,6 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        StatoOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-scatola-consegnata-24.png")); // NOI18N
         StatoOrdine.setText("Stato Ordine");
         StatoOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,10 +61,7 @@ public class VisualizzaStatoOrdini extends javax.swing.JFrame {
 
         TabellaOrdini.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome Farmaco", "Quantità"

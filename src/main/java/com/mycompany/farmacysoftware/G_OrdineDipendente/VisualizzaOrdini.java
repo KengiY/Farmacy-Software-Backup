@@ -261,7 +261,16 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     private void ConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfermaOrdineActionPerformed
     ControlOrdini co= new ControlOrdini();
         try {
-            co.EliminaOrdini(clicked_element_nOrdine);
+            co.Confermaordinicorriere(clicked_element_nOrdine);
+            co.CambioStato(clicked_element_nOrdine);
+            co.EliminaOrdiniTotali(clicked_element_nOrdine);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaOrdini().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -271,7 +280,15 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     private void EliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaOrdineActionPerformed
         ControlOrdini co= new ControlOrdini();
         try {
+            co.EliminaOrdiniTotali(clicked_element_nOrdine);
             co.EliminaOrdini(clicked_element_nOrdine);
+      
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaOrdini().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -281,9 +298,12 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
         
         try {
             visualizzafarmacifiltrati();
+            
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        
     }//GEN-LAST:event_VisualizzaOrdineActionPerformed
 
     private void jTableListaFarmaciMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableListaFarmaciMouseClicked
@@ -370,6 +390,7 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     }
     
     public void visualizzafarmacifiltrati() throws SQLException{
+       
         String id = null;
         String nome = null;
         String quantita = null;
