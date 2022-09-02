@@ -4,7 +4,7 @@
  */
 package Control;
 
-import com.mycompany.farmacysoftware.G_OrdineDipendente.FarmaciPerOrdine;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -71,14 +71,13 @@ public class ControlOrdini {
         
     }
     
-    public void prendiFarmaciPerNordine(int no) throws SQLException{
-        
+    public void prendiFarmaciPerNordine(int no) throws SQLException{        
 
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totalem WHERE NumeroOrdine = " + no);
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE NumeroOrdine = " + no);
         
         while(rs.next()){
             

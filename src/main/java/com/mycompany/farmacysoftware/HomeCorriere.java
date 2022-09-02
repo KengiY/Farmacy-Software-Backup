@@ -5,7 +5,11 @@
 package com.mycompany.farmacysoftware;
 
 import com.mycompany.farmacysoftware.Autenticazione.Login;
+import com.mycompany.farmacysoftware.G_OrdineCorriere.VisualizzaOrdineCorriere;
 import com.mycompany.farmacysoftware.G_OrdineDipendente.GestioneOrdine;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -162,13 +166,17 @@ public class HomeCorriere extends javax.swing.JFrame {
     }//GEN-LAST:event_home_bottoneLogoutActionPerformed
 
     private void GestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestioneOrdineActionPerformed
-            new GestioneOrdine().setVisible(true);
+            new VisualizzaOrdineCorriere().setVisible(true);
             this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_GestioneOrdineActionPerformed
 
     private void NotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificaActionPerformed
-        // TODO add your handling code here:
-        new Notifiche().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new Notifiche().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_NotificaActionPerformed
 
