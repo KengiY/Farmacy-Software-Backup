@@ -94,15 +94,18 @@ public class ControlOrdini {
         }
         
     }
+    public void EliminaOrdini(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+            String sql = "delete from lista_ordini_totale where NumeroOrdine= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,nordine);
+            ps.execute();
+
     
+    }
     
-    
-    
-    
-    
-    
-    
- 
     public void elimina() throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();

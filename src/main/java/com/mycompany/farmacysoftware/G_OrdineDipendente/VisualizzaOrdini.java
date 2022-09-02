@@ -56,12 +56,12 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Indietro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        bottoneConfermaOrdine = new javax.swing.JButton();
+        ConfermaOrdine = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
-        bottoneConfermaOrdine1 = new javax.swing.JButton();
-        bottoneConfermaOrdine2 = new javax.swing.JButton();
+        EliminaOrdine = new javax.swing.JButton();
+        VisualizzaOrdine = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableListaFarmaci = new javax.swing.JTable();
 
@@ -83,10 +83,10 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        bottoneConfermaOrdine.setText("Conferma Ordine");
-        bottoneConfermaOrdine.addActionListener(new java.awt.event.ActionListener() {
+        ConfermaOrdine.setText("Conferma Ordine");
+        ConfermaOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottoneConfermaOrdineActionPerformed(evt);
+                ConfermaOrdineActionPerformed(evt);
             }
         });
 
@@ -117,17 +117,17 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        bottoneConfermaOrdine1.setText("Elimina Ordine");
-        bottoneConfermaOrdine1.addActionListener(new java.awt.event.ActionListener() {
+        EliminaOrdine.setText("Elimina Ordine");
+        EliminaOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottoneConfermaOrdine1ActionPerformed(evt);
+                EliminaOrdineActionPerformed(evt);
             }
         });
 
-        bottoneConfermaOrdine2.setText("Visualizza Ordine");
-        bottoneConfermaOrdine2.addActionListener(new java.awt.event.ActionListener() {
+        VisualizzaOrdine.setText("Visualizza Ordine");
+        VisualizzaOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottoneConfermaOrdine2ActionPerformed(evt);
+                VisualizzaOrdineActionPerformed(evt);
             }
         });
 
@@ -154,6 +154,11 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableListaFarmaci.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableListaFarmaciMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableListaFarmaci);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,8 +172,8 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bottoneConfermaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bottoneConfermaOrdine2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ConfermaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VisualizzaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(19, 19, 19))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -178,7 +183,7 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(715, Short.MAX_VALUE)
-                    .addComponent(bottoneConfermaOrdine1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -190,9 +195,9 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(bottoneConfermaOrdine2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(VisualizzaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bottoneConfermaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ConfermaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(84, 84, 84)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -201,7 +206,7 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(327, 327, 327)
-                    .addComponent(bottoneConfermaOrdine1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(342, Short.MAX_VALUE)))
         );
 
@@ -245,31 +250,51 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
             int i = jTable1.getSelectedRow();
             
             int column = source.columnAtPoint( evt.getPoint() );
-            clicked_element_nOrdine=source.getModel().getValueAt(i, 1)+"";
-            clicked_element_farmacia=source.getModel().getValueAt(i, 2)+"";
+            clicked_element_nOrdine=source.getModel().getValueAt(i, 0)+"";
+            clicked_element_farmacia=source.getModel().getValueAt(i, 1)+"";
 
     }//GEN-LAST:event_jTable1MouseClicked
 
     
     
     ///////?????????????????????
-    private void bottoneConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdineActionPerformed
- 
+    private void ConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfermaOrdineActionPerformed
+    ControlOrdini co= new ControlOrdini();
         try {
-            stampaListaFarmaciPerOrdine();
+            co.EliminaOrdini(clicked_element_nOrdine);
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
+    }//GEN-LAST:event_ConfermaOrdineActionPerformed
 
-    private void bottoneConfermaOrdine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdine1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bottoneConfermaOrdine1ActionPerformed
+    private void EliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaOrdineActionPerformed
+        ControlOrdini co= new ControlOrdini();
+        try {
+            co.EliminaOrdini(clicked_element_nOrdine);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_EliminaOrdineActionPerformed
 
-    private void bottoneConfermaOrdine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdine2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bottoneConfermaOrdine2ActionPerformed
+    private void VisualizzaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaOrdineActionPerformed
+        
+        try {
+            visualizzafarmacifiltrati();
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_VisualizzaOrdineActionPerformed
+
+    private void jTableListaFarmaciMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableListaFarmaciMouseClicked
+            JTable source = (JTable)evt.getSource();
+            int i = jTableListaFarmaci.getSelectedRow();
+            
+            int column = source.columnAtPoint( evt.getPoint() );
+            clicked_element_nOrdine=source.getModel().getValueAt(i, 3)+"";
+            System.out.println(clicked_element_nOrdine);
+
+    }//GEN-LAST:event_jTableListaFarmaciMouseClicked
 
     
      ///////?????????????????????
@@ -344,20 +369,36 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public void visualizzafarmacifiltrati() throws SQLException{
+        String id = null;
+        String nome = null;
+        String quantita = null;
+        String numero_ordine = null;
+        System.out.println("stampaListaFarmaciPerOrdine()");
+        System.out.println(clicked_element_nOrdine);
+        ControlOrdini slfpo = new ControlOrdini();
+        int no = Integer.parseInt(clicked_element_nOrdine);
+        slfpo.prendiFarmaciPerNordine(no);
+        
+        
+        tipoId = (LinkedList<String>) slfpo.getId();
+        nomeFarmaco = (LinkedList<String>) slfpo.getNome();
+        qua = (LinkedList<String>) slfpo.getQuantita();
+        nOrdine = (LinkedList<String>) slfpo.getNumero_ordine();
+       
+        while(!nOrdine.isEmpty()){
+            System.out.println("Sono nel while puttana");
+            String tbcData[] = {tipoId.getFirst(), nomeFarmaco.getFirst(), qua.getFirst(),nOrdine.getFirst()};
+            
+            tbcModel = (DefaultTableModel)jTableListaFarmaci.getModel();
+            tbcModel.addRow(tbcData);
+            
+            tipoId.removeFirst();
+            nomeFarmaco.removeFirst();
+            qua.removeFirst();
+            nOrdine.removeFirst();
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -398,10 +439,10 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConfermaOrdine;
+    private javax.swing.JButton EliminaOrdine;
     private javax.swing.JButton Indietro;
-    private javax.swing.JButton bottoneConfermaOrdine;
-    private javax.swing.JButton bottoneConfermaOrdine1;
-    private javax.swing.JButton bottoneConfermaOrdine2;
+    private javax.swing.JButton VisualizzaOrdine;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
