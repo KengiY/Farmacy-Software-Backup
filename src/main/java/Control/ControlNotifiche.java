@@ -21,24 +21,25 @@ public class ControlNotifiche {
     List<String> tipo= new LinkedList<String>();
     
     
-    public void InvioNotifica(int tipo, String mex, String luogo) throws SQLException{
+    public void InvioNotifica(int tipo, String mex) throws SQLException{
 
         DBMSControl dc= new DBMSControl();
+        String luogo = "db_azienda";
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM notifiche");
             
+           System.out.println("suca");
             
-            
-            if(rs.next()){
+            if(rs.next()|| !rs.next()){
               
-                
+                System.out.println("suca");
                 String sql = "Insert into notifiche (idnotifiche, TipoNotifica) VALUES (?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
                
                 ps.setInt(1,tipo);
                 ps.setString(2,mex);
-
+                ps.executeUpdate();
                 
                 ps.close();
             }/// tutto ok

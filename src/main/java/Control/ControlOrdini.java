@@ -156,7 +156,24 @@ public class ControlOrdini {
                 ps.setString(2, nordine);
             
                 ps.executeUpdate();
-                ps.close();}
+                ps.close();
+    }
+        public void CambioStatoCorriere(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        String stato="Consegnato";
+        System.out.println(nordine+"sucarola");
+                String sql =  "update info_consegne set Stato=? where Ordine=?";
+                
+                PreparedStatement ps = conn.prepareStatement(sql);
+                
+                ps.setString(1, stato);
+                ps.setString(2, nordine);
+            
+                ps.executeUpdate();
+                ps.close();
+    }
     
     public void elimina() throws SQLException{
         String luogo = "db_azienda";

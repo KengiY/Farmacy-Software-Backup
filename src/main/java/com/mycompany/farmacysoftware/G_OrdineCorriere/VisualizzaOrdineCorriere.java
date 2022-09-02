@@ -5,12 +5,15 @@
 package com.mycompany.farmacysoftware.G_OrdineCorriere;
 
 import Control.ControlDiRicercaFarmaci;
+import Control.ControlNotifiche;
+import Control.ControlOrdini;
 import com.mycompany.farmacysoftware.G_OrdineDipendente.GestioneOrdine;
 import com.mycompany.farmacysoftware.HomeCorriere;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,6 +28,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
     LinkedList<String> stat = new LinkedList<String>();
     LinkedList<String> nOrdine = new LinkedList<String>();
     
+    String Ordine;
     
     
     /**
@@ -99,6 +103,11 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTableVOC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableVOCMouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jTableVOC);
@@ -176,13 +185,45 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JButton_OrdineConsegnatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_OrdineConsegnatoActionPerformed
-        // TODO add your handling code here:
+        //INVIARE NOTIFICA
+        ControlOrdini oc = new ControlOrdini(); 
+        try {
+            oc.CambioStatoCorriere(Ordine);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ControlNotifiche cn = new ControlNotifiche();
+        int tipo=1;
+        String mex="pacco consegnato";
+        
+        try {
+            cn.InvioNotifica(tipo,  mex);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaOrdineCorriere().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_JButton_OrdineConsegnatoActionPerformed
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
         new HomeCorriere().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_IndietroActionPerformed
+
+    private void jTableVOCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableVOCMouseClicked
+          
+        JTable source = (JTable)evt.getSource();
+            //int row = source.rowAtPoint( evt.getPoint() );
+            int i = jTableVOC.getSelectedRow();
+            
+            int column = source.columnAtPoint( evt.getPoint() );
+            Ordine=source.getModel().getValueAt(i, 0)+"";
+            System.out.println(Ordine);
+    }//GEN-LAST:event_jTableVOCMouseClicked
 
     public void caricaOrdiniCorriere() throws SQLException{
         
