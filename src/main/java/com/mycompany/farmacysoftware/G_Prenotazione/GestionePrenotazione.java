@@ -48,9 +48,10 @@ public class GestionePrenotazione extends javax.swing.JFrame {
         setLocation(new java.awt.Point(600, 200));
         setResizable(false);
 
-        labelGestionePrenotazione.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelGestionePrenotazione.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         labelGestionePrenotazione.setText("Gestione Prenotazione");
 
+        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\reply-fill.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +61,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        bottoneAggiungiFarmaco.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-più-30.png")); // NOI18N
+        bottoneAggiungiFarmaco.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\add-circle-fill.png")); // NOI18N
         bottoneAggiungiFarmaco.setText("Aggiungi Farmaco");
         bottoneAggiungiFarmaco.setBorder(null);
         bottoneAggiungiFarmaco.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +70,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottoneVisualizzaCarrello.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-carrello-caricato-24.png")); // NOI18N
+        bottoneVisualizzaCarrello.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\shopping-cart-fill.png")); // NOI18N
         bottoneVisualizzaCarrello.setText("Visualizza Carrello");
         bottoneVisualizzaCarrello.setBorder(null);
         bottoneVisualizzaCarrello.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +79,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottoneModificaeAnnulla.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-modifica-il-calendario-24.png")); // NOI18N
+        bottoneModificaeAnnulla.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\edit-line.png")); // NOI18N
         bottoneModificaeAnnulla.setText("Modifica/Annulla Ordine");
         bottoneModificaeAnnulla.setBorder(null);
         bottoneModificaeAnnulla.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottonePrenotazioniAutomatiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\NetBeansProjects\\FarmacySoftware\\icon\\icons8-ingranaggi-30.png")); // NOI18N
+        bottonePrenotazioniAutomatiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-sincronizzare-24.png")); // NOI18N
         bottonePrenotazioniAutomatiche.setText("Prenotazioni Automatiche");
         bottonePrenotazioniAutomatiche.setBorder(null);
         bottonePrenotazioniAutomatiche.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +142,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelGestionePrenotazione, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelGestionePrenotazione, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bottoneIndietro)
                 .addContainerGap())

@@ -121,12 +121,12 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bottoneAggiungi" min="-2" pref="128" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
+                  <Component id="bottoneAggiungi" min="-2" pref="132" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

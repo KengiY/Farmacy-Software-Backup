@@ -64,7 +64,7 @@ public class HomeFarmacista extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Farmacy Software 1.0");
+        setTitle("Home Farmacista");
         setLocation(new java.awt.Point(600, 200));
         setResizable(false);
 

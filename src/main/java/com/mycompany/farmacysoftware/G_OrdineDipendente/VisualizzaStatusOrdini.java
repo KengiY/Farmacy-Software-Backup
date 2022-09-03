@@ -5,7 +5,6 @@
 package com.mycompany.farmacysoftware.G_OrdineDipendente;
 
 import Control.ControlDiRicercaFarmaci;
-import com.mycompany.farmacysoftware.HomeCorriere;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -44,11 +43,13 @@ public class VisualizzaStatusOrdini extends javax.swing.JFrame {
         JTableStatoOrdini = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Farmacy Software - Dipendente");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Visualizza Stato Ordini");
         jLabel1.setToolTipText("");
 
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\arrow-left-circle-line.png")); // NOI18N
         jButton1.setText("Indietro");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +106,7 @@ public class VisualizzaStatusOrdini extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );

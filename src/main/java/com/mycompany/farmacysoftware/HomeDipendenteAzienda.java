@@ -6,6 +6,9 @@ package com.mycompany.farmacysoftware;
 
 import com.mycompany.farmacysoftware.Autenticazione.Login;
 import com.mycompany.farmacysoftware.G_OrdineDipendente.GestioneOrdine;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -40,10 +43,9 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
         home_benvenuto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Farmacy Software 1.0");
+        setTitle("Home Dipendente");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(600, 200));
-        setPreferredSize(new java.awt.Dimension(732, 654));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -161,7 +163,13 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneGestioneOrdineActionPerformed
 
     private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            new NotificheDipendente().setVisible(true);
+            this.setVisible(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeDipendenteAzienda.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bottoneNotificaActionPerformed
 
     /**
