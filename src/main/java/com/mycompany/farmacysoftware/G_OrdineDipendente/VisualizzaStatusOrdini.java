@@ -5,6 +5,7 @@
 package com.mycompany.farmacysoftware.G_OrdineDipendente;
 
 import Control.ControlDiRicercaFarmaci;
+import com.mycompany.farmacysoftware.HomeCorriere;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -49,6 +50,11 @@ public class VisualizzaStatusOrdini extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
 
         jButton1.setText("Indietro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -116,6 +122,12 @@ public class VisualizzaStatusOrdini extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new GestioneOrdine().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     
