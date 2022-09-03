@@ -78,7 +78,6 @@ public class HomeFarmacista extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setPreferredSize(new java.awt.Dimension(560, 480));
 
-        bottoneAggiornaMagazzino.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\refresh-fill.png")); // NOI18N
         bottoneAggiornaMagazzino.setText("Aggiorna Magazzino");
         bottoneAggiornaMagazzino.setPreferredSize(new java.awt.Dimension(158, 158));
         bottoneAggiornaMagazzino.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +86,6 @@ public class HomeFarmacista extends javax.swing.JFrame {
             }
         });
 
-        bottoneGestioneScorte.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\red-packet-fill.png")); // NOI18N
         bottoneGestioneScorte.setText("Gestione Scorte");
         bottoneGestioneScorte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +93,6 @@ public class HomeFarmacista extends javax.swing.JFrame {
             }
         });
 
-        bottoneGestionePrenotazione.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-scatola-consegnata-24.png")); // NOI18N
         bottoneGestionePrenotazione.setText("Gestione Prenotazione");
         bottoneGestionePrenotazione.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +100,6 @@ public class HomeFarmacista extends javax.swing.JFrame {
             }
         });
 
-        bottoneNotifiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\notification-4-fill.png")); // NOI18N
         bottoneNotifiche.setText("Notifiche");
         bottoneNotifiche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,9 +122,9 @@ public class HomeFarmacista extends javax.swing.JFrame {
                         .addComponent(jSeparator2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(82, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bottoneGestioneScorte, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bottoneGestionePrenotazione))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bottoneGestioneScorte, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                            .addComponent(bottoneGestionePrenotazione, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(61, 61, 61)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bottoneAggiornaMagazzino, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
@@ -163,8 +159,6 @@ public class HomeFarmacista extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Home");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-bastone-di-asclepio-40.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
