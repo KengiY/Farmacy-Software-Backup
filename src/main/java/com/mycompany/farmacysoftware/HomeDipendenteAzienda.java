@@ -111,6 +111,7 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Home");
 
+        bottoneLogout.setBackground(new java.awt.Color(255, 153, 153));
         bottoneLogout.setText("Logout");
         bottoneLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

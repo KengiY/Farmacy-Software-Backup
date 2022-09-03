@@ -130,6 +130,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
             }
         });
 
+        bottoneEliminaOrdine.setBackground(new java.awt.Color(255, 153, 153));
         bottoneEliminaOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\delete-bin-fill.png")); // NOI18N
         bottoneEliminaOrdine.setText("Elimina Ordine");
         bottoneEliminaOrdine.addActionListener(new java.awt.event.ActionListener() {
