@@ -63,9 +63,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="bottoneIndietro">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\reply-fill.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Indietro"/>
       </Properties>
       <Events>
@@ -131,9 +128,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\icons8-ingranaggi-30.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ordini Effettuati"/>
           </Properties>
           <Events>
@@ -142,9 +136,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneAggiungiFarmaco">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\add-circle-fill.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Aggiungi Farmaco"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -156,9 +147,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneVisualizzaCarrello">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\shopping-cart-fill.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Visualizza Carrello"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -170,9 +158,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneModificaeAnnulla">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\edit-line.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Modifica/Annulla Ordine"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -184,9 +169,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottonePrenotazioniAutomatiche">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\icons8-sincronizzare-24.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Prenotazioni Automatiche"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>

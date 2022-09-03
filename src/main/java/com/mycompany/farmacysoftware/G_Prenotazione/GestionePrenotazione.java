@@ -230,8 +230,12 @@ public class GestionePrenotazione extends javax.swing.JFrame {
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        new OrdiniEffettuati().setVisible(true);
+        try {
+            // TODO add your handling code here:
+            new OrdiniEffettuati().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

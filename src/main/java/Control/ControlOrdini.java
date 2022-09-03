@@ -77,7 +77,7 @@ public class ControlOrdini {
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE NumeroOrdine = " + no);
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE ID= 1 and NumeroOrdine = " + no);
         
         while(rs.next()){
             
@@ -93,12 +93,47 @@ public class ControlOrdini {
       
         }
         
+        
+    }
+        public void prendiFarmaciPerID(int no) throws SQLException{        
+
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+        Statement st = (Statement)conn.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE ID= 0 and NumeroOrdine = " + no);
+        
+        while(rs.next()){
+            
+                String tipoId = String.valueOf(rs.getInt("ID"));
+                String nomeFarmaco = rs.getString("ListaFarmaci");
+                String qua = String.valueOf(rs.getInt("Quantità"));
+                String nOrdine = String.valueOf(rs.getInt("NumeroOrdine"));
+            
+                id.add(tipoId);
+                nome.add(nomeFarmaco);
+                quantita.add(qua);
+                numero_ordine.add(nOrdine);
+      
+        }
     }
     public void EliminaOrdiniTotali(String nordine) throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
-            String sql = "delete from lista_ordini_totale where NumeroOrdine= ? ";
+            String sql = "update lista_ordini_totale set ID= ? where NumeroOrdine= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,0);
+            ps.setString(2,nordine);
+            ps.execute();
+
+    
+    }
+    public void EliminaOrdiniTotali2(String nordine) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+            String sql = "delete from  lista_ordini_totale where NumeroOrdine= ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,nordine);
             ps.execute();

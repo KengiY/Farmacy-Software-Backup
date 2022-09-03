@@ -316,5 +316,21 @@ public class ControlDiRicercaFarmaci {
                 ps.close();
                 
             }
+    
+        public void ModificaOrdine2(int qta, String clicked_element_farm ) throws SQLException{
+        String luogo = "db_azienda";
+        DBMSControl dc= new DBMSControl();
+        Connection conn= dc.ConnessioneDBMS(luogo);
+                String sql =  "update lista_ordini_totale set Quantità=? where ListaFarmaci=?";
+                
+                PreparedStatement ps = conn.prepareStatement(sql);
+                
+                ps.setInt(1, qta);
+                ps.setString(2, clicked_element_farm);
+            
+                ps.executeUpdate();
+                ps.close();
+                
+            }
 
 }
