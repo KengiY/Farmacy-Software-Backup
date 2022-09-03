@@ -195,9 +195,9 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
         ControlNotifiche cn = new ControlNotifiche();
         int tipo=1;
         String mex="pacco consegnato";
-        
+        String luogo= "db_farmacia";
         try {
-            cn.InvioNotifica(tipo,  mex);
+            cn.InvioNotifica(tipo,  mex, luogo);
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }
