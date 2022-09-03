@@ -263,7 +263,7 @@ public class ControlDiRicercaFarmaci {
         Connection conn= dc.ConnessioneDBMS(luogo);
         String stato = "daConsegnare";
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini WHERE stato = 'daConsegnare' ");
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini WHERE stato = 'daConfermare' ");
             
             while(rs.next()){
                 String nOrdine = String.valueOf(rs.getInt("Nordine"));
