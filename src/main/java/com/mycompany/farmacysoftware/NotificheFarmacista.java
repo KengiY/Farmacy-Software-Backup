@@ -141,7 +141,8 @@ public class NotificheFarmacista extends javax.swing.JFrame {
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        
+        new HomeFarmacista().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     
