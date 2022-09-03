@@ -63,6 +63,7 @@ public class OrdiniEffettuati extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\delete-bin-fill.png")); // NOI18N
         jButton2.setText("Elimina Ordine");
 

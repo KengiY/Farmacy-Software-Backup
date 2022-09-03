@@ -46,9 +46,10 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Software Gestionale Farmacia 1.0");
+        setTitle("Farmacy Software");
         setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFocusCycleRoot(false);
         setForeground(java.awt.Color.white);
         setLocation(new java.awt.Point(600, 200));
         setName("Login"); // NOI18N
