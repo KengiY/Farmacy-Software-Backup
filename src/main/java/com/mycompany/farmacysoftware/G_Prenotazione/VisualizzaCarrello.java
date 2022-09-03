@@ -6,9 +6,11 @@ package com.mycompany.farmacysoftware.G_Prenotazione;
 
 import Control.ControlDiRicercaFarmaci;
 import Control.ControlMagazzino;
+import Control.ControlNotifiche;
 import Control.ControlOrdini;
 import Control.PrenotazioneControl;
 import com.mycompany.farmacysoftware.Agg_Magazzino.AggiornaMagazzino;
+import com.mycompany.farmacysoftware.G_OrdineCorriere.VisualizzaOrdineCorriere;
 import com.mycompany.farmacysoftware.G_Prenotazione.ModificaOrdine;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
@@ -203,6 +205,21 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        ControlNotifiche cn = new ControlNotifiche();
+        int tipo=1;
+        String mex="nuovo ordine";
+        String luogo= "db_azienda";
+        try {
+            cn.InvioNotifica(tipo,  mex, luogo);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaCarrello().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed

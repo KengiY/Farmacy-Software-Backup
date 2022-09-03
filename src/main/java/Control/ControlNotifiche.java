@@ -21,10 +21,9 @@ public class ControlNotifiche {
     List<String> tipo= new LinkedList<String>();
     
     
-    public void InvioNotifica(int tipo, String mex) throws SQLException{
+    public void InvioNotifica(int tipo, String mex, String luogo) throws SQLException{
 
         DBMSControl dc= new DBMSControl();
-        String luogo = "db_azienda";
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM notifiche");
@@ -53,7 +52,7 @@ public class ControlNotifiche {
         
         while(rs.next())
             {
-                String name= rs.getString("TipoNotifiche");
+                String name= rs.getString("TipoNotifica");
                 String ad= String.valueOf(rs.getInt("idnotifiche"));
                 
                 nome.add(name);

@@ -157,7 +157,7 @@ public class NotificheDipendente extends javax.swing.JFrame {
                 
                 ControlNotifiche rf= new ControlNotifiche();
         
-                rf.caricaNotifiche("db_farmacia");
+                rf.caricaNotifiche("db_azienda");
         
 
                 name= (LinkedList<String>) rf.getListN();

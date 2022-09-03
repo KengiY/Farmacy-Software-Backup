@@ -203,7 +203,7 @@ public class ControlOrdini {
                 ps.setInt(1,nordine);
                 ps.setString(2,farmacia);
                 ps.setInt(3,idordine);
-                ps.setString(4,"daConsegnare");
+                ps.setString(4,"daConfermare");
                 ps.execute();
                 ps.close();
             }catch(SQLException ex){
