@@ -185,8 +185,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
-        new HomeFarmacista().setVisible(true);
-        this.setVisible(false);
+        clickIndietro();
     }//GEN-LAST:event_IndietroActionPerformed
 
     private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
@@ -198,6 +197,16 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
     }//GEN-LAST:event_NomeActionPerformed
 
     private void bottoneAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiActionPerformed
+        caricaMerceInMagazzino();
+    }//GEN-LAST:event_bottoneAggiungiActionPerformed
+
+   
+    public void clickIndietro(){
+        new HomeFarmacista().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void caricaMerceInMagazzino(){
        ControlMagazzino cm = new ControlMagazzino();
        int qt = (int) Quantita.getValue();
        String ID= id.getText();
@@ -213,11 +222,19 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
                Logger.getLogger(AggiornaMagazzino.class.getName()).log(Level.SEVERE, null, ex);
            }
        }
-    }//GEN-LAST:event_bottoneAggiungiActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

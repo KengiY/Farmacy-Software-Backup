@@ -168,7 +168,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Indietro)
                 .addContainerGap())
@@ -190,37 +190,16 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
 
     private void JButton_OrdineConsegnatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_OrdineConsegnatoActionPerformed
         //INVIARE NOTIFICA
-        ControlOrdini oc = new ControlOrdini(); 
-        try {
-            oc.CambioStatoCorriere(Ordine);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ControlNotifiche cn = new ControlNotifiche();
-        int tipo=1;
-        String mex="pacco consegnato";
-        String luogo= "db_farmacia";
-        try {
-            cn.InvioNotifica(tipo,  mex, luogo);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        try {
-            new VisualizzaOrdineCorriere().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        consegnaOrdine();
     }//GEN-LAST:event_JButton_OrdineConsegnatoActionPerformed
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
-        new HomeCorriere().setVisible(true);
-        this.setVisible(false);
+        clickIndietro();
     }//GEN-LAST:event_IndietroActionPerformed
 
     private void jTableVOCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableVOCMouseClicked
           
-        JTable source = (JTable)evt.getSource();
+            JTable source = (JTable)evt.getSource();
             //int row = source.rowAtPoint( evt.getPoint() );
             int i = jTableVOC.getSelectedRow();
             
@@ -229,7 +208,55 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
             System.out.println(Ordine);
     }//GEN-LAST:event_jTableVOCMouseClicked
 
-    public void caricaOrdiniCorriere() throws SQLException{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   public void clickIndietro(){
+       new HomeCorriere().setVisible(true);
+       this.setVisible(false);
+   } 
+    
+    
+   public void consegnaOrdine(){
+      ControlOrdini oc = new ControlOrdini(); 
+        
+        try {
+            oc.CambioStatoCorriere(Ordine);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ControlNotifiche cn = new ControlNotifiche();
+        
+        int tipo=1;
+        
+        String mex="pacco consegnato";
+        String luogo= "db_farmacia";
+        
+        try {
+            cn.InvioNotifica(tipo,  mex, luogo);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.setVisible(false);
+        
+        try {
+            new VisualizzaOrdineCorriere().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+   } 
+    
+     
+   public void caricaOrdiniCorriere() throws SQLException{
         
         System.out.println("sono in caricaOrdiniCorriere");
      
@@ -255,9 +282,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
             nomeIndirizzi.removeFirst();
             stat.removeFirst();
         }
-        
-        
-            
+         
     }
     
     

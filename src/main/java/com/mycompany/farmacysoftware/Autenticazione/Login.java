@@ -1,13 +1,6 @@
 package com.mycompany.farmacysoftware.Autenticazione;
 
 
-/**
- *
- * @author manfr
- */
-
-
-
 import Control.ControlLogin;
 import com.mycompany.farmacysoftware.HomeFarmacista;
 import java.sql.Connection;
@@ -184,7 +177,22 @@ public class Login extends javax.swing.JFrame {
 
     private void bottoneLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLoginActionPerformed
 
-    String user = username.getText();
+        controlloCredenziali();      
+        
+    }//GEN-LAST:event_bottoneLoginActionPerformed
+
+    private void bottoneRecuperoPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneRecuperoPasswordActionPerformed
+        // TODO add your handling code here:
+       clickRecuperoPassword();
+    }//GEN-LAST:event_bottoneRecuperoPasswordActionPerformed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
+
+    
+    public void controlloCredenziali(){
+        String user = username.getText();
         String pass = password.getText();
         ControlLogin cl = new ControlLogin(user, pass);
         int pl;
@@ -202,21 +210,16 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }    
         
-    }//GEN-LAST:event_bottoneLoginActionPerformed
-
-    private void bottoneRecuperoPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneRecuperoPasswordActionPerformed
-        // TODO add your handling code here:
-        new RecuperoPassword().setVisible(true);
+    }
+    
+    public void clickRecuperoPassword(){
+         new RecuperoPassword().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneRecuperoPasswordActionPerformed
-
-    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formKeyPressed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -210,41 +210,77 @@ public class HomeFarmacista extends javax.swing.JFrame {
 
     private void bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLogoutActionPerformed
         // TODO add your handling code here:
-            new Login().setVisible(true);
-            this.setVisible(false);
+        clickLogout();    
     }//GEN-LAST:event_bottoneLogoutActionPerformed
 
     private void bottoneGestionePrenotazioneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestionePrenotazioneActionPerformed
-            new GestionePrenotazione().setVisible(true);
-            this.setVisible(false);        // TODO add your handling code here:
+        clickGestionePrenotazioneFarmacista();      
     }//GEN-LAST:event_bottoneGestionePrenotazioneActionPerformed
 
     private void bottoneAggiornaMagazzinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiornaMagazzinoActionPerformed
-            new AggiornaMagazzino().setVisible(true);
-            this.setVisible(false); 
+        clickAggiornaMagazzino();
     }//GEN-LAST:event_bottoneAggiornaMagazzinoActionPerformed
 
     private void bottoneGestioneScorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneScorteActionPerformed
+        GestioneScorte();
+    }//GEN-LAST:event_bottoneGestioneScorteActionPerformed
+
+    private void bottoneNotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificheActionPerformed
+        clickNotifiche();
+    }//GEN-LAST:event_bottoneNotificheActionPerformed
+
+    public void clickLogout(){
+       new Login().setVisible(true);
+       this.setVisible(false);  
+    }
+    
+    public void clickGestionePrenotazioneFarmacista(){
+        new GestionePrenotazione().setVisible(true);
+        this.setVisible(false); 
+    }
+    
+    public void clickAggiornaMagazzino(){
+        new AggiornaMagazzino().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void GestioneScorte(){
         try {
             new VisualizzaScorte().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }
             this.setVisible(false); 
-    }//GEN-LAST:event_bottoneGestioneScorteActionPerformed
-
-    private void bottoneNotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificheActionPerformed
+    }
+    
+    public void clickNotifiche(){
         try {
             new NotificheFarmacista().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }
             this.setVisible(false); 
-    }//GEN-LAST:event_bottoneNotificheActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

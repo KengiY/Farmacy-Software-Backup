@@ -187,19 +187,16 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                         .addComponent(jScrollPane2)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ConfermaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VisualizzaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ConfermaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(VisualizzaOrdine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(19, 19, 19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
                             .addComponent(jSeparator2))
                         .addContainerGap())))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(715, Short.MAX_VALUE)
-                    .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,18 +208,15 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
                         .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(VisualizzaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(ConfermaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)))
+                        .addGap(18, 18, 18)
+                        .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(327, 327, 327)
-                    .addComponent(EliminaOrdine, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(342, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -274,50 +268,17 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     
     
     private void ConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfermaOrdineActionPerformed
-    ControlOrdini co= new ControlOrdini();
-        try {
-            co.Confermaordinicorriere(clicked_element_nOrdine);
-            co.CambioStato(clicked_element_nOrdine);
-            co.EliminaOrdiniTotali(clicked_element_nOrdine);
-
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        try {
-            new VisualizzaOrdini().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        confermaOrdine();
         
     }//GEN-LAST:event_ConfermaOrdineActionPerformed
 
     private void EliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaOrdineActionPerformed
-        ControlOrdini co= new ControlOrdini();
-        try {
-            co.EliminaOrdiniTotali(clicked_element_nOrdine);
-            co.EliminaOrdini(clicked_element_nOrdine);
-      
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        try {
-            new VisualizzaOrdini().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        eliminaOrdine();
     }//GEN-LAST:event_EliminaOrdineActionPerformed
 
     private void VisualizzaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaOrdineActionPerformed
-        
-        try {
-            visualizzafarmacifiltrati();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+       
+        visualizzaOrdiniFiltrati();
         
     }//GEN-LAST:event_VisualizzaOrdineActionPerformed
 
@@ -332,8 +293,57 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableListaFarmaciMouseClicked
 
     
-     ///////?????????????????????
-    //L'ho copiata sulla classe Control Ordini
+ 
+    
+    
+    
+    
+    
+    
+    
+    public void confermaOrdine(){
+        ControlOrdini co= new ControlOrdini();
+        try {
+            co.Confermaordinicorriere(clicked_element_nOrdine);
+            co.CambioStato(clicked_element_nOrdine);
+            co.EliminaOrdiniTotali(clicked_element_nOrdine);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaOrdini().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void eliminaOrdine(){
+        ControlOrdini co= new ControlOrdini();
+        try {
+            co.EliminaOrdiniTotali(clicked_element_nOrdine);
+            co.EliminaOrdini(clicked_element_nOrdine);
+      
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        try {
+            new VisualizzaOrdini().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void visualizzaOrdiniFiltrati(){
+        try {
+            visualizzafarmacifiltrati();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(VisualizzaOrdini.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public void stampaListaFarmaciPerOrdine() throws SQLException{
         
@@ -376,8 +386,6 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
        
     }
     
- 
-    //Visualizzazione schermata
     public void visualizza_ordini_dip() throws SQLException{
         
         System.out.println("sono in VisualizzaOrdini");
@@ -435,9 +443,14 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
             nOrdine.removeFirst();
         }
     }
-    /**
-     * @param args the command line arguments
-     */
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

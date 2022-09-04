@@ -168,8 +168,7 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        new Login().setVisible(true);
-        this.setVisible(false);
+        clickIndietro();
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
     private void recupero_passwordtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recupero_passwordtextActionPerformed
@@ -177,6 +176,24 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_recupero_passwordtextActionPerformed
 
     private void bottoneConfermaRecuperoPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaRecuperoPasswordActionPerformed
+       recuperaPassword();             
+    }//GEN-LAST:event_bottoneConfermaRecuperoPasswordActionPerformed
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void clickIndietro(){
+        new Login().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void recuperaPassword(){
       pass = recupero_passwordtext.getText();
       ControlRecuperoPassword rp= new ControlRecuperoPassword(user);
       int pl;
@@ -189,20 +206,24 @@ public class AggiornamentoPassword extends javax.swing.JFrame {
       pl= rp.getlof();
       if ( pl==1){
       new Login().setVisible(true);
-      this.setVisible(false);
-                
-
-            
-            
-
+      this.setVisible(false);              
       }
-      
-        
-    }//GEN-LAST:event_bottoneConfermaRecuperoPasswordActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

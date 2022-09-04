@@ -144,11 +144,18 @@ public class NotificheCorriere extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
-        // TODO add your handling code here:
-        new HomeCorriere().setVisible(true);
-        this.setVisible(false);
+       // TODO add your handling code here:
+       clickIndietro(); 
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
+    
+    
+    
+    
+    public void clickIndietro(){
+        new HomeCorriere().setVisible(true);
+        this.setVisible(false); 
+    }
     
     
     public void carica_tabella() throws SQLException{
@@ -174,9 +181,20 @@ public class NotificheCorriere extends javax.swing.JFrame {
                     name.removeFirst();
                     ad.removeFirst();
         }}
-    /**
-     * @param args the command line arguments
-     */
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

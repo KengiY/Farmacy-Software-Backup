@@ -163,32 +163,49 @@ public class HomeCorriere extends javax.swing.JFrame {
 
     private void bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLogoutActionPerformed
         // TODO add your handling code here:
-            new Login().setVisible(true);
-            this.setVisible(false);
+            clickLogout();
     }//GEN-LAST:event_bottoneLogoutActionPerformed
 
     private void bottoneGestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneOrdineActionPerformed
-        try {
+            // TODO add your handling code here:
+            clickGestioneOrdineCorriere();
+    }//GEN-LAST:event_bottoneGestioneOrdineActionPerformed
+
+    private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
+        clickNotificaCorriere();
+    }//GEN-LAST:event_bottoneNotificaActionPerformed
+
+   
+    public void clickLogout(){
+        new Login().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void clickGestioneOrdineCorriere(){
+         try {
             new VisualizzaOrdineCorriere().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }
-            this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_bottoneGestioneOrdineActionPerformed
-
-    private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
-        try {
+            this.setVisible(false);   
+    } 
+    
+    public void clickNotificaCorriere(){
+         try {
             // TODO add your handling code here:
             new NotificheCorriere().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneNotificaActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    } 
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -129,31 +129,55 @@ public class GestioneOrdine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
-        new HomeDipendenteAzienda().setVisible(true);
-        this.setVisible(false);
+       clickIndietro(); 
     }//GEN-LAST:event_IndietroActionPerformed
 
     private void VisualizzaOridniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaOridniActionPerformed
-        try {
+       clickVisualizzaOrdini();
+    }//GEN-LAST:event_VisualizzaOridniActionPerformed
+
+    private void VisualizzaStatoOrdiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaStatoOrdiniActionPerformed
+       clickVisualizzaStatoOrdini(); 
+    }//GEN-LAST:event_VisualizzaStatoOrdiniActionPerformed
+    
+    
+    
+    public void clickVisualizzaStatoOrdini(){
+       try {
+            new VisualizzaStatusOrdini().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(GestioneOrdine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false); 
+    }
+    
+    
+    
+    
+    public void clickVisualizzaOrdini(){
+       try {
             new VisualizzaOrdini().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(GestioneOrdine.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_VisualizzaOridniActionPerformed
-
-    private void VisualizzaStatoOrdiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizzaStatoOrdiniActionPerformed
-        try {
-            new VisualizzaStatusOrdini().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(GestioneOrdine.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    }
+    
+    
+    public void clickIndietro(){
+        new HomeDipendenteAzienda().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_VisualizzaStatoOrdiniActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -153,17 +153,31 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneLogoutActionPerformed
-        // TODO add your handling code here:
-            new Login().setVisible(true);
-            this.setVisible(false);
+       // TODO add your handling code here:
+       clickLogout();   
     }//GEN-LAST:event_bottoneLogoutActionPerformed
 
     private void bottoneGestioneOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneOrdineActionPerformed
-            new GestioneOrdine().setVisible(true);
-            this.setVisible(false);        // TODO add your handling code here:
+        // TODO add your handling code here:
+        clickGestioneOrdineDipendente();
     }//GEN-LAST:event_bottoneGestioneOrdineActionPerformed
 
     private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
+        clickNotificaDipendente();
+    }//GEN-LAST:event_bottoneNotificaActionPerformed
+
+    
+    public void clickLogout(){
+         new Login().setVisible(true);
+         this.setVisible(false);
+    }
+    
+    public void clickGestioneOrdineDipendente(){
+         new GestioneOrdine().setVisible(true);
+         this.setVisible(false); 
+    }
+    
+    public void clickNotificaDipendente(){
         try {
             // TODO add your handling code here:
             new NotificheDipendente().setVisible(true);
@@ -171,11 +185,17 @@ public class HomeDipendenteAzienda extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(HomeDipendenteAzienda.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_bottoneNotificaActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

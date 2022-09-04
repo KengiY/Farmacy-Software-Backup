@@ -144,11 +144,18 @@ public class NotificheFarmacista extends javax.swing.JFrame {
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        new HomeFarmacista().setVisible(true);
-        this.setVisible(false);
+        clickIndietro();
     }//GEN-LAST:event_bottoneIndietroActionPerformed
 
+  
     
+    
+    
+    
+    public void clickIndietro(){
+        new HomeFarmacista().setVisible(true);
+        this.setVisible(false);
+    }
     
     public void carica_tabella() throws SQLException{
                 String br= null;
@@ -173,9 +180,7 @@ public class NotificheFarmacista extends javax.swing.JFrame {
                     name.removeFirst();
                     ad.removeFirst();
         }}
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

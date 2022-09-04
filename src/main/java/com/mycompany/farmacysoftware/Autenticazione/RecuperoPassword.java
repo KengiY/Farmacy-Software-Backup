@@ -145,7 +145,32 @@ public class RecuperoPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottoneInviaRichiestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottoneInviaRichiestaActionPerformed
-        String user = recupero_usernametext.getText();
+        checkUsername();        
+    }//GEN-LAST:event_BottoneInviaRichiestaActionPerformed
+
+    private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
+        // TODO add your handling code here:
+        clickIndietro();
+    }//GEN-LAST:event_bottoneIndietroActionPerformed
+
+    private void recupero_usernametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recupero_usernametextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recupero_usernametextActionPerformed
+
+    
+    
+    
+    
+    
+    
+    
+    public void clickIndietro(){
+        new Login().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void checkUsername(){
+       String user = recupero_usernametext.getText();
         ControlRecuperoPassword rp= new ControlRecuperoPassword(user);
         String pu;
         int pl;
@@ -161,23 +186,14 @@ public class RecuperoPassword extends javax.swing.JFrame {
             
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_BottoneInviaRichiestaActionPerformed
-
-    private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
-        // TODO add your handling code here:
-        new Login().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_bottoneIndietroActionPerformed
-
-    private void recupero_usernametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recupero_usernametextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recupero_usernametextActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+        } 
+    }
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
