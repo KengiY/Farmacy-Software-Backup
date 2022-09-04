@@ -63,9 +63,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="bottoneIndietro">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\reply-fill.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Indietro"/>
       </Properties>
       <Events>
@@ -203,9 +200,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\shopping-cart-fill.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Aggiungi al Carrello"/>
           </Properties>
           <Events>
@@ -216,9 +210,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneCerca">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\search-fill.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Cerca"/>
           </Properties>
           <Events>

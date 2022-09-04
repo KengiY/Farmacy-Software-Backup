@@ -224,11 +224,17 @@ public class OrdiniEffettuati extends javax.swing.JFrame {
 
     private void indietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indietroActionPerformed
         // TODO add your handling code here:
+        ClickIndietro();
+    }//GEN-LAST:event_indietroActionPerformed
+    public void ClickIndietro(){
         new GestionePrenotazione().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_indietroActionPerformed
-
+    }
+    
     private void ModificaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaOrdineActionPerformed
+        ModificaOrdine();
+    }//GEN-LAST:event_ModificaOrdineActionPerformed
+    public void ModificaOrdine(){
         int qta = Integer.parseInt(fieldQuantita.getText());
         System.out.println(qta + clicked_element_qt);
         
@@ -251,10 +257,13 @@ public class OrdiniEffettuati extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OrdiniEffettuati.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_ModificaOrdineActionPerformed
-
+    
+    }
     private void EliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaOrdineActionPerformed
-                ControlOrdini co= new ControlOrdini();
+        eliminaOrdine();
+    }//GEN-LAST:event_EliminaOrdineActionPerformed
+    public void eliminaOrdine(){
+                    ControlOrdini co= new ControlOrdini();
         try {
             co.EliminaOrdiniTotali2(clicked_element_nOrdine);
       
@@ -267,8 +276,9 @@ public class OrdiniEffettuati extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OrdiniEffettuati.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_EliminaOrdineActionPerformed
-
+    }
+    
+    
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
             JTable source = (JTable)evt.getSource();
             int i = jTable1.getSelectedRow();

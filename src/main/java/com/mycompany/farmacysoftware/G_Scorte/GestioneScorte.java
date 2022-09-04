@@ -165,18 +165,24 @@ public class GestioneScorte extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new HomeFarmacista().setVisible(true);
-        this.setVisible(false);
+        ClickIndietro();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void ClickIndietro(){
+        new HomeFarmacista().setVisible(true);
+        this.setVisible(false);
+    }
     private void bottoneCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneCercaActionPerformed
         // TODO add your handling code here:
-        String br= barraDiRicerca.getText().toUpperCase();
+        ClickCerca();
+    }//GEN-LAST:event_bottoneCercaActionPerformed
+    
+    public void ClickCerca(){
+            String br= barraDiRicerca.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tbgsModel);
         jTable5.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(br));
-    }//GEN-LAST:event_bottoneCercaActionPerformed
-
+    }
     
     public void carica_tabellaScorte() throws SQLException{
                 String br= null;
@@ -202,9 +208,9 @@ public class GestioneScorte extends javax.swing.JFrame {
                     name.removeFirst();
                     quant.removeFirst();
         }}
-    /**
-     * @param args the command line arguments
-     */
+
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

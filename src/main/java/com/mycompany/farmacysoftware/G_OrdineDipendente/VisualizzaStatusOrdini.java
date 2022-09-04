@@ -127,11 +127,13 @@ public class VisualizzaStatusOrdini extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new GestioneOrdine().setVisible(true);
-        this.setVisible(false);
+        ClickIndietro();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+    public void ClickIndietro(){
+            new GestioneOrdine().setVisible(true);
+        this.setVisible(false);
+    }
     
     public void caricaStatoOrdiniDip() throws SQLException{
         

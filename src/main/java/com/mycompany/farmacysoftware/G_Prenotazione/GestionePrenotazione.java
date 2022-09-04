@@ -34,7 +34,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
         labelGestionePrenotazione = new javax.swing.JLabel();
         bottoneIndietro = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        OrdiniEffettuati = new javax.swing.JButton();
         bottoneAggiungiFarmaco = new javax.swing.JButton();
         bottoneVisualizzaCarrello = new javax.swing.JButton();
         bottoneModificaeAnnulla = new javax.swing.JButton();
@@ -53,7 +53,6 @@ public class GestionePrenotazione extends javax.swing.JFrame {
         labelGestionePrenotazione.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         labelGestionePrenotazione.setText("Gestione Prenotazione");
 
-        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\reply-fill.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,15 +62,13 @@ public class GestionePrenotazione extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-ingranaggi-30.png")); // NOI18N
-        jButton1.setText("Ordini Effettuati");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        OrdiniEffettuati.setText("Ordini Effettuati");
+        OrdiniEffettuati.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                OrdiniEffettuatiActionPerformed(evt);
             }
         });
 
-        bottoneAggiungiFarmaco.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\add-circle-fill.png")); // NOI18N
         bottoneAggiungiFarmaco.setText("Aggiungi Farmaco");
         bottoneAggiungiFarmaco.setBorder(null);
         bottoneAggiungiFarmaco.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +77,6 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottoneVisualizzaCarrello.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\shopping-cart-fill.png")); // NOI18N
         bottoneVisualizzaCarrello.setText("Visualizza Carrello");
         bottoneVisualizzaCarrello.setBorder(null);
         bottoneVisualizzaCarrello.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +85,6 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottoneModificaeAnnulla.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\edit-line.png")); // NOI18N
         bottoneModificaeAnnulla.setText("Modifica/Annulla Ordine");
         bottoneModificaeAnnulla.setBorder(null);
         bottoneModificaeAnnulla.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +93,6 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             }
         });
 
-        bottonePrenotazioniAutomatiche.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-sincronizzare-24.png")); // NOI18N
         bottonePrenotazioniAutomatiche.setText("Prenotazioni Automatiche");
         bottonePrenotazioniAutomatiche.setBorder(null);
         bottonePrenotazioniAutomatiche.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +109,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
                 .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OrdiniEffettuati, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bottoneAggiungiFarmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,7 +140,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OrdiniEffettuati, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
@@ -179,20 +173,23 @@ public class GestionePrenotazione extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneAggiungiFarmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiFarmacoActionPerformed
-        try {
+        ClickAggiungiFarmaco();
+    }//GEN-LAST:event_bottoneAggiungiFarmacoActionPerformed
+    public void ClickAggiungiFarmaco(){
+            try {
             // TODO add your handling code here:
             new AggiungiFarmaco().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.setVisible(false);
-        
-       
-        
-    }//GEN-LAST:event_bottoneAggiungiFarmacoActionPerformed
-
+        this.setVisible(false);  
+    
+    }
     private void bottoneVisualizzaCarrelloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneVisualizzaCarrelloActionPerformed
-        try {
+        ClickVIsualizzaCarrello();
+    }//GEN-LAST:event_bottoneVisualizzaCarrelloActionPerformed
+    public void ClickVIsualizzaCarrello(){
+         try {
             // TODO add your handling code here:
             new VisualizzaCarrello().setVisible(true);
         } catch (SQLException ex) {
@@ -200,36 +197,44 @@ public class GestionePrenotazione extends javax.swing.JFrame {
         }
         this.setVisible(false);
         
-    }//GEN-LAST:event_bottoneVisualizzaCarrelloActionPerformed
-
+    }
     private void bottoneModificaeAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaeAnnullaActionPerformed
-        try {
+        ClickModificaAnnulla();
+    }//GEN-LAST:event_bottoneModificaeAnnullaActionPerformed
+    public void ClickModificaAnnulla(){
+            try {
             // TODO add your handling code here:
             new ModificaOrdine().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneModificaeAnnullaActionPerformed
-
+    }
     private void bottonePrenotazioniAutomaticheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottonePrenotazioniAutomaticheActionPerformed
-        try {
+        ClickPrenotazioneAutomatiche();
+    }//GEN-LAST:event_bottonePrenotazioniAutomaticheActionPerformed
+    public void ClickPrenotazioneAutomatiche(){
+            try {
             // TODO add your handling code here:
             new PrenotazioniAutomatiche().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_bottonePrenotazioniAutomaticheActionPerformed
-
+    }
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        new HomeFarmacista().setVisible(true);
+        Indietro();
+    }//GEN-LAST:event_bottoneIndietroActionPerformed
+    public void Indietro(){
+            new HomeFarmacista().setVisible(true);
         this.setVisible(false);
         
-    }//GEN-LAST:event_bottoneIndietroActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    }
+    private void OrdiniEffettuatiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdiniEffettuatiActionPerformed
+        ClickOrdiniEffettuati();
+    }//GEN-LAST:event_OrdiniEffettuatiActionPerformed
+    public void ClickOrdiniEffettuati(){
         try {
             // TODO add your handling code here:
             new OrdiniEffettuati().setVisible(true);
@@ -237,8 +242,7 @@ public class GestionePrenotazione extends javax.swing.JFrame {
             Logger.getLogger(GestionePrenotazione.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
@@ -276,12 +280,12 @@ public class GestionePrenotazione extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton OrdiniEffettuati;
     private javax.swing.JButton bottoneAggiungiFarmaco;
     private javax.swing.JButton bottoneIndietro;
     private javax.swing.JButton bottoneModificaeAnnulla;
     private javax.swing.JButton bottonePrenotazioniAutomatiche;
     private javax.swing.JButton bottoneVisualizzaCarrello;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

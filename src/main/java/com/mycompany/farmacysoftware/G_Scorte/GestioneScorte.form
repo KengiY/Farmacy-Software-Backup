@@ -119,9 +119,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="bottoneCerca">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\search-fill.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Cerca"/>
           </Properties>
           <Events>
@@ -174,9 +171,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\manfr\Documents\GitHub\Farmacy-Software-Backup\icon\reply-fill.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Indietro"/>
       </Properties>
       <Events>

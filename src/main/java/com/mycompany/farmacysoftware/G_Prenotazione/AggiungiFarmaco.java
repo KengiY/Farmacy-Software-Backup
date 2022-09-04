@@ -25,6 +25,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.event.ListSelectionListener;
@@ -212,18 +213,22 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        new GestionePrenotazione().setVisible(true);
-        this.setVisible(false);
+        ClickIndietro();
     }//GEN-LAST:event_bottoneIndietroActionPerformed
-
+    public void ClickIndietro(){
+            new GestionePrenotazione().setVisible(true);
+        this.setVisible(false);
+    }
     private void bottoneCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneCercaActionPerformed
+        Cerca();
+    }//GEN-LAST:event_bottoneCercaActionPerformed
+    public void Cerca(){
         String br= barraDiRicerca.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tb1Model);
         jTable2.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(br));
         
-    }//GEN-LAST:event_bottoneCercaActionPerformed
-
+    }
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
             JTable source = (JTable)evt.getSource();
             int row = source.rowAtPoint( evt.getPoint() );
@@ -236,7 +241,10 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
     
     
     private void bottoneAggiungiAlCarrelloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneAggiungiAlCarrelloActionPerformed
-        int qt= (int) sceltaQuantità.getValue();
+        AggiungiAlCarrello();
+    }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
+    public void AggiungiAlCarrello(){
+            int qt= (int) sceltaQuantità.getValue();
         if( clicked_element_farm!= null && !clicked_element_farm.isEmpty()&& qt!=0){
  
             try {
@@ -248,12 +256,13 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
             }
+             JOptionPane.showMessageDialog(null, "Agginto al carrello");
      
            
                 
             }
-    }//GEN-LAST:event_bottoneAggiungiAlCarrelloActionPerformed
-
+    
+    }
     private void barraDiRicercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraDiRicercaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_barraDiRicercaActionPerformed
