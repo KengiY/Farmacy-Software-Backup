@@ -179,7 +179,7 @@ public class HomeCorriere extends javax.swing.JFrame {
     private void bottoneNotificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificaActionPerformed
         try {
             // TODO add your handling code here:
-            new NotificheDipendente().setVisible(true);
+            new NotificheCorriere().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }

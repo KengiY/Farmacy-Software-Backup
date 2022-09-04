@@ -20,7 +20,7 @@ import javax.swing.table.TableRowSorter;
  * @author manfr
  */
 
-public class GestioneScorte extends javax.swing.JFrame {
+public class VisualizzaScorte extends javax.swing.JFrame {
 
     LinkedList<String> name= new LinkedList<String>();
     LinkedList<String> ad= new LinkedList<String>();
@@ -31,7 +31,7 @@ public class GestioneScorte extends javax.swing.JFrame {
     /**
      * Creates new form GestioneScorte1
      */
-    public GestioneScorte() throws SQLException {
+    public VisualizzaScorte() throws SQLException {
         initComponents();
         carica_tabellaScorte();
     }
@@ -58,7 +58,7 @@ public class GestioneScorte extends javax.swing.JFrame {
         setLocation(new java.awt.Point(600, 200));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Gestione Scorte");
+        jLabel1.setText("Visualizza Scorte");
         jLabel1.setToolTipText("");
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -123,8 +123,8 @@ public class GestioneScorte extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(barraDiRicerca, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bottoneCerca, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -156,8 +156,7 @@ public class GestioneScorte extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -225,14 +224,16 @@ public class GestioneScorte extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestioneScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VisualizzaScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestioneScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VisualizzaScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestioneScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VisualizzaScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestioneScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VisualizzaScorte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -240,9 +241,9 @@ public class GestioneScorte extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new GestioneScorte().setVisible(true);
+                    new VisualizzaScorte().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(GestioneScorte.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(VisualizzaScorte.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
