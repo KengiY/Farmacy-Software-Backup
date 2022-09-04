@@ -54,7 +54,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Indietro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -70,11 +70,10 @@ public class ModificaOrdine extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Modifica Ordine");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\reply-fill.png")); // NOI18N
-        jButton1.setText("Indietro");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Indietro.setText("Indietro");
+        Indietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                IndietroActionPerformed(evt);
             }
         });
 
@@ -122,7 +121,6 @@ public class ModificaOrdine extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         bottoneConfermaModifica.setBackground(new java.awt.Color(204, 255, 204));
-        bottoneConfermaModifica.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-in-corso-30.png")); // NOI18N
         bottoneConfermaModifica.setText("Conferma Modifica");
         bottoneConfermaModifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +129,6 @@ public class ModificaOrdine extends javax.swing.JFrame {
         });
 
         bottoneEliminaOrdine.setBackground(new java.awt.Color(255, 153, 153));
-        bottoneEliminaOrdine.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\delete-bin-fill.png")); // NOI18N
         bottoneEliminaOrdine.setText("Elimina Ordine");
         bottoneEliminaOrdine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +179,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Indietro)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -191,7 +188,7 @@ public class ModificaOrdine extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Indietro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,8 +199,12 @@ public class ModificaOrdine extends javax.swing.JFrame {
 
     private void bottoneConfermaModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaModificaActionPerformed
         
-        
-        int qta = Integer.parseInt(textfield_quantita.getText());
+        ConfermaModificaOrdine();
+  
+    }//GEN-LAST:event_bottoneConfermaModificaActionPerformed
+
+   public void ConfermaModificaOrdine(){
+           int qta = Integer.parseInt(textfield_quantita.getText());
         System.out.println(qta + clicked_element_qt);
         
         
@@ -224,15 +225,16 @@ public class ModificaOrdine extends javax.swing.JFrame {
             new ModificaOrdine().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-
-        
-    }//GEN-LAST:event_bottoneConfermaModificaActionPerformed
-
+        } 
+   
+   } 
+   
     private void bottoneEliminaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneEliminaOrdineActionPerformed
-        int row = jTable1.getSelectedRow();
+        EliminaOrdine();
+    }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
+    
+    public void EliminaOrdine(){
+            int row = jTable1.getSelectedRow();
         clicked_element_farmaco=jTable1.getModel().getValueAt(row, 1)+"";
         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
         try {
@@ -246,18 +248,22 @@ public class ModificaOrdine extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_bottoneEliminaOrdineActionPerformed
+    
+    }
+    private void IndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndietroActionPerformed
+        Indietro();
+    }//GEN-LAST:event_IndietroActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
+    public void Indietro(){
+            try {
             // TODO add your handling code here:
             new VisualizzaCarrello().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
+    
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
             JTable source = (JTable)evt.getSource();
             //int row = source.rowAtPoint( evt.getPoint() );
@@ -359,9 +365,9 @@ public class ModificaOrdine extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Indietro;
     private javax.swing.JButton bottoneConfermaModifica;
     private javax.swing.JButton bottoneEliminaOrdine;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

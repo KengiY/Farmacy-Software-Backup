@@ -57,7 +57,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         spinnerqt = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         barraDiRicerca = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        Cerca = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -80,7 +80,6 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\reply-fill.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,11 +99,10 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\search-fill.png")); // NOI18N
-        jButton2.setText("Cerca");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Cerca.setText("Cerca");
+        Cerca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                CercaActionPerformed(evt);
             }
         });
 
@@ -137,6 +135,10 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(0).setResizable(false);
+            jTable3.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,7 +179,6 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         });
 
         bottoneConferma.setBackground(new java.awt.Color(204, 255, 204));
-        bottoneConferma.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\send-plane-fill.png")); // NOI18N
         bottoneConferma.setText("Conferma");
         bottoneConferma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,7 +186,6 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
             }
         });
 
-        bottone_elimina.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\delete-bin-fill.png")); // NOI18N
         bottone_elimina.setText("Elimina");
         bottone_elimina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +205,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(barraDiRicerca)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Cerca, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -237,7 +237,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(barraDiRicerca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cerca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -301,22 +301,33 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
         // TODO add your handling code here:
-        new GestionePrenotazione().setVisible(true);
-        this.setVisible(false);
+        ClickIndietro();
     }//GEN-LAST:event_bottoneIndietroActionPerformed
+    public void ClickIndietro(){
+            new GestionePrenotazione().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    
+    private void CercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CercaActionPerformed
+        ClickCerca();
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        String br = barraDiRicerca.getText();
+    }//GEN-LAST:event_CercaActionPerformed
+    public void ClickCerca(){
+        String br= barraDiRicerca.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tbpaModel);
         jTable3.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(br));
     
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+    }
+    
     private void bottoneConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaActionPerformed
         // TODO add your handling code here:
-        PrenotazioneControl ad = new PrenotazioneControl();
+        Conferma();
+    }//GEN-LAST:event_bottoneConfermaActionPerformed
+
+    public void Conferma(){
+            PrenotazioneControl ad = new PrenotazioneControl();
         int qt = (int)spinnerqt.getValue();
         String dt = combodate.getSelectedItem().toString();
         
@@ -336,8 +347,9 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "La quantità deve essere maggiore di 0");
         }
-    }//GEN-LAST:event_bottoneConfermaActionPerformed
-
+    
+    }
+    
     private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
         // TODO add your handling code here:
             JTable source = (JTable)evt.getSource();
@@ -348,9 +360,13 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
             System.out.println(clicked_element_farm);
     }//GEN-LAST:event_jTable3MouseClicked
 
+
     private void bottone_eliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottone_eliminaActionPerformed
         // TODO add your handling code here:
-        try{
+        BottoneElimina();
+    }//GEN-LAST:event_bottone_eliminaActionPerformed
+    public void BottoneElimina(){
+            try{
         int row = jTable4.getSelectedRow();
         clicked_element_farm = jTable4.getModel().getValueAt(row, 0)+"";
         ControlDiRicercaFarmaci vc = new ControlDiRicercaFarmaci();
@@ -360,8 +376,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println(e);
         }
-    }//GEN-LAST:event_bottone_eliminaActionPerformed
-
+    }
     private void barraDiRicercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraDiRicercaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_barraDiRicercaActionPerformed
@@ -460,12 +475,12 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cerca;
     private javax.swing.JTextField barraDiRicerca;
     private javax.swing.JButton bottoneConferma;
     private javax.swing.JButton bottoneIndietro;
     private javax.swing.JButton bottone_elimina;
     private javax.swing.JComboBox<String> combodate;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

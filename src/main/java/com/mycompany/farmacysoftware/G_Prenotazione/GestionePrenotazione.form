@@ -83,7 +83,7 @@
                   <EmptySpace pref="240" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jSeparator5" min="-2" pref="205" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="205" max="-2" attributes="0"/>
+                      <Component id="OrdiniEffettuati" min="-2" pref="205" max="-2" attributes="0"/>
                       <Component id="jSeparator4" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
                       <Component id="jSeparator1" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
                       <Component id="bottoneAggiungiFarmaco" min="-2" pref="205" max="-2" attributes="0"/>
@@ -117,7 +117,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="OrdiniEffettuati" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator5" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
@@ -126,12 +126,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="OrdiniEffettuati">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ordini Effettuati"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OrdiniEffettuatiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bottoneAggiungiFarmaco">

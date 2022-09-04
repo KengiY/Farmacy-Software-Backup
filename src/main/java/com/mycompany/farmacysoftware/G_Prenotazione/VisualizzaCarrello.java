@@ -188,19 +188,24 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bottoneIndietroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneIndietroActionPerformed
-        // TODO add your handling code here:
+        ClickIndietro();
+
+    }//GEN-LAST:event_bottoneIndietroActionPerformed
+    public void ClickIndietro(){
         new GestionePrenotazione().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneIndietroActionPerformed
-
+    }
     
     
     
     
     
     private void bottoneConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneConfermaOrdineActionPerformed
+        ConfermaOrdine();
 
-        try {
+    }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
+    public void ConfermaOrdine(){
+            try {
             carica_carrelloOrdini();
 
         } catch (SQLException ex) {
@@ -222,19 +227,20 @@ public class VisualizzaCarrello extends javax.swing.JFrame {
             Logger.getLogger(VisualizzaOrdineCorriere.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_bottoneConfermaOrdineActionPerformed
-
+    }
     
     private void bottoneModificaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneModificaOrdineActionPerformed
-        try {
+        ClickModificaOrdine();
+    }//GEN-LAST:event_bottoneModificaOrdineActionPerformed
+    public void ClickModificaOrdine(){
+            try {
             // TODO add your handling code here:
             new ModificaOrdine().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(VisualizzaCarrello.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-    }//GEN-LAST:event_bottoneModificaOrdineActionPerformed
-
+    }
     
     
     public void carica_carrelloOrdini() throws SQLException{
