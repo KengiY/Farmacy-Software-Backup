@@ -5,10 +5,10 @@
 package com.mycompany.farmacysoftware.G_Prenotazione;
 
 import Control.ControlDiRicercaFarmaci;
-import Control.ControlMagazzino;
+//import Control.ControlMagazzino;
 import Control.ControlNotifiche;
 import Control.ControlOrdini;
-import Control.PrenotazioneControl;
+//import Control.PrenotazioneControl;
 import com.mycompany.farmacysoftware.Agg_Magazzino.AggiornaMagazzino;
 import com.mycompany.farmacysoftware.G_OrdineCorriere.VisualizzaOrdineCorriere;
 import com.mycompany.farmacysoftware.G_Prenotazione.ModificaOrdine;
