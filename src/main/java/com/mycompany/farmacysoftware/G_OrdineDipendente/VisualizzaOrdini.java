@@ -272,7 +272,7 @@ public class VisualizzaOrdini extends javax.swing.JFrame {
 
     
     
-    ///////?????????????????????
+    
     private void ConfermaOrdineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfermaOrdineActionPerformed
     ControlOrdini co= new ControlOrdini();
         try {

@@ -55,6 +55,12 @@ public class RecuperoPassword extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
         jLabel1.setText("Inserire Username:");
 
+        recupero_usernametext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recupero_usernametextActionPerformed(evt);
+            }
+        });
+
         BottoneInviaRichiesta.setBackground(new java.awt.Color(204, 255, 204));
         BottoneInviaRichiesta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BottoneInviaRichiesta.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\mail-send-fill.png")); // NOI18N
@@ -164,6 +170,10 @@ public class RecuperoPassword extends javax.swing.JFrame {
         new Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_bottoneIndietroActionPerformed
+
+    private void recupero_usernametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recupero_usernametextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recupero_usernametextActionPerformed
 
     /**
      * @param args the command line arguments

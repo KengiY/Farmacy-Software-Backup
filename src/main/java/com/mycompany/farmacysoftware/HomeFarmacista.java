@@ -3,8 +3,8 @@ package com.mycompany.farmacysoftware;
 import com.mycompany.farmacysoftware.Agg_Magazzino.AggiornaMagazzino;
 import com.mycompany.farmacysoftware.Autenticazione.Login;
 import com.mycompany.farmacysoftware.G_Prenotazione.GestionePrenotazione;
-import com.mycompany.farmacysoftware.G_Scorte.GestioneScorte;
-import com.mycompany.farmacysoftware.G_Scorte.GestioneScorte;
+import com.mycompany.farmacysoftware.G_Scorte.VisualizzaScorte;
+import com.mycompany.farmacysoftware.G_Scorte.VisualizzaScorte;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -79,7 +79,7 @@ public class HomeFarmacista extends javax.swing.JFrame {
         });
 
         bottoneGestioneScorte.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\icons8-visualizza-file-24.png")); // NOI18N
-        bottoneGestioneScorte.setText("Gestione Scorte");
+        bottoneGestioneScorte.setText("Visualizza Scorte");
         bottoneGestioneScorte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bottoneGestioneScorteActionPerformed(evt);
@@ -226,7 +226,7 @@ public class HomeFarmacista extends javax.swing.JFrame {
 
     private void bottoneGestioneScorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGestioneScorteActionPerformed
         try {
-            new GestioneScorte().setVisible(true);
+            new VisualizzaScorte().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -235,7 +235,7 @@ public class HomeFarmacista extends javax.swing.JFrame {
 
     private void bottoneNotificheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNotificheActionPerformed
         try {
-            new NotificheDipendente().setVisible(true);
+            new NotificheFarmacista().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(HomeFarmacista.class.getName()).log(Level.SEVERE, null, ex);
         }

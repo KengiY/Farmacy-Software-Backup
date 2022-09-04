@@ -64,7 +64,7 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Visualizza Ordini");
+        jLabel1.setText("Visualizza Stato Ordine");
         jLabel1.setToolTipText("");
 
         Indietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\arrow-left-circle-line.png")); // NOI18N

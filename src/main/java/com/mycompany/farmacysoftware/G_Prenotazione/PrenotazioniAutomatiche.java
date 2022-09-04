@@ -307,7 +307,7 @@ public class PrenotazioniAutomatiche extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        String br= barraDiRicerca.getText().toUpperCase();
+        String br = barraDiRicerca.getText();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tbpaModel);
         jTable3.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(br));

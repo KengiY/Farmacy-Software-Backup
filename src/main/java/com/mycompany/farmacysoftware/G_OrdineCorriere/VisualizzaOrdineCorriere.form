@@ -58,7 +58,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Visualizza Ordini"/>
+        <Property name="text" type="java.lang.String" value="Visualizza Stato Ordine"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
