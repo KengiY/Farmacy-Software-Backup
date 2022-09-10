@@ -100,7 +100,7 @@ public class ControlOrdini {
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         Statement st = (Statement)conn.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE ID= 0 and NumeroOrdine = " + no);
+        ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini_totale WHERE  NumeroOrdine = " + no);
         
         while(rs.next()){
             

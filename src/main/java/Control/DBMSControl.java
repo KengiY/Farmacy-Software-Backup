@@ -18,7 +18,7 @@ public class DBMSControl {
    
     public Connection ConnessioneDBMS(String dbms){
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Bruno1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Manfro1234");
         if(conn!=null){
             System.out.println("ConnectionDone");
                     }
