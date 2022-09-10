@@ -2,6 +2,8 @@ package com.mycompany.farmacysoftware.Autenticazione;
 
 
 import Control.ControlLogin;
+import com.mycompany.farmacysoftware.HomeCorriere;
+import com.mycompany.farmacysoftware.HomeDipendenteAzienda;
 import com.mycompany.farmacysoftware.HomeFarmacista;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -199,18 +201,24 @@ public class Login extends javax.swing.JFrame {
         try {
             cl.checkLogin();
             pl= cl.getLog();
-            if ( pl==1){
+            if(pl==1){
                 new HomeFarmacista().setVisible(true);
+                this.setVisible(false);
+            }else if(pl==2){
+                new HomeDipendenteAzienda().setVisible(true);
+                this.setVisible(false);
+            }else if(pl==3){
+                new HomeCorriere().setVisible(true);
                 this.setVisible(false);
             }
             
             
-
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }    
         
     }
+   
     
     public void clickRecuperoPassword(){
          new RecuperoPassword().setVisible(true);

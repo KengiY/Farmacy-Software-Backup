@@ -58,7 +58,6 @@ public class ControlLogin {
                     }
 
                     if(log == 0){
-
                         log = 1;
                         passlog=1;
                     }else{
@@ -90,7 +89,7 @@ public class ControlLogin {
                     if(log == 0){
 
                         log = 1;
-                        passlog=1;
+                        passlog=2;
                         
                     }else{
                         JOptionPane.showMessageDialog(null, "Password Errata");
@@ -120,7 +119,7 @@ public class ControlLogin {
                     if(log == 0){
 
                         log = 1;
-                        passlog=1;
+                        passlog=3;
                         
                     }else{
                         JOptionPane.showMessageDialog(null, "Password Errata");
