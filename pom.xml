@@ -23,21 +23,28 @@
         <maven.compiler.target>11</maven.compiler.target>
         <exec.mainClass>com.mycompany.farmacysoftware.FarmacySoftware</exec.mainClass>
     </properties>
-    <build>  
-    <plugins>  
-        <plugin>  
-            <!-- Build an executable JAR -->  
-            <groupId>org.apache.maven.plugins</groupId>  
-            <artifactId>maven-jar-plugin</artifactId>  
-            <version>3.1.0</version>  
-            <configuration>  
-                <archive>  
-                    <manifest>  
-                        <mainClass>com.mycompany.farmacysoftware.FarmacySoftware</mainClass>  
-                    </manifest>  
-                </archive>  
-            </configuration>  
-        </plugin>  
-    </plugins>  
-    </build>  
+    <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>com.mycompany.farmacysoftware.FarmacySoftware</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>  
     </project>
