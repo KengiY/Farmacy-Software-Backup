@@ -214,7 +214,7 @@ public class AggiornaMagazzino extends javax.swing.JFrame {
        if(qt>0&& !ID.isEmpty()&& !farmaco.isEmpty()){
            try {
                cm.addMagazzino(ID, farmaco, qt);
-               System.out.println("fatto");
+               System.out.println("FARMACOAGGIUNTO");
                JOptionPane.showMessageDialog(null, "Farmaco Aggiunto");
                new AggiornaMagazzino().setVisible(true);
                this.setVisible(false);

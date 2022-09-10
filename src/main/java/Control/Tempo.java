@@ -18,8 +18,8 @@ public class Tempo {
  public void  Data() throws ParseException{
    
         
- DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
- System.out.println(df.format(new Date()));
+    DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
+    System.out.println(df.format(new Date()));
      
  
  

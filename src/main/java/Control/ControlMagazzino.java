@@ -32,7 +32,7 @@ public class ControlMagazzino {
             ps.setString(2,farmaco);
             ps.setInt(3,qt);
             ps.executeUpdate();
-            System.out.println("fatto2");
+            System.out.println("INSERT DONE");
             ps.close();
         }
     }

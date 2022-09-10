@@ -28,11 +28,11 @@ public class ControlNotifiche {
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM notifiche");
             
-           System.out.println("suca");
+           
             
             if(rs.next()|| !rs.next()){
               
-                System.out.println("suca");
+                System.out.println("RSNEXT");
                 String sql = "Insert into notifiche (idnotifiche, TipoNotifica) VALUES (?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
                
@@ -41,7 +41,7 @@ public class ControlNotifiche {
                 ps.executeUpdate();
                 
                 ps.close();
-            }/// tutto ok
+            }
     }
     
     public void caricaNotifiche(String luogo) throws SQLException{

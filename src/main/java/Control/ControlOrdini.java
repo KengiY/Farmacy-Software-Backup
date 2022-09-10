@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -64,7 +63,7 @@ public class ControlOrdini {
             ps.setInt(3,qt);
             ps.setInt(4,no);
             ps.executeUpdate();
-            System.out.println("controlOrdini effettuata");
+            System.out.println("ControlOrdiniEffettuata");
             ps.close();
             
         }
@@ -158,10 +157,10 @@ public class ControlOrdini {
         System.out.println(nordine);
 
         int no = Integer.parseInt(nordine);
-        String farmacia = " farm1";
-        String Indirizzo= "via dai coglioni";
-        String Stato = "Da consegnare";
-        System.out.println("controlOrdini effettuata");
+        String farmacia = "FarmHealth";
+        String Indirizzo= "Via Roma 10";
+        String Stato = "Da Consegnare";
+        System.out.println("ControlOrdini effettuata");
         
        
             String sql = "Insert into info_consegne (Ordine, Farmacia, Indirizzo, Stato) VALUES (?, ?, ?, ?)";
@@ -172,7 +171,7 @@ public class ControlOrdini {
             ps.setString(3,Indirizzo);
             ps.setString(4,Stato);
             ps.executeUpdate();
-            System.out.println("controlOrdini effettuata");
+            System.out.println("ControlOrdini effettuata");
             ps.close();
 
         }
@@ -181,8 +180,9 @@ public class ControlOrdini {
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
-        String stato="Confermato";
-        System.out.println(nordine+"sucarola");
+        String stato= "Confermato";
+        System.out.println(nordine+":N_Ordine");
+        
                 String sql =  "update lista_ordini set stato=? where Nordine=?";
                 
                 PreparedStatement ps = conn.prepareStatement(sql);
@@ -193,12 +193,15 @@ public class ControlOrdini {
                 ps.executeUpdate();
                 ps.close();
     }
-        public void CambioStatoCorriere(String nordine) throws SQLException{
+        
+    
+    
+   public void CambioStatoCorriere(String nordine) throws SQLException{
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         String stato="Consegnato";
-        System.out.println(nordine+"sucarola");
+        System.out.println(nordine+":N_Ordine");
                 String sql =  "update info_consegne set Stato=? where Ordine=?";
                 
                 PreparedStatement ps = conn.prepareStatement(sql);
@@ -223,11 +226,12 @@ public class ControlOrdini {
         DBMSControl dc= new DBMSControl();
         Connection conn= dc.ConnessioneDBMS(luogo);
         int nordine = 1;
-        String farmacia= "1farm";
+        String farmacia= "FarmHealth";
         int idordine= 2;
         Statement st = (Statement)conn.createStatement();
         ResultSet rs = st.executeQuery("SELECT * FROM lista_ordini ORDER BY Nordine DESC");
         if(rs.next()|| !rs.next()){
+            
             try{
 
                 nordine= rs.getInt("Nordine");
@@ -241,6 +245,7 @@ public class ControlOrdini {
                 ps.setString(4,"daConfermare");
                 ps.execute();
                 ps.close();
+                
             }catch(SQLException ex){
                 String sql =  "Insert into lista_ordini(Nordine, Farmacia, idordine,stato) VALUES (?, ?, ?,?)";
                 PreparedStatement ps = conn.prepareStatement(sql);

@@ -8,7 +8,6 @@ import com.mycompany.farmacysoftware.Autenticazione.AggiornamentoPassword;
 import com.mycompany.farmacysoftware.Autenticazione.Login;
 import com.mycompany.farmacysoftware.Autenticazione.RecuperoPassword;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +36,7 @@ public class ControlRecuperoPassword {
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_farmacista");
 
-            //Control
+            
                     while(rs.next())
                     {
                         if (rs.getString(1).equals(user))
@@ -56,7 +55,7 @@ public class ControlRecuperoPassword {
                         passUser=rs.getString(1);
                         passlog=1;
                     }else{
-                        JOptionPane.showMessageDialog(null, "User inesistente");
+                        JOptionPane.showMessageDialog(null, "Username inesistente, Riprova!");
                     }
 
         }
@@ -92,7 +91,7 @@ public class ControlRecuperoPassword {
                     ps.close();
                     
                     System.out.println(pass);
-                    JOptionPane.showMessageDialog(null, "Password aggiornata");
+                    JOptionPane.showMessageDialog(null, "Password Aggiornata");
                     lof=1;
 
 
@@ -111,7 +110,7 @@ public class ControlRecuperoPassword {
                     ps.close();
                     
                     System.out.println(pass);
-                    JOptionPane.showMessageDialog(null, "Password aggiornata");
+                    JOptionPane.showMessageDialog(null, "Password Aggiornata");
                     lof=1;
             }else if (res=='c'){
                 int log = 1;
@@ -128,7 +127,7 @@ public class ControlRecuperoPassword {
                     ps.close();
                     
                     System.out.println(pass);
-                    JOptionPane.showMessageDialog(null, "Password aggiornata");
+                    JOptionPane.showMessageDialog(null, "Password Aggiornata");
                     lof=1;
         }
         

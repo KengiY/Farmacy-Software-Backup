@@ -21,6 +21,8 @@ public class ControlLogin {
         String user;
         String pass;
         int passlog;
+        
+        
         public ControlLogin(String user, String pass){
             this.user=user;
             this.pass=pass;
@@ -30,6 +32,7 @@ public class ControlLogin {
             return passlog;
         }
 
+        //METODO CHECKCREDENZIALI
         public void checkLogin() throws SQLException{
 
             char res= user.charAt(0);
@@ -41,7 +44,7 @@ public class ControlLogin {
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_farmacista");
 
-            //Control
+            
                     while(rs.next())
                     {
                         if (rs.getString(1).equals(user) && rs.getString(2).equals(pass))
@@ -70,7 +73,7 @@ public class ControlLogin {
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_utente");
 
-            //Control
+            
                     while(rs.next())
                     {
                         if (rs.getString(1).equals(user) && rs.getString(2).equals(pass))
@@ -101,7 +104,7 @@ public class ControlLogin {
                     Statement st = (Statement)conn.createStatement();
                     ResultSet rs = st.executeQuery("select * from credenziali_utente");
 
-            //Control
+            
                     while(rs.next())
                     {
                         if (rs.getString(1).equals(user) && rs.getString(2).equals(pass))

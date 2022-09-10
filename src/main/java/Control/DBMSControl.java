@@ -6,8 +6,7 @@ package Control;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
 
 /**
  *
@@ -19,9 +18,9 @@ public class DBMSControl {
    
     public Connection ConnessioneDBMS(String dbms){
         try{
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Manfro1234");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbms,"root", "Bruno1234");
         if(conn!=null){
-            System.out.println("connection done");
+            System.out.println("ConnectionDone");
                     }
 
         }catch (Exception e){

@@ -209,15 +209,6 @@ public class VisualizzaOrdineCorriere extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableVOCMouseClicked
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
    public void clickIndietro(){
        new HomeCorriere().setVisible(true);
        this.setVisible(false);

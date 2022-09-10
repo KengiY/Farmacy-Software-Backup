@@ -158,12 +158,6 @@ public class RecuperoPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_recupero_usernametextActionPerformed
 
     
-    
-    
-    
-    
-    
-    
     public void clickIndietro(){
         new Login().setVisible(true);
         this.setVisible(false);

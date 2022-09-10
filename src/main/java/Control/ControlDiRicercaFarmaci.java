@@ -28,10 +28,11 @@ public class ControlDiRicercaFarmaci {
     List<String> indirizzi = new LinkedList<String>();
     List<String> status = new LinkedList<String>();
     
+    
+    //METODI GET
     public List<String> getListNF(){
         return nome_farmacia;
     }
-    
     
     public List<String> getListN(){
     return  nome;
@@ -62,6 +63,8 @@ public class ControlDiRicercaFarmaci {
     }
     
     
+    //METODI 
+    
     
     public void VisualizzaStatoOrdiniDipendente() throws SQLException{
         
@@ -85,7 +88,6 @@ public class ControlDiRicercaFarmaci {
                 
                 
                 }
-
     }
     
     

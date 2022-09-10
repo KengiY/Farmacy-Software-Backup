@@ -41,11 +41,11 @@ public class PrenotazioneControl {
         
         
         if(rs.next()|| !rs.next()){
-                System.out.println("pompini");
+                System.out.println("RS.NEXTINSIDE");
                 
                 try{
                     int nordine= rs.getInt("Nordine");
-                    System.out.println("pompini1");
+                    System.out.println("RS.NEXT1->TRY");
                     nordine++;
                     String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
                     PreparedStatement ps = conn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class PrenotazioneControl {
                     ps.close();
                     
                 }catch(SQLException ex){
-                    System.out.println("pompini2");
+                    System.out.println("RS.NEXT2->CATCH");
                     String sql = "Insert into carrello(ID, ListaFarmaci, Quantità, NumeroOrdine) VALUES (?, ?, ?, ?)";
                     PreparedStatement ps = conn.prepareStatement(sql);
                 
@@ -102,7 +102,7 @@ public class PrenotazioneControl {
                 ps.executeUpdate();
                 
                 ps.close();
-            }/// tutto ok
+            }
    
     }
     
