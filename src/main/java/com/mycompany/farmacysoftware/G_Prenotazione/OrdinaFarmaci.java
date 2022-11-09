@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author manfr
  */
-public class AggiungiFarmaco extends javax.swing.JFrame {
+public class OrdinaFarmaci extends javax.swing.JFrame {
     LinkedList<String> name= new LinkedList<String>();
     LinkedList<String> ad= new LinkedList<String>();
     DefaultTableModel tb1Model;
@@ -29,7 +29,7 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
     String clicked_element_tipo= null;
   
     
-    public AggiungiFarmaco() throws SQLException {
+    public OrdinaFarmaci() throws SQLException {
         initComponents();
         carica_tabella();
     }
@@ -56,9 +56,8 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Aggiungi Farmaco");
+        jLabel1.setText("Ordina Farmaci");
 
-        bottoneIndietro.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\reply-fill.png")); // NOI18N
         bottoneIndietro.setText("Indietro");
         bottoneIndietro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,15 +102,13 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable2);
 
         bottoneAggiungiAlCarrello.setBackground(new java.awt.Color(204, 255, 204));
-        bottoneAggiungiAlCarrello.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\shopping-cart-fill.png")); // NOI18N
-        bottoneAggiungiAlCarrello.setText("Aggiungi al Carrello");
+        bottoneAggiungiAlCarrello.setText("Ordina Farmaco");
         bottoneAggiungiAlCarrello.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bottoneAggiungiAlCarrelloActionPerformed(evt);
             }
         });
 
-        bottoneCerca.setIcon(new javax.swing.ImageIcon("C:\\Users\\manfr\\Documents\\GitHub\\Farmacy-Software-Backup\\icon\\search-fill.png")); // NOI18N
         bottoneCerca.setText("Cerca");
         bottoneCerca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,7 +238,7 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
                 
                 agg.AggiungiAlCarrelloo(clicked_element_farm,qt,clicked_element_tipo );
             } catch (SQLException ex) {
-                Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(OrdinaFarmaci.class.getName()).log(Level.SEVERE, null, ex);
             }
              JOptionPane.showMessageDialog(null, "Aggiunto al Carrello");
     
@@ -292,23 +289,24 @@ public class AggiungiFarmaco extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AggiungiFarmaco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdinaFarmaci.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AggiungiFarmaco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdinaFarmaci.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AggiungiFarmaco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdinaFarmaci.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AggiungiFarmaco.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdinaFarmaci.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new AggiungiFarmaco().setVisible(true);
+                    new OrdinaFarmaci().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(AggiungiFarmaco.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(OrdinaFarmaci.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
         }

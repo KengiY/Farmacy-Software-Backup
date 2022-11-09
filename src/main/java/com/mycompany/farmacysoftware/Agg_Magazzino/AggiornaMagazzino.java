@@ -5,7 +5,6 @@
 package com.mycompany.farmacysoftware.Agg_Magazzino;
 
 import Control.ControlMagazzino;
-import com.mycompany.farmacysoftware.G_Prenotazione.VisualizzaCarrello;
 import com.mycompany.farmacysoftware.HomeFarmacista;
 import java.sql.SQLException;
 import java.util.logging.Level;

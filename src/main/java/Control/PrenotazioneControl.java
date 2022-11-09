@@ -4,7 +4,7 @@
  */
 package Control;
 
-import com.mycompany.farmacysoftware.G_Prenotazione.VisualizzaCarrello;
+import com.mycompany.farmacysoftware.G_Prenotazione.OrdinaFarmaci;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -30,7 +30,7 @@ public class PrenotazioneControl {
         int num = 0;
         int tip= Integer.parseInt(tipo);
        
-        VisualizzaCarrello vc = new VisualizzaCarrello();
+        OrdinaFarmaci vc = new OrdinaFarmaci();
       
         String luogo = "db_azienda";
         DBMSControl dc= new DBMSControl();

@@ -247,13 +247,9 @@ public class ModificaOrdine extends javax.swing.JFrame {
     }//GEN-LAST:event_IndietroActionPerformed
 
     
-    public void Indietro(){
-            try {
-            // TODO add your handling code here:
-            new VisualizzaCarrello().setVisible(true);
-        } catch (SQLException ex) {
-            Logger.getLogger(ModificaOrdine.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void Indietro(){            
+        // TODO add your handling code here:
+        new GestionePrenotazione().setVisible(true);
         this.setVisible(false);
     }
     
